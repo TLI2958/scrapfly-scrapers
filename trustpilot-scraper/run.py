@@ -13,34 +13,37 @@ import trustpilot
 output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 
-
+urls=[
+            # "https://www.trustpilot.com/review/www.mountainroseherbs.com",
+            "https://www.trustpilot.com/review/fosterfarms.com",
+        ]
 async def run():
     trustpilot.BASE_CONFIG["cache"] = True
 
     print("running Trustpilot scrape and saving results to ./results directory")
 
-    search_data = await trustpilot.scrape_search(
-        url="https://www.trustpilot.com/categories/electronics_technology", max_pages=3
-    )
-    with open(output.joinpath("search.json"), "w", encoding="utf-8") as file:
-        json.dump(search_data, file, indent=2, ensure_ascii=False)
+    # search_data = await trustpilot.scrape_search(
+    #     url="https://www.trustpilot.com/categories/electronics_technology", max_pages=3
+    # )
+    # with open(output.joinpath("search.json"), "w", encoding="utf-8") as file:
+    #     json.dump(search_data, file, indent=2, ensure_ascii=False)
 
     companies_data = await trustpilot.scrape_company(
-        urls=[
-            "https://www.trustpilot.com/review/www.flashbay.com",
-            "https://www.trustpilot.com/review/iggm.com",
-            "https://www.trustpilot.com/review/www.bhphotovideo.com",
-        ]
+        urls= urls
     )
-    with open(output.joinpath("companies.json"), "w", encoding="utf-8") as file:
+    with open(output.joinpath("companies_1.json"), "w", encoding="utf-8") as file:
         json.dump(companies_data, file, indent=2, ensure_ascii=False)
 
-    reviews_data = await trustpilot.scrape_reviews(
-        url="https://www.trustpilot.com/review/www.bhphotovideo.com",
-        max_pages=3,
-    )
-    with open(output.joinpath("reviews.json"), "w", encoding="utf-8") as file:
-        json.dump(reviews_data, file, indent=2, ensure_ascii=False)
+    for i, url in enumerate(urls):
+        reviews_data = await trustpilot.scrape_reviews(
+            url= url,
+            max_pages=100,
+        )
+
+        file_path = output.joinpath(f"reviews_1.json")
+
+        with open(file_path, "w", encoding="utf-8") as file:
+            json.dump(reviews_data, file, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":

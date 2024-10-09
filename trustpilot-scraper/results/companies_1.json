@@ -1,0 +1,158 @@
+[
+  {
+    "pageUrl": "https://www.trustpilot.com/review/fosterfarms.com",
+    "companyDetails": {
+      "id": "64332c1c26e69b18a5e193bb",
+      "displayName": "Foster Farms",
+      "identifyingName": "fosterfarms.com",
+      "numberOfReviews": 2,
+      "trustScore": 3.7,
+      "websiteUrl": "http://fosterfarms.com",
+      "websiteTitle": "fosterfarms.com",
+      "profileImageUrl": "//s3-eu-west-1.amazonaws.com/tpd/screenshots/64332c1c26e69b18a5e193bb/198x149.png",
+      "customHeaderUrl": "",
+      "promotion": null,
+      "hideCompetitorModule": false,
+      "stars": 3.5,
+      "categories": [],
+      "breadcrumb": null,
+      "isClaimed": false,
+      "isClosed": false,
+      "isTemporarilyClosed": false,
+      "locationsCount": 0,
+      "isCollectingReviews": false,
+      "verification": {
+        "verifiedByGoogle": false,
+        "verifiedBusiness": false,
+        "verifiedPaymentMethod": false,
+        "verifiedUserIdentity": false
+      },
+      "hasCollectedIncentivisedReviews": false,
+      "consumerAlert": null,
+      "consumerAlerts": [],
+      "isMerged": false,
+      "contactInfo": {
+        "email": "",
+        "address": "",
+        "city": "",
+        "country": "US",
+        "phone": "",
+        "zipCode": ""
+      },
+      "activity": {
+        "isUsingPaidFeatures": false,
+        "hasSubscription": false,
+        "isAskingForReviews": false,
+        "claimedDate": null,
+        "isClaimed": false,
+        "previouslyClaimed": false,
+        "replyBehavior": {
+          "averageDaysToReply": 0,
+          "lastReplyToNegativeReview": null,
+          "negativeReviewsWithRepliesCount": 0,
+          "replyPercentage": 0,
+          "totalNegativeReviewsCount": 0
+        },
+        "verification": {
+          "verifiedByGoogle": false,
+          "verifiedBusiness": false,
+          "verifiedPaymentMethod": false,
+          "verifiedUserIdentity": false
+        },
+        "hasBusinessUnitMergeHistory": false,
+        "basiclinkRate": 0,
+        "hideBasicLinkAlert": false,
+        "isUsingAIResponses": false
+      },
+      "hasCustomHeaderSetting": false,
+      "hasPromotionSetting": false,
+      "hasNewTrustSignalsConsumerAlerts": true
+    },
+    "reviews": [
+      {
+        "id": "66107366edfe3cffa276b559",
+        "filtered": false,
+        "pending": false,
+        "text": "So cheesy, and so spicy! They make your mouth feel watery as to buy this product!\n\nWhen will this item be back within stock at Albertsons or Walmart?",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": false,
+            "createdDateTime": "2024-04-05T23:55:51.000Z",
+            "reviewSourceName": "Organic",
+            "verificationSource": "invitation",
+            "verificationLevel": "not-verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I love your Foster Farms Jalapeno Cheese Corn Dogs!",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-04-05T00:00:00.000Z",
+          "publishedDate": "2024-04-05T23:55:51.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "619abf93126c9c0012479d5e",
+          "displayName": "Alec Heesacker",
+          "imageUrl": "https://user-images.trustpilot.com/619abf93126c9c0012479d5e/73x73.png",
+          "numberOfReviews": 48,
+          "countryCode": "US",
+          "hasImage": true,
+          "isVerified": true
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "64332e5c7c50134301374c0e",
+        "filtered": false,
+        "pending": false,
+        "text": "Great chicken breasts, great product created by nature, but Foster Farms company messed up this wonderful product by adding way too much salt to this product. Why? It's impossible to consume/eat those chicken breasts if you simply defrost them in the air - too much salt. It Is also impossible to drink chicken bouillon in which these chicken breasts were cooked - bullion is way over salted, so it has to go to the garbage every time. There is ~300mg of sodium on 4oz of chicken breasts. The only one way to bring those chicken breasts to normal condition is to soak them in the water for a long time to wash the salt out, before cooking. Why are you adding so much salt? Can't find a logical explanation. Or maybe you just want to cause harm to people, because too much salt causes the following health issues: high blood pressure, risk of developing osteoporosis, kidney problems, risk of stomach cancer, worsening heart health. I'm sure that Foster Farms company is aware of that, so why are you messing up this wonderful product consciously and on purpose by adding way too much salt?\nUnable to add pictures (no options)",
+        "rating": 2,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": false,
+            "createdDateTime": "2023-04-09T23:30:04.000Z",
+            "reviewSourceName": "Organic",
+            "verificationSource": "invitation",
+            "verificationLevel": "not-verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Great chicken breasts",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2023-02-14T00:00:00.000Z",
+          "publishedDate": "2023-04-09T23:30:04.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "5665ca100000ff0001f112a3",
+          "displayName": "Malvina",
+          "imageUrl": "",
+          "numberOfReviews": 7,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      }
+    ]
+  }
+]

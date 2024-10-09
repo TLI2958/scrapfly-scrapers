@@ -21,13 +21,7 @@ SCRAPFLY = ScrapflyClient(key=os.environ["SCRAPFLY_KEY"])
 BASE_CONFIG = {
     # Aliexpress.com requires Anti Scraping Protection bypass feature.
     # for more: https://scrapfly.io/docs/scrape-api/anti-scraping-protection
-    "asp": True,
-    "country": "US",
-    # aliexpress returns differnt results based on localization settings
-    # apply localization settings from the browser and then copy the aep_usuc_f cookie from devtools
-    "headers": {
-        "cookie": "aep_usuc_f=site=glo&province=&city=&c_tp=USD&region=EG&b_locale=en_US&ae_u_p_s=2"
-    }
+    "asp": True
 }
 
 
@@ -158,14 +152,13 @@ def parse_product(result: ScrapeApiResponse) -> Product:
         })
     seller_link = selector.xpath("//a[@data-pl='store-name']/@href").get()
     seller_followers = selector.xpath("//div[contains(@class,'store-info')]/strong[2]/text()").get()
-    seller_followers = int(float(seller_followers.replace('K', '')) * 1000) if seller_followers and 'K' in seller_followers else int(seller_followers) if seller_followers else None
     seller = {
         "name": selector.xpath("//a[@data-pl='store-name']/text()").get(),
         "link": seller_link.split("?")[0].replace("//", "") if seller_link else None,
         "id": int(seller_link.split("store/")[-1].split("?")[0]) if seller_link else None,
         "info": {
             "positiveFeedback": selector.xpath("//div[contains(@class,'store-info')]/strong/text()").get(),
-            "followers": seller_followers
+            "followers": int (seller_followers) if seller_followers else None
         }
     }
     return {
@@ -194,8 +187,8 @@ async def scrape_product(url: str) -> List[Product]:
     session_id = await obtain_session()
     log.info("scraping product: {}", url)
     result = await SCRAPFLY.async_scrape(ScrapeConfig(
-        url, **BASE_CONFIG, render_js=True, session=session_id, auto_scroll=True,
-        rendering_wait=15000, retry=False, timeout=150000, js_scenario=[
+        url, **BASE_CONFIG, render_js=True, auto_scroll=True, session=session_id,
+        rendering_wait=10000, retry=False, timeout=150000, js_scenario=[
             {"wait_for_selector": {"selector": "//div[@id='nav-specification']//button", "timeout": 5000}},
             {"click": {"selector": "//div[@id='nav-specification']//button", "ignore_if_not_visible": True}}
         ]

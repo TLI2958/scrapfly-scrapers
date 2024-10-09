@@ -17,6 +17,7 @@ output.mkdir(exist_ok=True)
 async def run():
     # enable scrapfly cache for basic use
     # aliexpress.BASE_CONFIG["cache"] = True # session can't be combined with cache
+    aliexpress.BASE_CONFIG["country"] = "US"
     aliexpress.BASE_CONFIG["debug"] = True
 
     print("running Aliexpress scrape and saving results to ./results directory")

@@ -1,0 +1,140 @@
+[
+  {
+    "@type": "Product",
+    "@context": "https://schema.org",
+    "url": "https://www.etsy.com/listing/730184969/california-poppy-fresh-organic-plant",
+    "name": "California poppy (FRESH Organic plant) tincture, Eschscholzia californica",
+    "sku": "730184969",
+    "gtin": "n/a",
+    "description": "Yes, we grow our own Organic California poppy. We have 300 acres of land where we grow our own herbs and pick others in the wild resulting in a truly organic product from nature. We focus on picking product at the optimum time of the moon and right time of season to ensure maximum power and potency. All of our products are processed by hand with care and attention to quality and excellence.  Tinctures are made from fresh organic herbs.\n\nPart used: Fresh flowers, fresh leaves and stem.\n\nRatio plant to menstruum: 1:2, 50% alcohol.\n\nDosage: 15-25 drops up in water up to 3x daily",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "@context": "https://schema.org",
+        "author": "Myherbsforyou",
+        "contentURL": "https://i.etsystatic.com/17212905/r/il/d844a8/2570014711/il_fullxfull.2570014711_h6vn.jpg",
+        "description": null,
+        "thumbnail": "https://i.etsystatic.com/17212905/c/960/766/0/420/il/d844a8/2570014711/il_340x270.2570014711_h6vn.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@context": "https://schema.org",
+        "author": "Myherbsforyou",
+        "contentURL": "https://i.etsystatic.com/17212905/r/il/b6643d/1980680036/il_fullxfull.1980680036_8zmt.jpg",
+        "description": null,
+        "thumbnail": "https://i.etsystatic.com/17212905/r/il/b6643d/1980680036/il_340x270.1980680036_8zmt.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@context": "https://schema.org",
+        "author": "Myherbsforyou",
+        "contentURL": "https://i.etsystatic.com/17212905/r/il/a03648/2028209461/il_fullxfull.2028209461_540l.jpg",
+        "description": null,
+        "thumbnail": "https://i.etsystatic.com/17212905/r/il/a03648/2028209461/il_340x270.2028209461_540l.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@context": "https://schema.org",
+        "author": "Myherbsforyou",
+        "contentURL": "https://i.etsystatic.com/17212905/r/il/c3dfa1/1980650508/il_fullxfull.1980650508_dgbw.jpg",
+        "description": null,
+        "thumbnail": "https://i.etsystatic.com/17212905/r/il/c3dfa1/1980650508/il_340x270.1980650508_dgbw.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@context": "https://schema.org",
+        "author": "Myherbsforyou",
+        "contentURL": "https://i.etsystatic.com/17212905/r/il/70d810/2028216381/il_fullxfull.2028216381_6jnn.jpg",
+        "description": null,
+        "thumbnail": "https://i.etsystatic.com/17212905/r/il/70d810/2028216381/il_340x270.2028216381_6jnn.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@context": "https://schema.org",
+        "author": "Myherbsforyou",
+        "contentURL": "https://i.etsystatic.com/17212905/r/il/bce73d/2558025469/il_fullxfull.2558025469_ov7d.jpg",
+        "description": null,
+        "thumbnail": "https://i.etsystatic.com/17212905/c/960/766/0/453/il/bce73d/2558025469/il_340x270.2558025469_ov7d.jpg"
+      }
+    ],
+    "category": "Home & Living < Outdoor & Gardening < Plants < Herbs",
+    "brand": {
+      "@type": "Brand",
+      "@context": "https://schema.org",
+      "name": "Myherbsforyou"
+    },
+    "logo": "https://i.etsystatic.com/isla/306cca/55177366/isla_500x500.55177366_iabehg8f.jpg?version=0",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": 9489
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "offerCount": 24,
+      "lowPrice": "7.46",
+      "highPrice": "42.69",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "datePublished": "2024-09-13",
+        "reviewBody": "Potent and effective tincture. Rich color/flavor. I use when feeling anxious/stressed and trying to sleep. I take 3-4 dropperfulls and it works every time.",
+        "author": {
+          "@type": "Person",
+          "name": "Deborah Revenaugh"
+        }
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "datePublished": "2024-09-09",
+        "reviewBody": "I had insomnia before using California Poppy tincture, and now I sleep like a baby without waking up in the wee hours of the morning. This is one of many great tinctures this seller produces.",
+        "author": {
+          "@type": "Person",
+          "name": "Dee"
+        }
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "datePublished": "2024-09-05",
+        "reviewBody": "Repeat buyer of this item. Thank you!",
+        "author": {
+          "@type": "Person",
+          "name": "Thingamabobs Of Random"
+        }
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "datePublished": "2024-08-19",
+        "reviewBody": "Item arrived very quickly! Excited to start using it.",
+        "author": {
+          "@type": "Person",
+          "name": "Ella Rose Design Studio"
+        }
+      }
+    ],
+    "material": "Organic Alcohol/Distilled Water/California Flower"
+  }
+]

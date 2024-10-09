@@ -13,7 +13,7 @@ import amazon
 output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 
-
+urls = ["https://www.amazon.com/s?k=california+poppy+tea"]
 async def run():
     # enable scrapfly cache for basic use
     amazon.BASE_CONFIG["cache"] = True
@@ -21,17 +21,28 @@ async def run():
 
     print("running Amazon scrape and saving results to ./results directory")
 
-    url = "https://www.amazon.com/s?k=kindle"
-    search = await amazon.scrape_search(url, max_pages=2)
-    output.joinpath("search.json").write_text(json.dumps(search, indent=2))
+    for i, url in enumerate(urls):    
+        search = await amazon.scrape_search(url, max_pages=3)
+        output.joinpath(f"search_{i}.json").write_text(json.dumps(search, indent=2))
+        
+        for product in search:
+            url = product["url"].split('ref')[0]
+            brand = product.get('brand', '')
+            product_data = await amazon.scrape_product(url)
+            product_data = product_data[0]
+            ASIN = product_data.get('asin', '')
 
-    url = "https://www.amazon.com/PlayStation-5-Console-CFI-1215A01X/dp/B0BCNKKZ91/"
-    product = await amazon.scrape_product(url)
-    output.joinpath("product.json").write_text(json.dumps(product, indent=2))
+            if not ASIN:
+                continue
+            else:
+                review_url = url.split(f'dp/{ASIN}')[0]  + 'product-reviews/' + ASIN + '/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
+                reviews = await amazon.scrape_reviews(review_url, ASIN, max_pages=3)
+                for review in reviews:
+                    review.update(product_data)
+                    review.update({'brand': brand})
 
-    url = "https://www.amazon.com/PlayStation-PS5-Console-Ragnar%C3%B6k-Bundle-5/product-reviews/B0BHC395WW/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews"
-    reviews = await amazon.scrape_reviews(url, max_pages=3)
-    output.joinpath("reviews.json").write_text(json.dumps(reviews, indent=2))
+                    with output.joinpath(f"search_california_poppy_tea_products_reviews.json").open('a', encoding='utf-8') as file:
+                        file.write(json.dumps(review, indent=2) + ",\n") 
 
 
 if __name__ == "__main__":

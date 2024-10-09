@@ -5,7 +5,7 @@ import pprint
 
 pp = pprint.PrettyPrinter(indent=4)
 
-similarweb.BASE_CONFIG["cache"] = False
+similarweb.BASE_CONFIG["cache"] = True
 
 class Validator(_Validator):
     def _validate_min_presence(self, min_presence, field, value):
@@ -104,7 +104,6 @@ trends_schema = {
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_website_scraping():
     website_data = await similarweb.scrape_website(
         domains=["google.com", "twitter.com", "youtube.com"]
@@ -116,7 +115,6 @@ async def test_website_scraping():
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_website_compare_scraping():
     comparing_data = await similarweb.scrape_website_compare(
         first_domain="twitter.com",
@@ -128,7 +126,6 @@ async def test_website_compare_scraping():
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_trend_scraping():
     trending_data = await similarweb.scrape_trendings(
         urls=[

@@ -18,18 +18,21 @@ async def run():
     # enable scrapfly cache for basic use
     tripadvisor.BASE_CONFIG["cache"] = False
 
-    print("running Tripadvisor scrape and saving results to ./results directory")
-    result_location = await tripadvisor.scrape_location_data(query="Malta")
-    output.joinpath("location.json").write_text(json.dumps(result_location, indent=2, ensure_ascii=False))
+    # print("running Tripadvisor scrape and saving results to ./results directory")
+    # result_location = await tripadvisor.scrape_location_data(query="Malta")
+    # output.joinpath("location.json").write_text(json.dumps(result_location, indent=2, ensure_ascii=False))
 
-    result_search = await tripadvisor.scrape_search(query="Malta", max_pages=2)
-    output.joinpath("search.json").write_text(json.dumps(result_search, indent=2, ensure_ascii=False))
+    # result_search = await tripadvisor.scrape_search(query="Malta", max_pages=2)
+    # output.joinpath("search.json").write_text(json.dumps(result_search, indent=2, ensure_ascii=False))
+    url = "https://www.tripadvisor.com/Attraction_Review-g60763-d105127-Reviews-Central_Park-New_York_City_New_York.html"
+    att = url.split('Attraction_Review-')[-1].split('Reviews-')[1].split('-')[0]
 
-    result_hotel = await tripadvisor.scrape_hotel(
-        "https://www.tripadvisor.com/Hotel_Review-g190327-d264936-Reviews-1926_Hotel_Spa-Sliema_Island_of_Malta.html",
-        max_review_pages=3,
+    result_attraction = await tripadvisor.scrape_hotel(
+        url,
+        max_review_pages= 100,
     )
-    output.joinpath("hotels.json").write_text(json.dumps(result_hotel, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    output.joinpath(f"reviews_{att}.json").write_text(json.dumps(result_attraction, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 if __name__ == "__main__":

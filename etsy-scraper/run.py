@@ -12,38 +12,28 @@ import etsy
 
 output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
-
+urls = [
+# 'https://www.etsy.com/search/home-and-living/food-and-drink?q=%22california+poppy%22&category_path=891%2C930'
+'https://www.etsy.com/search/home-and-living/outdoor-and-garden/plants/herbs?explicit=1&q=%26quot%3BCalifornia+poppy%26quot%3B&category_path=891%2C1105%2C1120%2C1126&ship_to=US',
+# 'https://www.etsy.com/search/home-and-living/food-and-drink/herbs-and-spices-and-seasonings/herbs-and-spices?q=%22California+poppy%22&explicit=1&category_path=891%2C930%2C957%2C958&ship_to=US'
+# 'https://www.etsy.com/search/home-and-living/food-and-drink/coffee-and-tea/tea?q=%22California+poppy%22&explicit=1&category_path=891%2C930%2C951%2C955&ship_to=US'
+]
 
 async def run():
-    etsy.BASE_CONFIG["cache"] = True
-
+    etsy.BASE_CONFIG["cache"] = False   
     print("running Etsy scrape and saving results to ./results directory")
+    for i, url in enumerate(urls):
+        # product_data = await etsy.scrape_product(url, search_data = None, max_review_pages= 10)
+        search_data, product_data = await etsy.scrape_search_and_products(
+            search_url=url,
+            max_pages=1,
+            max_review_pages= 10
+        )
+        with open(output.joinpath(f"search_null.json"), "w", encoding="utf-8") as file:
+            json.dump(search_data, file, indent=2, ensure_ascii=False)
 
-    search_data = await etsy.scrape_search(
-        url="https://www.etsy.com/search?q=wood+laptop+stand", max_pages=3
-    )
-    with open(output.joinpath("search.json"), "w", encoding="utf-8") as file:
-        json.dump(search_data, file, indent=2, ensure_ascii=False)
-
-    product_data = await etsy.scrape_product(
-        urls = [
-            "https://www.etsy.com/listing/971370843",
-            "https://www.etsy.com/listing/529765307",
-            "https://www.etsy.com/listing/949905096"
-        ]
-    )
-    with open(output.joinpath("products.json"), "w", encoding="utf-8") as file:
-        json.dump(product_data, file, indent=2, ensure_ascii=False)
-
-    product_data = await etsy.scrape_shop(
-        urls = [
-            "https://www.etsy.com/shop/FalkelDesign",
-            "https://www.etsy.com/shop/JoshuaHouseCrafts",
-            "https://www.etsy.com/shop/Oakywood"
-        ]
-    )
-    with open(output.joinpath("shops.json"), "w", encoding="utf-8") as file:
-        json.dump(product_data, file, indent=2, ensure_ascii=False)  
+        with open(output.joinpath(f"products_null.json"), "w", encoding="utf-8") as file:
+            json.dump(product_data, file, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":

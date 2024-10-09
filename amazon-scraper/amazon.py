@@ -50,13 +50,15 @@ def parse_search(result: ScrapeApiResponse) -> List[ProductPreview]:
     previews = []
     product_boxes = result.selector.css("div.s-result-item[data-component-type=s-search-result]")
     for box in product_boxes:
-        url = urljoin(result.context["url"], box.css("h2>a::attr(href)").get()).split("?")[0]
+        url = urljoin(result.context["url"], box.css("h2>   a::attr(href)").get()).split("?")[0]
+        brand = box.css("span.a-size-base-plus.a-color-base::text").get()
+
         if "/slredirect/" in url:  # skip ads etc.
             continue
         rating = box.css("span[aria-label~=stars]::attr(aria-label)").re_first(r"(\d+\.*\d*) out")
         rating_count = box.xpath("//div[contains(@data-csa-c-content-id, 'ratings-count')]/span/@aria-label").get()
         previews.append(
-            {
+            {   "brand": brand,
                 "url": url,
                 "title": box.css("h2>a>span::text").get(),
                 # big price text is discounted price
@@ -74,7 +76,6 @@ def parse_search(result: ScrapeApiResponse) -> List[ProductPreview]:
 async def scrape_search(url: str, max_pages: Optional[int] = None) -> List[ProductPreview]:
     """Scrape amazon search pages product previews"""
     log.info(f"{url}: scraping first page")
-
     # first, scrape the first page and find total pages:
     first_result = await SCRAPFLY.async_scrape(ScrapeConfig(url, **BASE_CONFIG))
     results = parse_search(first_result)
@@ -111,12 +112,16 @@ class Review(TypedDict):
 
 def parse_reviews(result: ScrapeApiResponse) -> List[Review]:
     """parse review from single review page"""
+    # shop = result.selector.xpath('//*[@id="cr-arp-byline"]/a')
+    # shop = shop.get().split('>')[-2].split('<')[0].strip() 
+
     review_boxes = result.selector.css("#cm_cr-review_list div.review")
     parsed = []
     for box in review_boxes:
         rating = box.css("*[data-hook*=review-star-rating] ::text").re_first(r"(\d+\.*\d*) out")
         parsed.append(
-            {
+            {  
+                #  "Brand": shop,
                 "text": "".join(box.css("span[data-hook=review-body] ::text").getall()).strip(),
                 "title": box.css("*[data-hook=review-title]>span::text").get(),
                 "location_and_date": box.css("span[data-hook=review-date] ::text").get(),
@@ -127,13 +132,11 @@ def parse_reviews(result: ScrapeApiResponse) -> List[Review]:
     return parsed
 
 
-async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List[Review]:
+async def scrape_reviews(url: str, ASIN: str, max_pages: Optional[int] = None) -> List[Review]:
     """scrape product reviews of a given URL of an amazon product"""
     if max_pages > 10:
         raise ValueError("max_pages cannot be greater than 10 as Amazon paging stops at 10 pages. Try splitting search through multiple filters and sorting to get more results")
-    url = url.split("/ref=")[0]
-    url = _add_or_replace_url_parameters(url, pageSize=20)  # Amazon.com allows max 20 reviews per page
-    asin = url.split("/product-reviews/")[1].split("/")[0]
+
     # scrape first review page
     log.info(f"scraping review page: {url}")
     first_page_result = await SCRAPFLY.async_scrape(ScrapeConfig(url, **BASE_CONFIG))
@@ -144,7 +147,7 @@ async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List[Revi
         r"(\d+,*\d*)"
     )[1]
     total_reviews = int(total_reviews.replace(",", ""))
-    _reviews_per_page = len(reviews)
+    _reviews_per_page = max(len(reviews), 1)
 
     total_pages = int(math.ceil(total_reviews / _reviews_per_page))
     if max_pages and total_pages > max_pages:
@@ -153,7 +156,8 @@ async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List[Revi
     log.info(f"found total {total_reviews} reviews across {total_pages} pages -> scraping")
     other_pages = []
     for page in range(2, total_pages + 1):
-        url = f"https://www.amazon.com/product-reviews/{asin}/ref=cm_cr_getr_d_paging_btm_next_{page}?pageNumber={page}&pageSize={_reviews_per_page}"
+        url_prefix = url.split(f'{ASIN}')[0]
+        url = url_prefix + f'ref=cm_cr_getr_d_paging_btm_next_{page}?pageNumber={page}&pageSize={_reviews_per_page}'
         other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
     async for result in SCRAPFLY.concurrent_scrape(other_pages):
         page_reviews = parse_reviews(result)
@@ -187,7 +191,9 @@ def parse_product(result) -> Product:
     elif image_gallery:
         images = [img['mainUrl'] for img in json.loads(image_gallery[0])]
     else:
-        log.debug(f"no images found for {result.context['url']}")
+        images = []
+        log.info(f"no images found for {result.context['url']}")
+        # log.debug(f"no images found for {result.context['url']}")
 
     # the other fields can be extracted with simple css selectors
     # we can define our helper functions to keep our code clean

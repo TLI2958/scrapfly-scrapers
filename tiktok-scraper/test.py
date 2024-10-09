@@ -120,7 +120,6 @@ channel_schema = {
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_comment_scraping():
     commnets_data = await tiktok.scrape_comments(
         post_id=7198206283571285294,
@@ -135,7 +134,6 @@ async def test_comment_scraping():
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_post_scraping():
     posts_data = await tiktok.scrape_posts(
         urls=[
@@ -150,7 +148,6 @@ async def test_post_scraping():
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_profile_scraping():
     profiles_data = await tiktok.scrape_profiles(
         urls=[
@@ -165,7 +162,6 @@ async def test_profile_scraping():
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_search_scraping():
     search_data = await tiktok.scrape_search(
         keyword="whales",
@@ -179,7 +175,6 @@ async def test_search_scraping():
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_channel_scraping():
     channel_data = await tiktok.scrape_channel(
         url="https://www.tiktok.com/@oddanimalspecimens"        

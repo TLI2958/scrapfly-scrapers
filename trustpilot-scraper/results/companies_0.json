@@ -1,0 +1,968 @@
+[
+  {
+    "pageUrl": "https://www.trustpilot.com/review/www.mountainroseherbs.com",
+    "companyDetails": {
+      "id": "56e33ba20000ff00058a1440",
+      "displayName": "Mountain Rose Herbs",
+      "identifyingName": "www.mountainroseherbs.com",
+      "numberOfReviews": 11085,
+      "trustScore": 4.8,
+      "websiteUrl": "http://www.mountainroseherbs.com",
+      "websiteTitle": "www.mountainroseherbs.com",
+      "profileImageUrl": "//s3-eu-west-1.amazonaws.com/tpd/logos/56e33ba20000ff00058a1440/0x0.png",
+      "customHeaderUrl": "",
+      "promotion": null,
+      "hideCompetitorModule": false,
+      "stars": 5,
+      "categories": [
+        {
+          "id": "organic_drug_store",
+          "name": "Organic Drug Store",
+          "rank": "2",
+          "cardinality": "3",
+          "isPrimary": false
+        },
+        {
+          "id": "vitamin_and_supplements_store",
+          "name": "Vitamin and Supplements Store",
+          "rank": "9",
+          "cardinality": "139",
+          "isPrimary": false
+        },
+        {
+          "id": "tea_manufacturer",
+          "name": "Tea Manufacturer",
+          "rank": "1",
+          "cardinality": "2",
+          "isPrimary": false
+        },
+        {
+          "id": "organic_store",
+          "name": "Organic Shop",
+          "rank": "3",
+          "cardinality": "8",
+          "isPrimary": true
+        },
+        {
+          "id": "food_seasoning_manufacturer",
+          "name": "Food Seasoning Manufacturer",
+          "rank": "1",
+          "cardinality": "2",
+          "isPrimary": false
+        },
+        {
+          "id": "aromatherapy_supply_store",
+          "name": "Aromatherapy Supply Store",
+          "rank": "1",
+          "cardinality": "8",
+          "isPrimary": false
+        }
+      ],
+      "breadcrumb": {
+        "topLevelId": "food_beverages_tobacco",
+        "topLevelDisplayName": "Food, Beverages & Tobacco",
+        "midLevelId": "grocery_stores_markets",
+        "midLevelDisplayName": "Grocery Stores & Markets",
+        "bottomLevelId": "organic_store",
+        "bottomLevelDisplayName": "Organic Shop"
+      },
+      "isClaimed": true,
+      "isClosed": false,
+      "isTemporarilyClosed": false,
+      "locationsCount": 0,
+      "isCollectingReviews": true,
+      "verification": {
+        "verifiedByGoogle": false,
+        "verifiedBusiness": true,
+        "verifiedPaymentMethod": true,
+        "verifiedUserIdentity": false
+      },
+      "hasCollectedIncentivisedReviews": false,
+      "consumerAlert": null,
+      "consumerAlerts": [],
+      "isMerged": false,
+      "contactInfo": {
+        "email": "pr@mountainroseherbs.com",
+        "address": "",
+        "city": "Eugene",
+        "country": "US",
+        "phone": "800.879.3337",
+        "zipCode": ""
+      },
+      "activity": {
+        "isUsingPaidFeatures": true,
+        "hasSubscription": true,
+        "isAskingForReviews": true,
+        "claimedDate": "2017-03-17T18:43:13.000Z",
+        "isClaimed": true,
+        "previouslyClaimed": true,
+        "replyBehavior": {
+          "averageDaysToReply": 0.68,
+          "lastReplyToNegativeReview": "2024-08-22 22:04:30 UTC",
+          "negativeReviewsWithRepliesCount": 76,
+          "replyPercentage": 97.43589743589743,
+          "totalNegativeReviewsCount": 78
+        },
+        "verification": {
+          "verifiedByGoogle": false,
+          "verifiedBusiness": true,
+          "verifiedPaymentMethod": true,
+          "verifiedUserIdentity": false
+        },
+        "hasBusinessUnitMergeHistory": false,
+        "basiclinkRate": 0,
+        "hideBasicLinkAlert": false,
+        "isUsingAIResponses": false
+      },
+      "hasCustomHeaderSetting": false,
+      "hasPromotionSetting": false,
+      "hasNewTrustSignalsConsumerAlerts": false
+    },
+    "reviews": [
+      {
+        "id": "66f46c67f34d1ed480d63919",
+        "filtered": false,
+        "pending": false,
+        "text": "First time order with MRH. Ordered catnip for the kitties since organic is difficult to find locally. The cats went crazy!! It was so fun to watch and the catnip smelled so fresh and pure. Might also try making our own combination teas, who knows. Awesome product and so glad to have organic nonGMO. Thank you MRH!! ",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-25T22:02:47.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "First time order with MRH",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-04T00:00:00.000Z",
+          "publishedDate": "2024-09-25T22:02:47.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "611c3feb5dace20012146b33",
+          "displayName": "Sonja Jansen",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f4a65bc9d6e5fceb280865",
+        "filtered": false,
+        "pending": false,
+        "text": "I love love Mountain Rose.  Excellent quality, no hassle shipping, received in a timely manner and very important, I trust them. I love all the information available on their website.  I could go on and on but in the interest of time and space…I just LOVE Mountain Rose",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-26T02:10:03.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I love love Mountain Rose",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-04T00:00:00.000Z",
+          "publishedDate": "2024-09-26T02:10:03.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f4a65a83419399710d943d",
+          "displayName": "Colleen",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f45ac0d00a531ca1306bfa",
+        "filtered": false,
+        "pending": false,
+        "text": "First time using this company and it did not disappoint. Everything was packaged nicely and shipping was fast. Herbs are top-notch. Great quality. I highly recommend Mountain Rose for your herbal needs. ",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-25T20:47:28.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Excellent Company. Top-Notch Herbs",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-08-31T00:00:00.000Z",
+          "publishedDate": "2024-09-25T20:47:28.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f45abfe1677335dba43385",
+          "displayName": "Dixon",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f2f4da73f0f1d4500e36bd",
+        "filtered": false,
+        "pending": false,
+        "text": "Absolutely LOVE this company, I was able to purchase the herbs needed to create my own blend of tea needed to keep my body healthy.  Thank for offering such a wonderful selection of high quality herbs at a decent price.",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-24T19:20:26.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Absolutely LOVE this company",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-03T00:00:00.000Z",
+          "publishedDate": "2024-09-24T19:20:26.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f2f4d9c19b2b4ed8398f75",
+          "displayName": "Melissa Paul",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f1c413feea2e3d90578fe2",
+        "filtered": false,
+        "pending": false,
+        "text": "More than once, your descriptions of products are incomplete or misleading. The coconut \"oil\" was more like coconut milk than \"oil\", very watery. I asked if rosehip oil was clear, answer was \"yes\". When it arrived it was \"yellow\", stains clothing. Now, it may be I am not educated in mountain herbs, so I just ask that you write more complete descriptions!",
+        "rating": 3,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-23T21:40:03.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Descriptions",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-02T00:00:00.000Z",
+          "publishedDate": "2024-09-23T21:40:03.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f1c412664ea614fed23852",
+          "displayName": "MaryAnn Heathfield",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f471ea344f4b95018472e9",
+        "filtered": false,
+        "pending": false,
+        "text": "Quality and quantity of the many types of herbs you sell.  Good packaging and great recipes and suggestions in how to use the herbs. And, a great instructive channel on Youtube.",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-25T22:26:18.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Quality and Quantity ",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-04T00:00:00.000Z",
+          "publishedDate": "2024-09-25T22:26:18.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "59bc8cce0000ff000ac9d2f0",
+          "displayName": "Gail",
+          "imageUrl": "",
+          "numberOfReviews": 2,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f1945fce6af79f60ce183b",
+        "filtered": false,
+        "pending": false,
+        "text": "Always great options for purchase and no matter how large my order is you guys package and get it out fairly quickly! Everything looks and smells great! Thank you for being a trusted herbal provider!",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-23T18:16:31.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Always great options for purchase and…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-02T00:00:00.000Z",
+          "publishedDate": "2024-09-23T18:16:31.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f1945eefe3b96febbebf28",
+          "displayName": "Brittany  Williams",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f3000e15c7efbccc96ce2b",
+        "filtered": false,
+        "pending": false,
+        "text": "I have been a customer for 10+ years and I have always been happy with the products MRH carries. Their sustainable practices and care for the environment and impact. Their customer service and support is also so wonderful!",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-24T20:08:14.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I have been a customer for 10+ years…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-03T00:00:00.000Z",
+          "publishedDate": "2024-09-24T20:08:14.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f3000d094dde22fd01f1fd",
+          "displayName": "Grace Killpack",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66edad47bba7365aa1c6d67e",
+        "filtered": false,
+        "pending": false,
+        "text": "I find the e mails I am receiving from Mountain Rose very useful, very informative and very natural remedies or ingredients. I look forward to receive them. Usually, we hate all the emails coming after you made a purchase and the vendor get your e mail, but your emails are welcome, thanks. I still have to make the tea with the ingredients I purchased from you, I welcome anything that will improve my sleep. Thanks again",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-20T19:13:43.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "E mails welcome..",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-08-30T00:00:00.000Z",
+          "publishedDate": "2024-09-20T19:13:43.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66edad46f7127b2ef2daf783",
+          "displayName": "Sora",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f3182abe4446f304d9ff90",
+        "filtered": false,
+        "pending": false,
+        "text": "information as well as product. product is 5 star fresh.\ninformation is so helpful and sometimes will lead me to try something I have not tried before.",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-24T21:51:06.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "information as well as product",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-01T00:00:00.000Z",
+          "publishedDate": "2024-09-24T21:51:06.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "5cc8da91e7d72b18db54e741",
+          "displayName": "Jan.",
+          "imageUrl": "",
+          "numberOfReviews": 2,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f20bbd832ba6678c315952",
+        "filtered": false,
+        "pending": false,
+        "text": "I absolutely love all of the herbs, lichens and mushrooms I have ordered. The resealable packages are great. I HIGHLY recommend their products! I will definitely be ordering more! ",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-24T02:45:49.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Great company with amazing products! Highly recommend!!",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-14T00:00:00.000Z",
+          "publishedDate": "2024-09-24T02:45:49.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "5ffb3d0a33b567001ab7c76f",
+          "displayName": "Wendy Hawkins",
+          "imageUrl": "",
+          "numberOfReviews": 2,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f308391d7aef18a9585dd4",
+        "filtered": false,
+        "pending": false,
+        "text": "Mountain Rose Herbs has always delivered quality products in bulk at a more than fair price comparison according to my local shopping prices. my only two req of a good shopping experience quality, inexpensive price.",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-24T20:43:05.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Mountain Rose Herbs has always…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-03T00:00:00.000Z",
+          "publishedDate": "2024-09-24T20:43:05.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f30838094dde555901f728",
+          "displayName": "Joshua Kerley",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f4253a0b8bb6b29f3d9732",
+        "filtered": false,
+        "pending": false,
+        "text": "The products are great but honestly, charging a flat rate  on shipping based on price makes the cost skyrocket. Shipping can be a flat rate, but make it based on weight, not price. It seems to just be an additional profit center that is sneaky. ",
+        "rating": 3,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-25T16:59:06.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Shipping costs are out of line with what they should be",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-04T00:00:00.000Z",
+          "publishedDate": "2024-09-25T16:59:06.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f42539c893a77abd907155",
+          "displayName": "Tracy Nicholas",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": {
+          "message": "Thank you for sharing your feedback with us, Tracy. We appreciate your continued support! Our standard ground shipping rates are based on the weight of the order. The current flat rate for orders up to 4.99 lbs shipped to any physical address within the contiguous 48 states is $9.99; the next tier from 5 lbs to 19.99 lbs is $11.99. \n\nSome of our customers prefer to place larger orders or order with friends or family members to help get the most out of these flat rate options. We hope this helps to better explain our shipping costs and apologize for any confusion! Warmly ~ Celeste",
+          "publishedDate": "2024-09-25T17:35:12.000Z",
+          "updatedDate": null
+        },
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66eef68576c6d411b5be6e2a",
+        "filtered": false,
+        "pending": false,
+        "text": "I have ordered several times from Mountain Rose Herbs and found their products to be high quality.  Several herbalists I follow recommend them so I feel confident in ordering.  My only drawback previously was it took longer to receive my order but they have worked to address this issue and my orders arrive in an acceptable time frame.",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-21T18:38:29.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I have ordered several times from…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-08-31T00:00:00.000Z",
+          "publishedDate": "2024-09-21T18:38:29.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "577e8fd50000ff000a2fcf1a",
+          "displayName": "SUSAN USSERY",
+          "imageUrl": "",
+          "numberOfReviews": 7,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 2,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f45e9f8b3d9fd7c287c109",
+        "filtered": false,
+        "pending": false,
+        "text": "I have been buying herbals for a few years and always satisfied from ordering to use of any Mt Rose product.",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-25T21:03:59.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I have been buying Mt Rose herbals for a few years and always…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-04T00:00:00.000Z",
+          "publishedDate": "2024-09-25T21:03:59.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "6467dcec610088001155d99b",
+          "displayName": "donna spinley",
+          "imageUrl": "",
+          "numberOfReviews": 2,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 2,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f1690cadd72825b696391b",
+        "filtered": false,
+        "pending": false,
+        "text": "I LOVE this company!The products are always what I expect and of quality,along with excellent customer service.I love all the information and services they provide on herbal product and education.....Thank You!",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": false,
+            "createdDateTime": "2024-09-23T15:11:40.000Z",
+            "reviewSourceName": "Organic",
+            "verificationSource": "invitation",
+            "verificationLevel": "not-verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I LOVE this company!The products are…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-23T00:00:00.000Z",
+          "publishedDate": "2024-09-23T15:11:40.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f16748efe3b908bdbe9880",
+          "displayName": "Amber Macias",
+          "imageUrl": "",
+          "numberOfReviews": 2,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f1f89eff9e1ba73a95033e",
+        "filtered": false,
+        "pending": false,
+        "text": "The quality of the teas and extracts are excellent! They package everything so carefully to ship it. The prices are very reasonable. I highly recommend Mountain Rose! ",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-24T01:24:14.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "Extracts and teas",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-02T00:00:00.000Z",
+          "publishedDate": "2024-09-24T01:24:14.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "57bdc4a00000ff000a3dc605",
+          "displayName": "risa ",
+          "imageUrl": "",
+          "numberOfReviews": 4,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 2,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f4731c33b59fa29cf4878d",
+        "filtered": false,
+        "pending": false,
+        "text": "I love working with you guys because your products are organic and amazing and your customer service is run by kind and competent people",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-25T22:31:24.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I love working with you guys because…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-04T00:00:00.000Z",
+          "publishedDate": "2024-09-25T22:31:24.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "66f4731b613f30bf08ff7d3f",
+          "displayName": "Megan  Booher",
+          "imageUrl": "",
+          "numberOfReviews": 1,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 1,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f40b82c33ed8a6aec6bc0b",
+        "filtered": false,
+        "pending": false,
+        "text": "I have been ordering various products from Mountain Rose for years and every single product is of the highest quality. ",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-25T15:09:22.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I have been ordering various products…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-09-03T00:00:00.000Z",
+          "publishedDate": "2024-09-25T15:09:22.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "65fc41a759b26800127b987d",
+          "displayName": "Heather Songy",
+          "imageUrl": "",
+          "numberOfReviews": 2,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 2,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      },
+      {
+        "id": "66f031c48c0c5a9d34cb002f",
+        "filtered": false,
+        "pending": false,
+        "text": "I LOVE this company!The products are always what I expect and of quality,along with excellent customer service.I love all the information and services they provide on herbal product and education.....Thank You!",
+        "rating": 5,
+        "labels": {
+          "merged": null,
+          "verification": {
+            "isVerified": true,
+            "createdDateTime": "2024-09-22T17:03:32.000Z",
+            "reviewSourceName": "BigCommerce",
+            "verificationSource": "invitation",
+            "verificationLevel": "verified",
+            "hasDachExclusion": false
+          }
+        },
+        "title": "I LOVE this company!The products are…",
+        "likes": 0,
+        "dates": {
+          "experiencedDate": "2024-08-31T00:00:00.000Z",
+          "publishedDate": "2024-09-22T17:03:32.000Z",
+          "updatedDate": null
+        },
+        "report": null,
+        "hasUnhandledReports": false,
+        "consumer": {
+          "id": "65b655a43768c40012f385b4",
+          "displayName": "Lesly Mallory",
+          "imageUrl": "",
+          "numberOfReviews": 2,
+          "countryCode": "US",
+          "hasImage": false,
+          "isVerified": false
+        },
+        "reply": null,
+        "consumersReviewCountOnSameDomain": 2,
+        "consumersReviewCountOnSameLocation": null,
+        "productReviews": [],
+        "language": "en",
+        "location": null
+      }
+    ]
+  }
+]

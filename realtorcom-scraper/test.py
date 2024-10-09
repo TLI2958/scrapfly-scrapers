@@ -17,7 +17,6 @@ def validate_or_fail(item, validator):
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_property_scraping():
     url = "https://www.realtor.com/realestateandhomes-detail/12355-Attlee-Dr_Houston_TX_77077_M70330-35605"
     result = await realtorcom.scrape_property(url)
@@ -58,7 +57,6 @@ async def test_property_scraping():
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_search_scraping():
     result = await realtorcom.scrape_search("CA", "San-Francisco", max_pages=2)
     schema = {
@@ -73,7 +71,6 @@ async def test_search_scraping():
         validate_or_fail(item, validator)
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_feed_scraping():
     url = "https://www.realtor.com/realestateandhomes-detail/sitemap-rss-price/rss-price-ca.xml"
     result_feed = await realtorcom.scrape_feed(url)

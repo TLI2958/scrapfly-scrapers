@@ -204,6 +204,75 @@ async def scrape_search(query: str, max_pages: Optional[int] = None) -> List[Pre
     return results
 
 
+def parse_attraction_page(result: ScrapeApiResponse) -> Dict:
+    """parse attraction data from attraction pages"""
+    selector = result.selector
+    attraction = selector.xpath("//h1[contains(@data-automation, 'mainH1')]/text()").get()
+    total_reviews = selector.xpath("//span[contains(@data-automation, 'reviewCount')]/text()").get().split(' ')[0]
+    total_reviews = total_reviews.replace(",", "")
+
+    reviews = []
+
+    for review in selector.xpath("//div[contains(@data-automation, 'reviewCard')]"):
+        rate = review.xpath(".//title[contains(text(), 'of 5 bubbles')]/text()").get()
+        rate = (float(rate.replace(" of 5 bubbles", ""))) if rate else None
+        reviewer =  review.xpath(".//a[contains(@href, '/Profile/')]/text()").get()
+        text = review.xpath(".//span[contains(@class, 'yCeTE')]/text()").getall()
+        title, text = text[0], " ".join([line.strip() for line in text[1:]]) 
+        date = review.xpath(".//div[contains(@class, 'RpeCd')]/text()").get()
+        date = ' '.join(date.split(' ')[:2])
+        
+        reviews.append({
+            "reviewer": reviewer,
+            "title": title,
+            "rate": rate,
+            "date": date,
+            "text": text,
+        })
+
+    return {
+        "basic_data": {
+            "name": attraction,
+            "total_reviews": int(total_reviews),
+        },
+        "reviews": reviews,
+
+    }
+
+
+async def scrape_attraction(url: str, max_review_pages: Optional[int] = None) -> Dict:
+    """Scrape attraction data and reviews"""
+    first_page = await SCRAPFLY.async_scrape(ScrapeConfig(url, **BASE_CONFIG))
+    attraction_data = parse_attraction_page(first_page)
+
+    # get the number of total review pages
+    _review_page_size = 10
+    total_reviews = int(attraction_data['basic_data']["total_reviews"])
+    total_review_pages = math.ceil(total_reviews / _review_page_size)
+
+    # get the number of review pages to scrape
+    if max_review_pages and max_review_pages < total_review_pages:
+        total_review_pages = max_review_pages
+    
+    if total_review_pages > 1:
+        # scrape all review pages concurrently
+        review_urls = [
+            # note: "or" stands for "offset reviews"
+            url.replace("-Reviews-", f"-Reviews-or{_review_page_size * i}-")
+            for i in range(1, total_review_pages)
+        ]
+        async for result in SCRAPFLY.concurrent_scrape([
+                ScrapeConfig(url, **BASE_CONFIG)
+                for url in review_urls
+            ]):
+            data = parse_hotel_page(result)
+            attraction_data["reviews"].extend(data["reviews"])
+    log.success(f"scraped one hotel data with {len(attraction_data['reviews'])} reviews")
+    return attraction_data
+
+
+
+
 def parse_hotel_page(result: ScrapeApiResponse) -> Dict:
     """parse hotel data from hotel pages"""
     selector = result.selector

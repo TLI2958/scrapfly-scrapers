@@ -94,14 +94,14 @@ async def test_product_scraping():
                 "type": "dict",
                 "schema": {
                     "question": {"type": "string"},
-                    "answer": {"type": "string", "nullable": True}
+                    "answer": {"type": "string"}
                 }
             }
         },
         "seller": {
             "type": "dict",
             "schema": {
-                "name": {"type": "string"},
+                "name": {"type": "float"},
                 "link": {"type": "string"},
                 "id": {"type": "integer"},
                 "info": {

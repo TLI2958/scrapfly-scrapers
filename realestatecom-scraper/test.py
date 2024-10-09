@@ -115,7 +115,6 @@ property_schema = {
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_properties_scraping():
     properties_data = await realestate.scrape_properties(
         urls=[
@@ -131,7 +130,6 @@ async def test_properties_scraping():
 
 
 @pytest.mark.asyncio
-@pytest.mark.flaky(reruns=3, reruns_delay=30)
 async def test_search_scraping():
     search_data = await realestate.scrape_search(
         url="https://www.realestate.com.au/buy/in-melbourne+-+northern+region,+vic/list-1",
