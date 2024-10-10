@@ -13,7 +13,7 @@ import amazon
 output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 
-urls = ["https://www.amazon.com/s?k=california+poppy+tincture"]
+urls = ["https://www.amazon.com/s?k=california+poppy+drink"]
 async def run():
     # enable scrapfly cache for basic use
     amazon.BASE_CONFIG["cache"] = True
@@ -41,7 +41,7 @@ async def run():
                     review.update(product_data)
                     review.update({'brand': brand})
 
-                    with output.joinpath(f"search_california_poppy_tincture_products_reviews.json").open('a', encoding='utf-8') as file:
+                    with output.joinpath(f"search_california_poppy_drink_products_reviews.json").open('a', encoding='utf-8') as file:
                         file.write(json.dumps(review, indent=2) + ",\n") 
 
 

@@ -66,22 +66,23 @@ def parse_reviews(respones: ScrapeApiResponse):
     """parse product reviews from product pages"""
     sel = respones.selector
     review_boxes = sel.xpath('//div[contains(@class,"overflow-visible" and contains(@class, "dark-gray"))]/*')
-    try:
-        total_reviews = first_page.selector.xpath("//div[@class='f6 f5-m b pr3 mid-gray' and @role='heading']").get().split(' ')[0]
-        total_reviews = int(total_reviews)
-    except:
-        total_reviews = 0
-        
+    overall_rating = sel.xpath('//div[contains(@class, "mb2")]//span[contains(@class, "w_iUH7")]/text()').get().split()[0]
+    total_reviews = sel.xpath('//div[contains(@class, "mb2")]//span[contains(@class, "ml2")]/text()').get().split()[0]
+    
     parsed = []
     for review in review_boxes:
-        # customer_name = review.xpath('//')
-        review_date = review.xpath('.//div[contains(@class, "f7") and contains(@class, "gray") and contains(@class, "flex")]/text()').get()
+        customer_name = review.xpath('.//span[contains(@class, "f7") and contains(@class, "b") and contains(@class, "mv0")]/text()').get()
+        review_date = review.xpath('//div[contains(@class, "f7") and contains(@class, "gray")]/text()').get()
         star_rating = review.xpath('.//span[contains(@class, "w_iUH7")]/text()').get()
+        
         review_title = review.xpath('.//h3[contains(@class, "f5") and contains(@class, "b")]/text()').get()
         review_text = review.xpath('.//span[contains(@class, "tl-m") and contains(@class, "db-m")]/text()').get()
+        parsed.append({'overall_rating': overall_rating, 
+                       'total_reviews': total_reviews,
+                       'reviewer': customer_name, 'date': review_date, 
+                       'rating': star_rating, 'title': review_title, 'text': review_text})
         
-        print(review_date, star_rating, review_title, review_text,)
-    return 
+    return parsed
 
 
 async def scrape_products(urls: List[str]) -> List[Dict]:
@@ -102,6 +103,7 @@ async def scrape_reviews(id, max_pages: Optional[int] = None):
     log.info(f"scraping the first review page from https://www.walmart.com/reviews/product/{id}")
 
     reviews = parse_reviews(first_page)
+    total_reviews = int(reviews[0]['total_reviews'])
 
     _reviews_per_page = max(len(reviews), 1)
 
@@ -118,7 +120,7 @@ async def scrape_reviews(id, max_pages: Optional[int] = None):
         page_reviews = parse_reviews(result)
         reviews.extend(page_reviews)
     log.info(f"scraped total {len(reviews)} reviews")
-    return [reviews]
+    return reviews
 
 
 async def scrape_search(
@@ -165,6 +167,7 @@ async def scrape_search(
         ScrapeConfig(make_search_url(page), **BASE_CONFIG)
         for page in range(2, total_pages + 1)
     ]
+    
     async for response in SCRAPFLY.concurrent_scrape(other_pages):
         search_data.extend(parse_search(response)["results"])
     log.success(f"scraped {len(search_data)} product listings from search pages")
