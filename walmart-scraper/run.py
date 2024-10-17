@@ -17,7 +17,7 @@ output.mkdir(exist_ok=True)
 
 async def run():
     # enable scrapfly cache for basic use
-    walmart.BASE_CONFIG["cache"] = True
+    walmart.BASE_CONFIG["cache"] = False
 
     print("running Walmart scrape and saving results to ./results directory")
     # search_data = await walmart.scrape_search(
@@ -26,10 +26,11 @@ async def run():
     # with open(output.joinpath("search_california_poppy.json"), "a", encoding="utf-8") as file:
     #     json.dump(search_data, file, indent=2, ensure_ascii=False)
 
-    # with open(output.joinpath("search_california_poppy.json"), "r", encoding="utf-8") as file:
-    #     search_data = json.load(file) 
-    search_data = [{'usItemId': '379839788'}]
+    with open(output.joinpath("search_california_poppy.json"), "r", encoding="utf-8") as file:
+        search_data = json.load(file) 
+    # search_data = [{'usItemId': '3931738164'}]
     product_and_reviews = await walmart.scrape_product_and_reviews(search_data)
+    
     # with open(output.joinpath("Walmart_product_and_reviews_california_poppy.json"), "a", encoding="utf-8") as file:
     #     json.dump(product_and_reviews, file, indent=2, ensure_ascii=False)
 

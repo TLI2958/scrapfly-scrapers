@@ -1,0 +1,94 @@
+[
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/Ferry-Morse-400MG-California-Poppy-Mission-Bells-Annual-Flower-Seeds-Full-Sun_cadbe341-d171-4f8b-95fb-1c9720b71aa0.6c838e245f6106eb1ebd4ce238822336.jpeg",
+      "name": "Ferry-Morse 340MG California Poppy Mission Bells Annual Flower Seeds, Full Sun",
+      "sku": "379839788",
+      "description": "Grow vibrant annual flowers with Ferry-Morse California Poppy Mission Bells Seeds. These seeds produce stunning, colorful blooms that thrive in full sun, perfect for adding a burst of lively hues to your garden. Ideal for both novice and experienced gardeners, these annual flowers are easy to grow and maintain, making them a delightful addition to any landscape. Enjoy a season of vibrant blooms with Ferry-Morse California Poppy Mission Bells Seeds.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Ferry-Morse"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.walmart.com/ip/Ferry-Morse-400MG-California-Poppy-Mission-Bells-Annual-Flower-Seeds-Full-Sun/379839788",
+        "priceCurrency": "USD",
+        "price": 1.96,
+        "availability": "https://schema.org/OutOfStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.3,
+        "bestRating": 5,
+        "reviewCount": 19
+      }
+    },
+    "product_reviews": [
+      {
+        "customer_name": "rebeccaf146",
+        "review_date": "Jul 1, 2024",
+        "star_rating": "1 out of 5 stars review",
+        "review_title": "No flowers came up",
+        "review_text": "[This review was collected as part of a promotion.] I was so excited to plant the seeds and have beautiful  flowers but my seeds never took. No flowers came up.  I watered the right amount as well. Not sure what happened."
+      },
+      {
+        "customer_name": "Walmart Customer",
+        "review_date": "Aug 7, 2024",
+        "star_rating": "5 out of 5 stars review",
+        "review_title": "Good for a house",
+        "review_text": "[This review was collected as part of a promotion.] I love this product. Very easy to plant and take care of. Makes beautiful flowers that help with improving the look of the front of our house. Would definitely recommend."
+      },
+      {
+        "customer_name": "christyc145",
+        "review_date": "Jun 13, 2024",
+        "star_rating": "4 out of 5 stars review",
+        "review_title": "Generous amount per package!",
+        "review_text": "[This review was collected as part of a promotion.] Can't wait to see these beauties bloom in my container garden! They look beautiful, nicely packaged and a generous amount of seeds! Planting flowered from seed is my favorite way to increase my garden! Anxious to see the blooms on these!"
+      },
+      {
+        "customer_name": "gracielah13",
+        "review_date": "Jun 19, 2024",
+        "star_rating": "5 out of 5 stars review",
+        "review_title": "Just what I needed!",
+        "review_text": "[This review was collected as part of a promotion.] I'm growing a wildflower patch and this is exactly what I needed. I find that a lot of the wildflower mixes come with 99% filler, so I decided to go with these packets instead"
+      },
+      {
+        "customer_name": "leefifer1993",
+        "review_date": "Jun 19, 2024",
+        "star_rating": "3 out of 5 stars review",
+        "review_title": "Nice",
+        "review_text": "[This review was collected as part of a promotion.] Very lightweight and easy plant to water and take care of. I did just plant it in my garden but have experience with it before so I doubt I will have any problems"
+      },
+      {
+        "customer_name": "johnm114",
+        "review_date": "Jun 24, 2024",
+        "star_rating": "5 out of 5 stars review",
+        "review_title": "Great Seeds!",
+        "review_text": "[This review was collected as part of a promotion.] These were very easy to germinate using paper towels. Packaging was alright. These have started to grow pretty quickly. You can't complain about the value when it comes to Ferry Morse."
+      },
+      {
+        "customer_name": "ngann15",
+        "review_date": "Jun 18, 2024",
+        "star_rating": "5 out of 5 stars review",
+        "review_title": "I like poppy.",
+        "review_text": "[This review was collected as part of a promotion.] I'm so excited to get this poppy seed. It's late here so I have to wait for next year to grow them. The package is good although it was delivered on the rainy day."
+      },
+      {
+        "customer_name": "hannahr304",
+        "review_date": "Jun 12, 2024",
+        "star_rating": "5 out of 5 stars review",
+        "review_title": "perfecf!",
+        "review_text": "[This review was collected as part of a promotion.] Very happy to try these seeds! I love California poppy! I am excited to plant these and i can sed that right now in my area it is time perfect time to plant them!"
+      },
+      {
+        "customer_name": "Ashley S.",
+        "review_date": "Apr 2, 2023",
+        "star_rating": "5 out of 5 stars review",
+        "review_title": "",
+        "review_text": ""
+      }
+    ]
+  }
+]

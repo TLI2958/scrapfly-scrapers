@@ -8,12 +8,14 @@ $ export $SCRAPFLY_KEY="your key from https://scrapfly.io/dashboard"
 import os
 import json
 import math
+import re
 from typing import Dict, List, TypedDict, Optional
 from urllib.parse import urlencode
 from loguru import logger as log
 from lxml import html
 from parsel import Selector
 from scrapfly import ScrapeConfig, ScrapflyClient, ScrapeApiResponse
+from pathlib import Path
 
 SCRAPFLY = ScrapflyClient(key=os.environ["SCRAPFLY_KEY"])
 
@@ -24,6 +26,8 @@ BASE_CONFIG = {
     "country": "US",
 }
 
+output = Path(__file__).parent / "results"
+output.mkdir(exist_ok=True)
 
 def parse_product(response: ScrapeApiResponse):
     """parse product data from walmart product pages"""
@@ -73,19 +77,32 @@ def parse_reviews(respones: ScrapeApiResponse):
     customer_name = sel.xpath('//span[contains(@class, "f7") and contains(@class, "b") and contains(@class, "mv0")]/text()').getall()
     review_date = sel.xpath('//div[contains(@class, "f7") and contains(@class, "gray") and contains(@class, "mt1")]/text()').getall()
     star_rating = sel.xpath('//div[contains(@class, "w_ExHd")]/following-sibling::span[contains(@class, "w_iUH7")]/text()').getall()
-    review_body = sel.xpath('//div[contains(@class, "overflow-visible")][not(contains(@class, "undefined"))]//div[contains(@class, "f6")]').getall()
-    
+
+    review_body = sel.xpath('//div[contains(@class, "overflow-visible")][not(contains(@class, "undefined"))]').getall()
     review_title = sel.xpath('//div[contains(@class, "overflow-visible")][not(contains(@class, "undefined"))]//h3[contains(@class, "w_kV33")]/text()').getall()
     review_text = sel.xpath('//div[contains(@class, "overflow-visible")][not(contains(@class, "undefined"))]//span[contains(@class, "tl-m") and contains(@class, "db-m")]/text()').getall()
 
     
-    for i in range(len(customer_name)):
-        if review_body[i].find('tl-m db-m') != -1:
-            parsed.append(dict(zip(key, [customer_name[i], review_date[i], star_rating[i], review_title[i], review_text[i]])))
+    j, k = 0, 0
+    for i in range(len(review_body)):
+        has_title = re.search(r'w_kV33', review_body[i])
+        has_text = re.search(r'tl-m db-m', review_body[i])
+
+        if has_title and has_text: 
+            parsed.append(dict(zip(key, [customer_name[i], review_date[i], star_rating[i], review_title[j], review_text[k]])))
+            j, k = j + 1, k + 1
+        elif has_text:
+            parsed.append(dict(zip(key, [customer_name[i], review_date[i], star_rating[i], '', review_text[k]])))
+            k = k + 1
+        elif has_title:
+            parsed.append(dict(zip(key, [customer_name[i], review_date[i], star_rating[i], review_title[j], ''])))
+            j = j + 1
         else:
             parsed.append(dict(zip(key, [customer_name[i], review_date[i], star_rating[i], '', ''])))
-        print(parsed[-1])
-            
+        try:
+            print(parsed[-1])    
+        except:
+            continue
     return parsed
 
 
@@ -109,8 +126,8 @@ async def scrape_reviews(res = None, max_pages: Optional[int] = None):
         res: metadata of product from scrape_products"""
     total_reviews = int(res.get('product',{}).get("aggregateRating",{}).get('reviewCount', 0))
     id = res['product']['sku']
-    first_page = await SCRAPFLY.async_scrape(ScrapeConfig(f"https://www.walmart.com/reviews/product/{id}?sort=submission-desc", **BASE_CONFIG))
-    log.info(f"scraping the first review page from https://www.walmart.com/reviews/product/{id}?sort=submission-desc")
+    first_page = await SCRAPFLY.async_scrape(ScrapeConfig(f"https://www.walmart.com/reviews/product/{id}?", **BASE_CONFIG))
+    log.info(f"scraping the first review page from https://www.walmart.com/reviews/product/{id}?")
 
     reviews = parse_reviews(first_page)
     _reviews_per_page = 10
@@ -123,27 +140,33 @@ async def scrape_reviews(res = None, max_pages: Optional[int] = None):
     log.info(f"found total {total_reviews} reviews across {total_pages} pages -> scraping")
     other_pages = []
     for page in range(2, total_pages + 1):
-        url = f"https://www.walmart.com/reviews/product/{id}?sort=submission-desc&page={page}"
+        url = f"https://www.walmart.com/reviews/product/{id}?page={page}"
         other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
 
 
     async for result in SCRAPFLY.concurrent_scrape(other_pages):
         page_reviews = parse_reviews(result)
         reviews.extend(page_reviews)
-    
     log.info(f"scraped total {len(reviews)} reviews")
-    res['reviews'] = reviews 
-    return res
+    return reviews
 
 async def scrape_product_and_reviews(search_data):
     """scrape product and reviews concurrently"""
-    result = await scrape_products(search_data)
-
+    # result = await scrape_products(search_data)
+    # with open(output.joinpath("Walmart_products_california_poppy.json"), "a", encoding="utf-8",) as file:
+    #     json.dump(result, file, indent=2, ensure_ascii=False)
+    with open(output.joinpath("Walmart_products_california_poppy.json"), "r", encoding="utf-8") as file:
+        result = json.load(file) 
+        
     result_combined = []
     for product in result:
         product_reviews = await scrape_reviews(product, max_pages=3)
         product['product_reviews'] = product_reviews
         result_combined.append(product)
+        log.info(f'scraped reviews for product {product["product"]["sku"]}')
+        with open(output.joinpath("Walmart_product_and_reviews_california_poppy.json"), "a", encoding="utf-8") as file:
+            json.dump(result_combined, file, indent=2, ensure_ascii=False)
+            
     return result_combined
 
 async def scrape_search(
