@@ -150,21 +150,22 @@ async def scrape_reviews(res = None, max_pages: Optional[int] = None):
     log.info(f"scraped total {len(reviews)} reviews")
     return reviews
 
-async def scrape_product_and_reviews(search_data):
+async def scrape_product_and_reviews(search_data, key = ''):
     """scrape product and reviews concurrently"""
-    # result = await scrape_products(search_data)
-    # with open(output.joinpath("Walmart_products_california_poppy.json"), "a", encoding="utf-8",) as file:
-    #     json.dump(result, file, indent=2, ensure_ascii=False)
-    with open(output.joinpath("Walmart_products_california_poppy.json"), "r", encoding="utf-8") as file:
-        result = json.load(file) 
+    result = await scrape_products(search_data)
+    with open(output.joinpath(f"Walmart_products_california_poppy_{key}.json"), "a", encoding="utf-8",) as file:
+        json.dump(result, file, indent=2, ensure_ascii=False)
+        
+    # with open(output.joinpath(f"Walmart_products_california_poppy_{key}.json"), "r", encoding="utf-8") as file:
+    #     result = json.load(file) 
         
     result_combined = []
     for product in result:
-        product_reviews = await scrape_reviews(product, max_pages=3)
+        product_reviews = await scrape_reviews(product, max_pages=5)
         product['product_reviews'] = product_reviews
         result_combined.append(product)
         log.info(f'scraped reviews for product {product["product"]["sku"]}')
-        with open(output.joinpath("Walmart_product_and_reviews_california_poppy.json"), "a", encoding="utf-8") as file:
+        with open(output.joinpath(f"Walmart_product_and_reviews_california_poppy_{key}.json"), "a", encoding="utf-8") as file:
             json.dump(result_combined, file, indent=2, ensure_ascii=False)
             
     return result_combined

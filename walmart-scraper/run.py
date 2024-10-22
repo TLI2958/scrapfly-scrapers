@@ -20,16 +20,18 @@ async def run():
     walmart.BASE_CONFIG["cache"] = False
 
     print("running Walmart scrape and saving results to ./results directory")
-    # search_data = await walmart.scrape_search(
-    #     query="california+poppy", sort="best_seller", max_pages=3
-    # )
-    # with open(output.joinpath("search_california_poppy.json"), "a", encoding="utf-8") as file:
-    #     json.dump(search_data, file, indent=2, ensure_ascii=False)
-
-    with open(output.joinpath("search_california_poppy.json"), "r", encoding="utf-8") as file:
-        search_data = json.load(file) 
-    # search_data = [{'usItemId': '3931738164'}]
-    product_and_reviews = await walmart.scrape_product_and_reviews(search_data)
+    kw = ["tincture", "drink", "tea", "supplement"]
+    for k in kw:
+        search_data = await walmart.scrape_search(
+            query="california+poppy" + "+" + k, sort="best_seller", max_pages=5
+        )
+        with open(output.joinpath(f"search_california_poppy_{k}.json"), "a", encoding="utf-8") as file:
+            json.dump(search_data, file, indent=2, ensure_ascii=False)
+    
+        # with open(output.joinpath(f"search_california_poppy_{k}.json"), "r", encoding="utf-8") as file:
+        #     search_data = json.load(file) 
+        # search_data = [{'usItemId': '3931738164'}]
+        product_and_reviews = await walmart.scrape_product_and_reviews(search_data, key = k)
     
     # with open(output.joinpath("Walmart_product_and_reviews_california_poppy.json"), "a", encoding="utf-8") as file:
     #     json.dump(product_and_reviews, file, indent=2, ensure_ascii=False)
