@@ -220,11 +220,16 @@ def parse_product(result) -> Product:
     rank = sel.xpath("//tr[th[text()=' Best Sellers Rank ']]//td//text()").getall()
     info_table['Best Sellers Rank'] = ' '.join([text.strip() for text in rank if text.strip()])
     parsed['info_table'] = info_table
+    
+    ingredients = sel.xpath('//div[@id="important-information"]//h4[text()="Ingredients"]/following-sibling::p/text()').get()
+    parsed['ingredients'] = ingredients.strip() if ingredients else None
+
     return parsed
 
 
 async def scrape_product(url: str) -> List[Product]:
     """scrape Amazon.com product"""
+    print(url)
     url = url.split("/ref=")[0]
     asin = url.split("/dp/")[-1]
     log.info(f"scraping product {url}")
@@ -234,12 +239,12 @@ async def scrape_product(url: str) -> List[Product]:
     variants = [parse_product(product_result)]
 
     # if product has variants - we want to scrape all of them
-    _variation_data = re.findall(r'dimensionValuesDisplayData"\s*:\s*({.+?}),\n', product_result.content)
-    if _variation_data:
-        variant_asins = [variant_asin for variant_asin in json.loads(_variation_data[0]) if variant_asin != asin]
-        log.info(f"scraping {len(variant_asins)} variants: {variant_asins}")
-        _to_scrape = [ScrapeConfig(f"https://www.amazon.com/dp/{asin}", **BASE_CONFIG) for asin in variant_asins]
-        async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
-            variants.append(parse_product(result))
+    # _variation_data = re.findall(r'dimensionValuesDisplayData"\s*:\s*({.+?}),\n', product_result.content)
+    # if _variation_data:
+    #     variant_asins = [variant_asin for variant_asin in json.loads(_variation_data[0]) if variant_asin != asin]
+    #     log.info(f"scraping {len(variant_asins)} variants: {variant_asins}")
+    #     _to_scrape = [ScrapeConfig(f"https://www.amazon.com/dp/{asin}", **BASE_CONFIG) for asin in variant_asins]
+    #     async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
+    #         variants.append(parse_product(result))
     return variants
 
