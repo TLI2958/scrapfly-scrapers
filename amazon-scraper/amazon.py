@@ -261,8 +261,7 @@ async def scrape_products(urls: List[str]) -> List[Product]:
     products = []
     product_urls = [url.split("/ref=")[0] for url in urls]
     log.info(f"scraping {len(product_urls)} products")
-    _to_scrape = [ScrapeConfig(url, **BASE_CONFIG, render_js=True, 
-                               wait_for_selector="#productDetails_detailBullets_sections1 tr") for url in product_urls]
+    _to_scrape = [ScrapeConfig(url, **BASE_CONFIG) for url in product_urls]
     async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
         res = parse_product(result)
         with output.joinpath(f"products_on_time.json").open('a', encoding='utf-8') as file:

@@ -1,0 +1,72 @@
+1bLZtGFXp8HTgv1l_1i9nuHj9lxozsRgC
+Id: 1bLZtGFXp8HTgv1l_1i9nuHj9lxozsRgC
+Name: Amazon_reviews_w_sentiment.csv
+Mime: text/csv
+Size: 2.1 MB
+Created: 2024-10-07 14:56:39
+Modified: 2024-10-07 16:55:13
+MD5: 922293d8e73747a00422c89b04adece9
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1bLZtGFXp8HTgv1l_1i9nuHj9lxozsRgC/view?usp=drivesdk
+---------------------------------------
+1-qGhCjov92ukk9epuiPUMqBEN0Q07Z-D
+Id: 1-qGhCjov92ukk9epuiPUMqBEN0Q07Z-D
+Name: Amazon_reviews_w_sentiment.csv
+Mime: text/csv
+Size: 3 MB
+Created: 2024-10-07 16:55:34
+Modified: 2024-10-07 16:55:37
+MD5: e0cb708b90086c8b3917b386d9efa6c0
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1-qGhCjov92ukk9epuiPUMqBEN0Q07Z-D/view?usp=drivesdk
+---------------------------------------
+1TTYw7rwV3sAzj2_YXrP7M4W-PLLeOjLD
+Id: 1TTYw7rwV3sAzj2_YXrP7M4W-PLLeOjLD
+Name: ingredient_dict.xlsx
+Mime: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+Size: 10.9 KB
+Created: 2024-10-24 11:46:40
+Modified: 2024-10-24 11:46:42
+MD5: 73ea1c52dee757fdc360ba625dd473f3
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://docs.google.com/spreadsheets/d/1TTYw7rwV3sAzj2_YXrP7M4W-PLLeOjLD/edit?usp=drivesdk&ouid=106380200962027929760&rtpof=true&sd=true
+---------------------------------------
+1Iw6AKXDMJZY7FTiOks3yYdNEJbzunI9m
+Id: 1Iw6AKXDMJZY7FTiOks3yYdNEJbzunI9m
+Name: ingredient_dict.xlsx
+Mime: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+Size: 7.6 KB
+Created: 2024-10-24 11:49:33
+Modified: 2024-10-24 11:49:35
+MD5: 1309c3b14c920b542af0bc111b612e1c
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://docs.google.com/spreadsheets/d/1Iw6AKXDMJZY7FTiOks3yYdNEJbzunI9m/edit?usp=drivesdk&ouid=106380200962027929760&rtpof=true&sd=true
+---------------------------------------
+1mH6TyQXvkhad2qfq8YsWE9Ge30ty19iU
+Id: 1mH6TyQXvkhad2qfq8YsWE9Ge30ty19iU
+Name: ingredient_dict.xlsx
+Mime: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+Size: 10.9 KB
+Created: 2024-10-24 11:50:43
+Modified: 2024-10-24 11:50:45
+MD5: 4e93c1074522fa032c42f16922696410
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://docs.google.com/spreadsheets/d/1mH6TyQXvkhad2qfq8YsWE9Ge30ty19iU/edit?usp=drivesdk&ouid=106380200962027929760&rtpof=true&sd=true
+---------------------------------------
+11ES-NLb_CsvAP4lyxDMmGh1GZwComFHc
+Id: 11ES-NLb_CsvAP4lyxDMmGh1GZwComFHc
+Name: ingredient_dict.xlsx
+Mime: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+Size: 10.9 KB
+Created: 2024-10-24 11:51:09
+Modified: 2024-10-24 11:51:13
+MD5: 4e93c1074522fa032c42f16922696410
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://docs.google.com/spreadsheets/d/11ES-NLb_CsvAP4lyxDMmGh1GZwComFHc/edit?usp=drivesdk&ouid=106380200962027929760&rtpof=true&sd=true
+---------------------------------------
