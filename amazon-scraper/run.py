@@ -14,16 +14,16 @@ output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 
 kws = [
-        # "tea", 
-        # "tincture",
+        "tea", 
+        "tincture",
         # "supplement", 
-        "drink"
+        # "drink"
         ]
 
 prefix = "https://www.amazon.com/s?k=california+poppy+"
 async def run():
     # enable scrapfly cache for basic use
-    amazon.BASE_CONFIG["cache"] = False
+    amazon.BASE_CONFIG["cache"] = True
     amazon.BASE_CONFIG["country"] = "US"
 
     print("running Amazon scrape and saving results to ./results directory")
@@ -33,12 +33,16 @@ async def run():
         search = await amazon.scrape_search(url, max_pages=3)
         output.joinpath(f"search_{k}.json").write_text(json.dumps(search, indent=2))
 
-        for product in search:
-            url = product["url"]
-            brand = product.get('brand', '')
-            product_data = await amazon.scrape_product(url)
-            product_data = product_data[0]
-            ASIN = product_data.get('asin', '')
+        urls = [product["url"] for product in search]
+        products = await amazon.scrape_products(urls)
+        output.joinpath(f"search_{k}_products.json").write_text(json.dumps(products, indent=2))
+        
+        # for product in search:
+        #     url = product["url"]
+        #     brand = product.get('brand', '')
+        #     product_data = await amazon.scrape_product(url)
+        #     product_data = product_data[0]
+        #     ASIN = product_data.get('asin', '')
 
             # if not ASIN:
             #     continue
@@ -51,8 +55,6 @@ async def run():
 
             #         with output.joinpath(f"search_california_poppy_{k}_products_reviews.json").open('a', encoding='utf-8') as file:
             #             file.write(json.dumps(review, indent=2) + ",\n") 
-            with output.joinpath(f"search_california_poppy_{k}_products.json").open('a', encoding='utf-8') as file:
-                file.write(json.dumps(product_data, indent=2) + ",\n") 
 
 
 if __name__ == "__main__":

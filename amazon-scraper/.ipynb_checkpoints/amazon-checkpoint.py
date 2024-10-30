@@ -9,6 +9,7 @@ import json
 import math
 import os
 import re
+from pathlib import Path
 from typing import Dict, List, TypedDict, Optional
 from urllib.parse import urljoin, urlparse, parse_qsl, urlencode, urlunparse
 
@@ -23,6 +24,9 @@ BASE_CONFIG = {
     # to change region see change the country code
     "country": "US",
 }
+
+output = Path(__file__).parent / "results"
+output.mkdir(exist_ok=True)
 
 
 def _add_or_replace_url_parameters(url: str, **params):
@@ -98,7 +102,7 @@ async def scrape_search(url: str, max_pages: Optional[int] = None) -> List[Produ
     async for result in SCRAPFLY.concurrent_scrape(other_pages):
         results.extend(parse_search(result))
 
-    log.info(f"{url}: found total of {len(results)} product previews")
+    log.info(f"{url}: found total of {len(results)} products")
     return results
 
 
@@ -220,16 +224,19 @@ def parse_product(result) -> Product:
     rank = sel.xpath("//tr[th[text()=' Best Sellers Rank ']]//td//text()").getall()
     info_table['Best Sellers Rank'] = ' '.join([text.strip() for text in rank if text.strip()])
     parsed['info_table'] = info_table
-    
+
+    legal_disclaimer = sel.xpath('//div[@id="important-information"]//h4[text()="Legal Disclaimer"]/following-sibling::p/text()').get()
+    legal_disclaimer_backup = sel.xpath('//div[@id="important-information"]//span[contains(text(), "Legal Disclaimer")]/following-sibling::p/text()').get()
     ingredients = sel.xpath('//div[@id="important-information"]//h4[text()="Ingredients"]/following-sibling::p/text()').get()
     parsed['ingredients'] = ingredients.strip() if ingredients else None
+    parsed['legal_disclaimer'] = legal_disclaimer.strip() if legal_disclaimer else legal_disclaimer_backup.strip() if legal_disclaimer_backup else None
 
+    log.info(f"parsed product {parsed['name']} ({parsed['asin']})")
     return parsed
 
 
 async def scrape_product(url: str) -> List[Product]:
     """scrape Amazon.com product"""
-    print(url)
     url = url.split("/ref=")[0]
     asin = url.split("/dp/")[-1]
     log.info(f"scraping product {url}")
@@ -244,7 +251,22 @@ async def scrape_product(url: str) -> List[Product]:
     #     variant_asins = [variant_asin for variant_asin in json.loads(_variation_data[0]) if variant_asin != asin]
     #     log.info(f"scraping {len(variant_asins)} variants: {variant_asins}")
     #     _to_scrape = [ScrapeConfig(f"https://www.amazon.com/dp/{asin}", **BASE_CONFIG) for asin in variant_asins]
-    #     async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
-    #         variants.append(parse_product(result))
+        # async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
+        #     variants.append(parse_product(result))
     return variants
 
+
+async def scrape_products(urls: List[str]) -> List[Product]:
+    """scrape multiple Amazon.com products"""
+    products = []
+    product_urls = [url.split("/ref=")[0] for url in urls]
+    log.info(f"scraping {len(product_urls)} products")
+    _to_scrape = [ScrapeConfig(url, **BASE_CONFIG, render_js=True, 
+                               wait_for_selector="#productDetails_detailBullets_sections1 tr") for url in product_urls]
+    async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
+        res = parse_product(result)
+        with output.joinpath(f"products_on_time.json").open('a', encoding='utf-8') as file:
+            file.write(json.dumps(res, indent=2) + ",\n")
+        products.extend(res)
+
+    return products
