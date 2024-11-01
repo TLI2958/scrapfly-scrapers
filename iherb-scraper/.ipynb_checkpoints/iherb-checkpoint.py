@@ -244,7 +244,7 @@ def parse_product(result) -> Product:
         'info_table': info_table
     }
     
-    print(parsed)
+    # print(parsed)
 
     log.info(f"parsed product page for {result.context['url']}")
     return parsed
@@ -257,10 +257,16 @@ async def scrape_products(urls: List[str]) -> List[Product]:
     log.info(f"scraping {len(urls)} products")
     _to_scrape = [ScrapeConfig(url, **BASE_CONFIG, render_js=True
                                ) for url in urls]
+    
     async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
-        res = parse_product(result)
-        with output.joinpath(f"products_on_time.json").open('a', encoding='utf-8') as file:
-            file.write(json.dumps(res, indent=2) + ",\n")
-        products.append(res)
-
+        # add error handling
+        try:
+            res = parse_product(result)
+            with output.joinpath(f"products_on_time.json").open('a', encoding='utf-8') as file:
+                file.write(json.dumps(res, indent=2) + ",\n")
+            products.append(res)
+        except Exception as e:
+            log.error("An occured while scraping product pages", e)
+            pass
+    log.success(f'scraped {len(products)} product pages from iherb')
     return products
