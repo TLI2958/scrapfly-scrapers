@@ -1,6 +1,6 @@
 """
-This is an example web scraper for Amazon.com used in scrapfly blog article:
-https://SCRAPFLY.io/blog/how-to-scrape-amazon/
+This is an example web scraper for iherb.com used in scrapfly blog article:
+https://SCRAPFLY.io/blog/how-to-scrape-iherb/
 
 To run this scraper set env variable $SCRAPFLY_KEY with your scrapfly API key:
 $ export $SCRAPFLY_KEY="your key from https://SCRAPFLY.io/dashboard"
@@ -18,7 +18,7 @@ from scrapfly import ScrapeApiResponse, ScrapeConfig, ScrapflyClient
 
 SCRAPFLY = ScrapflyClient(key=os.environ["SCRAPFLY_KEY"])
 BASE_CONFIG = {
-    # Amazon.com requires Anti Scraping Protection bypass feature.
+    # iherb.com requires Anti Scraping Protection bypass feature.
     # for more: https://SCRAPFLY.io/docs/scrape-api/anti-scraping-protection
     "asp": True,
     # to change region see change the country code
@@ -91,7 +91,7 @@ def parse_search(result: ScrapeApiResponse) -> List[ProductPreview]:
 
 
 async def scrape_search(url: str, max_pages: Optional[int] = None) -> List[ProductPreview]:
-    """Scrape amazon search pages product previews"""
+    """Scrape iherb search pages product previews"""
     log.info(f"{url}: scraping first page")
     # first, scrape the first page and find total pages:
     first_result = await SCRAPFLY.async_scrape(ScrapeConfig(url, **BASE_CONFIG))
@@ -130,30 +130,44 @@ class Review(TypedDict):
 
 def parse_reviews(result: ScrapeApiResponse) -> List[Review]:
     """parse review from single review page"""
-    # shop = result.selector.xpath('//*[@id="cr-arp-byline"]/a')
-    # shop = shop.get().split('>')[-2].split('<')[0].strip() 
 
-    review_boxes = result.selector.css("#cm_cr-review_list div.review")
+    sel = result.selector
+    try:
+        data = sel.xpath('//*[@id="__NEXT_DATA__"]/text()').get()
+        info = data.split("calculatedRating")[1]
+        avg_rating, total_reviews = info.split('"count":')[0].strip(':"'), info.split('"count":')[1].split(',')[0]
+    except:
+        avg_rating, total_reviews = None, 0
+
+    review_boxes = sel.xpath('//div[contains(@class, "MuiBox-root") and @id="reviews"]/div')
     parsed = []
-    for box in review_boxes:
-        rating = box.css("*[data-hook*=review-star-rating] ::text").re_first(r"(\d+\.*\d*) out")
-        parsed.append(
-            {  
-                #  "Brand": shop,
-                "text": "".join(box.css("span[data-hook=review-body] ::text").getall()).strip(),
-                "title": box.css("*[data-hook=review-title]>span::text").get(),
-                "location_and_date": box.css("span[data-hook=review-date] ::text").get(),
-                "verified": bool(box.css("span[data-hook=avp-badge] ::text").get()),
-                "rating": float(rating) if rating else None,
-            }
-        )
+    for box in review_boxes:    
+        date = box.xpath('.//span[@data-testid="review-posted-date"]/text()').get().split('on')[-1]
+        rating = box.xpath('.//ul[@data-testid="review-rating"]//path/@fill').getall()
+        rating = f'{len(rating)} star(s)'
+        title = box.xpath('.//span[@data-testid="review-title"]/text()').get()
+        badges = box.xpath('.//div[@data-testid="review-badge-info"]/div').getall()
+        verified, rewarded = any([i.find('Verified') != -1 for i in badges]), any([i.find('Rewarded') != -1 for i in badges])  
+        review_text = box.xpath('.//div[@data-testid="review-text"]//p/text()').get()
+        parsed.append({ 
+            'review_url': result.context['url'].split('?')[0],
+            "avg_rating": avg_rating,
+            "total_reviews": total_reviews,
+            'title': title,
+            'rating': rating,
+            'text': review_text,
+            'location_and_date': date,
+            'verified': verified,
+            'rewarded': rewarded
+        })
+    # print(parsed)
     return parsed
 
 
-async def scrape_reviews(url: str, ASIN: str, max_pages: Optional[int] = None) -> List[Review]:
-    """scrape product reviews of a given URL of an amazon product"""
+async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List[Review]:
+    """scrape product reviews of a given URL of an iherb product"""
     if max_pages > 10:
-        raise ValueError("max_pages cannot be greater than 10 as Amazon paging stops at 10 pages. Try splitting search through multiple filters and sorting to get more results")
+        raise ValueError("max_pages cannot be greater than 10 as iherb paging stops at 10 pages. Try splitting search through multiple filters and sorting to get more results")
 
     # scrape first review page
     log.info(f"scraping review page: {url}")
@@ -161,32 +175,32 @@ async def scrape_reviews(url: str, ASIN: str, max_pages: Optional[int] = None) -
     reviews = parse_reviews(first_page_result)
 
     # find total reviews
-    total_reviews = first_page_result.selector.css("div[data-hook=cr-filter-info-review-rating-count] ::text").re(
-        r"(\d+,*\d*)"
-    )[1]
-    total_reviews = int(total_reviews.replace(",", ""))
     _reviews_per_page = max(len(reviews), 1)
-
-    total_pages = int(math.ceil(total_reviews / _reviews_per_page))
+    total_reviews = reviews[0].get('total_reviews', 0)
+    # raise ValueError
+    total_pages = int(math.ceil(int(total_reviews) / _reviews_per_page))
     if max_pages and total_pages > max_pages:
         total_pages = max_pages
 
     log.info(f"found total {total_reviews} reviews across {total_pages} pages -> scraping")
     other_pages = []
     for page in range(2, total_pages + 1):
-        url_prefix = url.split(f'{ASIN}')[0]
-        url = url_prefix + f'ref=cm_cr_getr_d_paging_btm_next_{page}?pageNumber={page}&pageSize={_reviews_per_page}'
+        url = url + f'?sort=6&isshowtranslated=true&p={page}'
         other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
+
     async for result in SCRAPFLY.concurrent_scrape(other_pages):
         page_reviews = parse_reviews(result)
+        with output.joinpath(f"reviews_on_time.json").open('a', encoding='utf-8') as file:
+            file.write(json.dumps(page_reviews, indent=2) + ",")
         reviews.extend(page_reviews)
-    log.info(f"scraped total {len(reviews)} reviews")
+
+    log.info(f"scraped total {len(reviews)} reviews for url {url.split('?')[0]}")
     return reviews
 
 
 
 class Product(TypedDict):
-    """type hint storage of Amazons product information"""
+    """type hint storage of iherbs product information"""
     name: str
     asin: str
     style: str
@@ -244,29 +258,32 @@ def parse_product(result) -> Product:
         'info_table': info_table
     }
     
-    # print(parsed)
+    print(parsed)
 
     log.info(f"parsed product page for {result.context['url']}")
     return parsed
 
 
 async def scrape_products(urls: List[str]) -> List[Product]:
-    """scrape multiple Amazon.com products"""
+    """scrape multiple iherb.com products"""
     products = []
 
     log.info(f"scraping {len(urls)} products")
     _to_scrape = [ScrapeConfig(url, **BASE_CONFIG, render_js=True
                                ) for url in urls]
-    
     async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
-        # add error handling
-        try:
-            res = parse_product(result)
-            with output.joinpath(f"products_on_time.json").open('a', encoding='utf-8') as file:
-                file.write(json.dumps(res, indent=2) + ",\n")
-            products.append(res)
-        except Exception as e:
-            log.error("An occured while scraping product pages", e)
-            pass
-    log.success(f'scraped {len(products)} product pages from iherb')
+        res = parse_product(result)
+        with output.joinpath(f"products_on_time.json").open('a', encoding='utf-8') as file:
+            file.write(json.dumps(res, indent=2) + ",\n")
+        products.append(res)
+
     return products
+
+
+
+async def scrape_all_reviews(urls: List[str], max_pages: Optional[int] = None):
+    """scrape all reviews of multiple iherb.com products"""
+    reviews = []
+    for url in urls:
+        reviews.extend(await scrape_reviews(url, max_pages))
+    return reviews

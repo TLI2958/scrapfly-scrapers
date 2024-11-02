@@ -16,16 +16,16 @@ output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 
 kws = [
-        # "tea", 
-        # "tincture",
-        "supplement", 
-        "drink"
+        "tea", 
+        "tincture",
+        # "supplement", 
+        # "drink"
         ]
 
 prefix = "https://www.iherb.com/search?kw=california%20poppy%20"
 async def run():
     # enable scrapfly cache for basic use
-    iherb.BASE_CONFIG["cache"] = False
+    iherb.BASE_CONFIG["cache"] = True
     iherb.BASE_CONFIG["country"] = "US"
 
     print("running iherb scrape and saving results to ./results directory")
@@ -39,12 +39,11 @@ async def run():
         search = json.loads(output.joinpath(f"search_{k}.json").read_text())
         # search = [{"url": "https://www.iherb.com/pr/california-gold-nutrition-sport-organic-mct-oil-unflavored-12-fl-oz-355-ml/99738"}]
 
-        urls = [product["url"] if product["url"].startswith("https://www.iherb.com/pr/") else '/pr/'.join(product["review_url"].split('/r/')) for product in search]
-        products = await iherb.scrape_products(urls)
-        output.joinpath(f"search_{k}_products.json").write_text(json.dumps(products, indent=2))
+        # urls = [product["url"] if product["url"].startswith("https://www.iherb.com/pr/") else '/pr/'.join(product["review_url"].split('/r/')) for product in search]
+        urls = [product["review_url"] for product in search]
+        reviews = await iherb.scrape_all_reviews([urls[0]], max_pages= 5)
+        output.joinpath(f"search_{k}_reviews.json").write_text(json.dumps(reviews, indent=2))
         
-
-
-
+        log.success(f"search_{k}_reviews.json saved")
 if __name__ == "__main__":
     asyncio.run(run())
