@@ -16,7 +16,7 @@ output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 
 kws = [
-        "tea", 
+        # "tea", 
         "tincture",
         # "supplement", 
         # "drink"
@@ -41,7 +41,7 @@ async def run():
 
         # urls = [product["url"] if product["url"].startswith("https://www.iherb.com/pr/") else '/pr/'.join(product["review_url"].split('/r/')) for product in search]
         urls = [product["review_url"] for product in search]
-        reviews = await iherb.scrape_all_reviews([urls[0]], max_pages= 5)
+        reviews = await iherb.scrape_all_reviews(urls, max_pages= 5)
         output.joinpath(f"search_{k}_reviews.json").write_text(json.dumps(reviews, indent=2))
         
         log.success(f"search_{k}_reviews.json saved")
