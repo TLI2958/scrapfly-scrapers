@@ -1,0 +1,106 @@
+[
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/California-Poppy-And-Valerian-ALCOHOL-FREE-KETO-Friendly-Absolutely-Natural-Expertly-Extracted-Trusted-HerbalTerra-brand-Liquid-Extract-Proudly-made-_186260a4-1d0d-4f94-b0f9-a981909011d3.b92df622fb53327f6b45d3acd744f444.jpeg",
+      "name": "California Poppy And Valerian ALCOHOL-FREE, KETO Friendly, Absolutely Natural Expertly Extracted by Trusted HerbalTerra brand Liquid Extract. Proudly made in USA. Glycerite 32 Fl.Oz",
+      "sku": "5028706745",
+      "description": "<div>\n                ✳️ ALCOHOL-FREE ✳️ Sugar-Free ✳️ KETO ✳️ Gluten-Free ✳️ Natural ✳️ NON-GMO ✳️ Vegan<br>\n                ✔️ Introducing HerbalTerra's premium <b> ()  </b>  liquid extract — nature's essence captured in its purest form. Harnessing the potent power of botanicals, this extract is meticulously crafted from ethically sourced and hand-selected plant material.<br>\n                ✔️ Each drop delivers a concentrated dose of wellness, ensuring maximum bioavailability and rapid absorption. Our state-of-the-art extraction process preserves the natural integrity and beneficial properties of the herbs, providing you with a product that is as close to nature as possible.<br>\n                ✔️ Free from GMOs, gluten, artificial additives, colors, or preservatives, this supplement is an unadulterated elixir designed for those who seek natural products. Enhance your daily regimen with the natural goodness and experience the transformative benefits of herbal synergy!<br>\n                ✔️ This extract is expertly crafted under strict quality standards and procedures using the cold maceration method of extraction, ensuring that the broad spectrum of therapeutic plant compounds — vitamins, minerals, alkaloids, flavonoids, and other active constituents of the herbs — are fully preserved and extracted.<br>\n                ✔️ Proudly designed, produced and packed in the USA, in an FDA-registered facility under strict laboratory control.\n                </div>",
+      "brand": {
+        "@type": "Brand",
+        "name": "HerbalTerra"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/California-Poppy-And-Valerian-ALCOHOL-FREE-KETO-Friendly-Absolutely-Natural-Expertly-Extracted-Trusted-HerbalTerra-brand-Liquid-Extract-Proudly-made/5028706745",
+          "priceCurrency": "USD",
+          "price": 159.95,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ]
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/Herbs-of-Light-California-Poppy-1-oz-Liquid_9e921d62-e394-4e8a-86b0-b7d8f93ce659.53c8c351e8ef32fe53a6ffb0a173968c.jpeg",
+      "name": "Herbs of Light California Poppy 1 oz Liquid",
+      "sku": "686240386",
+      "description": "California poppy is flowering plant that is a known adaptogen, meaning it can help combat stress and promote relaxation. It may also improve the health of the adrenal system, which is responsible for managing hormonal responses to both internal and external stress. Additionally, California Poppy may promote sleeping, ease aches, and prevent disease of the bladder and liver.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Herbs of Light"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/Herbs-of-Light-California-Poppy-1-oz-Liquid/686240386",
+          "priceCurrency": "USD",
+          "price": 14.5,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 1,
+        "bestRating": 5,
+        "reviewCount": 1
+      }
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/BulkSupplements-com-Cranberry-Powder-5g-Supports-Urinary-Tract-Health-500g-100-Servings_fd4fd25b-f55f-40cd-a1e4-ef00ad2e89a5.4c97cde9e533f055b9c5839e3361bc6e.jpeg",
+      "name": "BulkSupplements.com Cranberry Powder, 5g - Cranberry Supplement - Cranberry Powder for Drinks (500g - 1.1 lbs)",
+      "sku": "968623189",
+      "description": "Introducing our vibrant Cranberry powder, a powerhouse of health benefits neatly packed into a convenient form that easily blends into your daily routine. Rich in antioxidants, our cranberry powder is teeming with phytonutrients and fiber to promote your overall well-being. With a vitamin spectrum that includes C, E, and K, and a dose of essential minerals such as manganese and copper, this unsung hero is more than just a tart delight for your taste buds!",
+      "brand": {
+        "@type": "Brand",
+        "name": "BulkSupplements.com"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/BulkSupplements-com-Cranberry-Powder-5g-Supports-Urinary-Tract-Health-500g-100-Servings/968623189",
+          "priceCurrency": "USD",
+          "price": 25.96,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ]
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/Certified-Organic-Spirulina-Powder-USP-Verified-USDA-Organic-Non-GMO-8-5-oz-240-g_0c39aa5a-d009-451b-b2d9-8dba240fa062.f4645e0d8c2ab4b643a49b8e75535009.jpeg",
+      "name": "Certified Organic Spirulina Powder, USP Verified, USDA Organic, Non-GMO, 8.5 oz (240 g)",
+      "sku": "796648972",
+      "description": "Featuring Naturally-Occurring Protein and Antioxidants Perfect for Adding Extra Greens and Nutrients to Smoothies, Shakes, or Yogurt Great Addition to a Healthy and Active Lifestyle Suitable for Vegetarians and Vegans  California Gold Nutrition® Superfoods Organic Spirulina Powder is exclusively sourced from from India and is grown under pristine, lab-controlled conditions. The flavor of spirulina is typical of greens with mild grassy notes, making it mellow enough to pair well with a wide range of fruits and veggies, like apple, banana, celery, lemon, mint, and spinach.",
+      "brand": {
+        "@type": "Brand",
+        "name": "California Gold Nutrition"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/Certified-Organic-Spirulina-Powder-USP-Verified-USDA-Organic-Non-GMO-8-5-oz-240-g/796648972",
+          "priceCurrency": "USD",
+          "price": 15.44,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.6,
+        "bestRating": 5,
+        "reviewCount": 1599
+      }
+    }
+  }
+]
