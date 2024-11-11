@@ -49,8 +49,10 @@ def parse_product(response: ScrapeApiResponse):
         "aggregateRating",
     ]
 
-    product = {k: v for k, v in meta_data.items() if k in wanted_product_keys}
-
+    ingredients = sel.xpath('//h3[text()="Ingredients"]/following-sibling::p/text()').get()
+    # print(ingredients)
+    product = {k: v for k, v in meta_data.items() if k in wanted_product_keys}  
+    product['ingredient'] = ingredients
     return {"product": product}
 
 
@@ -112,7 +114,29 @@ async def scrape_products(res = None) -> List[Dict]:
     # add the product pages to a scraping list
     result = []
     urls = [f"https://www.walmart.com/ip/{e['usItemId']}" for e in res if e.get('usItemId', 0) != 0]
-    to_scrape = [ScrapeConfig(url, **BASE_CONFIG) for url in urls]
+    to_scrape = [ScrapeConfig(url, 
+                                    js_scenario=[
+                                    {
+                                        "condition": {
+                                            "selector": "//div[@data-testid='product-description']",
+                                            "selector_state": "not_existing",
+                                            "timeout": 1000,
+                                            "action": "exit_success"
+                                        }
+                                    },
+                                    {
+                                        "wait_for_selector": {
+                                            "selector": "//div[@data-testid='product-description']",
+                                            "state": "visible",
+                                            "timeout": 1000
+                                        }
+                                    }
+                                ],
+                              render_js = True,
+                              **BASE_CONFIG,
+                             ) for url in urls]
+
+    
     async for response in SCRAPFLY.concurrent_scrape(to_scrape):
         result.append(parse_product(response))  
         if len(result)%10 == 0:
@@ -139,7 +163,7 @@ async def scrape_reviews(res = None, max_pages: Optional[int] = None):
     
     log.info(f"found total {total_reviews} reviews across {total_pages} pages -> scraping")
     other_pages = []
-    for page in range(2, total_pages + 1):
+    for page in range(6, total_pages + 1):
         url = f"https://www.walmart.com/reviews/product/{id}?page={page}"
         other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
 
@@ -153,7 +177,7 @@ async def scrape_reviews(res = None, max_pages: Optional[int] = None):
 async def scrape_product_and_reviews(search_data, key = ''):
     """scrape product and reviews concurrently"""
     result = await scrape_products(search_data)
-    with open(output.joinpath(f"Walmart_products_california_poppy_{key}.json"), "a", encoding="utf-8",) as file:
+    with open(output.joinpath(f"Walmart_products_california_poppy_{key}_.json"), "a", encoding="utf-8",) as file:
         json.dump(result, file, indent=2, ensure_ascii=False)
         
     # with open(output.joinpath(f"Walmart_products_california_poppy_{key}.json"), "r", encoding="utf-8") as file:
@@ -161,11 +185,11 @@ async def scrape_product_and_reviews(search_data, key = ''):
         
     result_combined = []
     for product in result:
-        product_reviews = await scrape_reviews(product, max_pages=5)
+        product_reviews = await scrape_reviews(product, max_pages=10)
         product['product_reviews'] = product_reviews
         result_combined.append(product)
         log.info(f'scraped reviews for product {product["product"]["sku"]}')
-        with open(output.joinpath(f"Walmart_product_and_reviews_california_poppy_{key}.json"), "a", encoding="utf-8") as file:
+        with open(output.joinpath(f"Walmart_product_and_reviews_california_poppy_{key}_.json"), "a", encoding="utf-8") as file:
             json.dump(result_combined, file, indent=2, ensure_ascii=False)
             
     return result_combined
@@ -218,5 +242,6 @@ async def scrape_search(
         search_data.extend(parse_search(response)["results"])
     log.success(f"scraped {len(search_data)} product listings from search pages")
     return search_data
+
 
 

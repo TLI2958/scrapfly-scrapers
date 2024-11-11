@@ -184,16 +184,19 @@ async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List[Revi
 
     log.info(f"found total {total_reviews} reviews across {total_pages} pages -> scraping")
     other_pages = []
-    for page in range(2, total_pages + 1):
+    for page in range(6, total_pages + 1):
         url = url + f'?sort=6&isshowtranslated=true&p={page}'
         other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
 
     async for result in SCRAPFLY.concurrent_scrape(other_pages):
-        page_reviews = parse_reviews(result)
-        with output.joinpath(f"reviews_on_time.json").open('a', encoding='utf-8') as file:
-            file.write(json.dumps(page_reviews, indent=2) + ",")
-        reviews.extend(page_reviews)
-
+        try:
+            page_reviews = parse_reviews(result)
+            with output.joinpath(f"reviews_on_time_.json").open('a', encoding='utf-8') as file:
+                file.write(json.dumps(page_reviews, indent=2) + ",")
+            reviews.extend(page_reviews)
+        except:
+            continue
+            
     log.info(f"scraped total {len(reviews)} reviews for url {url.split('?')[0]}")
     return reviews
 
@@ -273,12 +276,11 @@ async def scrape_products(urls: List[str]) -> List[Product]:
                                ) for url in urls]
     async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
         res = parse_product(result)
-        with output.joinpath(f"products_on_time.json").open('a', encoding='utf-8') as file:
+        with output.joinpath(f"products_on_time_.json").open('a', encoding='utf-8') as file:
             file.write(json.dumps(res, indent=2) + ",\n")
         products.append(res)
 
     return products
-
 
 
 async def scrape_all_reviews(urls: List[str], max_pages: Optional[int] = None):

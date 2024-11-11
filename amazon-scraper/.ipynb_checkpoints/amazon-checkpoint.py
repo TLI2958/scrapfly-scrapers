@@ -23,6 +23,8 @@ BASE_CONFIG = {
     "asp": True,
     # to change region see change the country code
     "country": "US",
+    "proxy_pool": "public_residential_pool"
+
 }
 
 output = Path(__file__).parent / "results"
@@ -119,34 +121,36 @@ def parse_reviews(result: ScrapeApiResponse) -> List[Review]:
     # shop = result.selector.xpath('//*[@id="cr-arp-byline"]/a')
     # shop = shop.get().split('>')[-2].split('<')[0].strip() 
 
-    review_boxes = result.selector.css("#cm_cr-review_list div.review")
+    review_boxes = result.selector.xpath('//div[@data-hook="review"]')
     parsed = []
     for box in review_boxes:
-        rating = box.css("*[data-hook*=review-star-rating] ::text").re_first(r"(\d+\.*\d*) out")
         parsed.append(
             {  
                 #  "Brand": shop,
-                "text": "".join(box.css("span[data-hook=review-body] ::text").getall()).strip(),
-                "title": box.css("*[data-hook=review-title]>span::text").get(),
-                "location_and_date": box.css("span[data-hook=review-date] ::text").get(),
-                "verified": bool(box.css("span[data-hook=avp-badge] ::text").get()),
-                "rating": float(rating) if rating else None,
+                # "text": "".join(box.css("span[data-hook=review-body] ::text").getall()).strip(),
+                "title": box.css('//i[@data-hook="review-title"]/span[@class="a-letter-space"]/following-sibling::span/text()').get(),
+                # "location_and_date": box.css("span[data-hook=review-date] ::text").get(),
+                # "verified": bool(box.css("span[data-hook=avp-badge] ::text").get()),
+                "rating": box.xpath('//span[@class="a-icon-alt"]/text()')
             }
         )
+    print(parsed)
     return parsed
 
 
-async def scrape_reviews(url: str, ASIN: str, max_pages: Optional[int] = None) -> List[Review]:
+async def scrape_reviews(url: str, ASIN, max_pages: Optional[int] = None) -> List[Review]:
     """scrape product reviews of a given URL of an amazon product"""
     if max_pages > 10:
         raise ValueError("max_pages cannot be greater than 10 as Amazon paging stops at 10 pages. Try splitting search through multiple filters and sorting to get more results")
-
-    # scrape first review page
+    # url = url.split("/ref=")[0]
     log.info(f"scraping review page: {url}")
+    # todo: seems to be blocked
     first_page_result = await SCRAPFLY.async_scrape(ScrapeConfig(url, **BASE_CONFIG))
+    
     reviews = parse_reviews(first_page_result)
-
+    raise ValueError
     # find total reviews
+    # todo: debug
     total_reviews = first_page_result.selector.css("div[data-hook=cr-filter-info-review-rating-count] ::text").re(
         r"(\d+,*\d*)"
     )[1]
@@ -159,7 +163,7 @@ async def scrape_reviews(url: str, ASIN: str, max_pages: Optional[int] = None) -
 
     log.info(f"found total {total_reviews} reviews across {total_pages} pages -> scraping")
     other_pages = []
-    for page in range(2, total_pages + 1):
+    for page in range(4, total_pages + 1):
         url_prefix = url.split(f'{ASIN}')[0]
         url = url_prefix + f'ref=cm_cr_getr_d_paging_btm_next_{page}?pageNumber={page}&pageSize={_reviews_per_page}'
         other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
