@@ -23,7 +23,7 @@ BASE_CONFIG = {
     "asp": True,
     # to change region see change the country code
     "country": "US",
-    "proxy_pool": "public_residential_pool"
+    # "proxy_pool": "public_residential_pool"
 
 }
 

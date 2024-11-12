@@ -17,7 +17,7 @@ prefix = "https://www.amazon.com/s?k=california+poppy+"
 
 async def run():
     # enable scrapfly cache for basic use
-    amazon.BASE_CONFIG["cache"] = True
+    amazon.BASE_CONFIG["cache"] = False
     amazon.BASE_CONFIG["country"] = "US"
 
     print("running Amazon scrape and saving results to ./results directory")
