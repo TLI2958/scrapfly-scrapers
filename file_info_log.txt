@@ -1,0 +1,96 @@
+1n0DD3Rg8JSb8J_jU97IBpFOISd_68m2W
+Id: 1n0DD3Rg8JSb8J_jU97IBpFOISd_68m2W
+Name: sentiment_distribution_Amazon_vader.png
+Mime: image/png
+Size: 90.6 KB
+Created: 2024-11-13 18:45:40
+Modified: 2024-11-13 18:45:42
+MD5: cbbfc5c403bbcbbc610fb61cd38b3a9f
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1n0DD3Rg8JSb8J_jU97IBpFOISd_68m2W/view?usp=drivesdk
+---------------------------------------
+1wky8aPk7HCDU8Ag25lrepa1kzSFYLXbO
+Id: 1wky8aPk7HCDU8Ag25lrepa1kzSFYLXbO
+Name: sentiment_distribution_Amazon_transformer.png
+Mime: image/png
+Size: 89.7 KB
+Created: 2024-11-13 18:45:50
+Modified: 2024-11-13 18:45:52
+MD5: 3240c5c46c38963269dd2e6366431879
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1wky8aPk7HCDU8Ag25lrepa1kzSFYLXbO/view?usp=drivesdk
+---------------------------------------
+1l_ZnHqeZkpaZkCXNAWosPss_EyFPS7bN
+Id: 1l_ZnHqeZkpaZkCXNAWosPss_EyFPS7bN
+Name: sentiment_distribution_etsy_vader.png
+Mime: image/png
+Size: 77 KB
+Created: 2024-11-13 18:47:52
+Modified: 2024-11-13 18:47:54
+MD5: 1893f7c4790293afdee10ac935162342
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1l_ZnHqeZkpaZkCXNAWosPss_EyFPS7bN/view?usp=drivesdk
+---------------------------------------
+1mZ00z_B8xvJu1Rt79alBZbiiqXw3dW5Y
+Id: 1mZ00z_B8xvJu1Rt79alBZbiiqXw3dW5Y
+Name: sentiment_distribution_etsy_transformer.png
+Mime: image/png
+Size: 88.1 KB
+Created: 2024-11-13 18:48:29
+Modified: 2024-11-13 18:48:41
+MD5: 7ed4dd99575cc77717fcd9e1f94ed753
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1mZ00z_B8xvJu1Rt79alBZbiiqXw3dW5Y/view?usp=drivesdk
+---------------------------------------
+1SIdMaG6VkygELOGSuPAVPsgqf3CsVCSd
+Id: 1SIdMaG6VkygELOGSuPAVPsgqf3CsVCSd
+Name: sentiment_distribution_iherb_transformer.png
+Mime: image/png
+Size: 89.4 KB
+Created: 2024-11-13 18:49:43
+Modified: 2024-11-13 18:49:45
+MD5: b9d1a5f001b6f7dbabf02bb214f10a0e
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1SIdMaG6VkygELOGSuPAVPsgqf3CsVCSd/view?usp=drivesdk
+---------------------------------------
+1COoGc3_DmN2tSdkSoVevNEZiwzy_aLM3
+Id: 1COoGc3_DmN2tSdkSoVevNEZiwzy_aLM3
+Name: sentiment_distribution_iherb_vader.png
+Mime: image/png
+Size: 85.4 KB
+Created: 2024-11-13 18:50:32
+Modified: 2024-11-13 18:50:34
+MD5: 9cb1b28c0cee157c758ef0db95460715
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1COoGc3_DmN2tSdkSoVevNEZiwzy_aLM3/view?usp=drivesdk
+---------------------------------------
+1_IK9m5R6RT5CXT5WIA73_B8wE6Fnsl37
+Id: 1_IK9m5R6RT5CXT5WIA73_B8wE6Fnsl37
+Name: sentiment_distribution_Walmart_vader.png
+Mime: image/png
+Size: 90.6 KB
+Created: 2024-11-13 18:52:32
+Modified: 2024-11-13 18:52:34
+MD5: f81783bd50d9e5f4a02d31f90730f3db
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1_IK9m5R6RT5CXT5WIA73_B8wE6Fnsl37/view?usp=drivesdk
+---------------------------------------
+1-yDKBvrN44PGkIk9m1Stp6FyApwYcCFN
+Id: 1-yDKBvrN44PGkIk9m1Stp6FyApwYcCFN
+Name: sentiment_distribution_Walmart_transformer.png
+Mime: image/png
+Size: 90.3 KB
+Created: 2024-11-13 18:52:43
+Modified: 2024-11-13 18:52:45
+MD5: 81e19f72c9719105feeeca77ce36ba29
+Shared: True
+Parents: 1kLpuorVasMKnHoSl7l5KSEphgXBNIERw
+ViewUrl: https://drive.google.com/file/d/1-yDKBvrN44PGkIk9m1Stp6FyApwYcCFN/view?usp=drivesdk
+---------------------------------------
