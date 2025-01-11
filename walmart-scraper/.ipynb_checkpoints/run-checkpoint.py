@@ -17,26 +17,26 @@ output.mkdir(exist_ok=True)
 
 async def run():
     # enable scrapfly cache for basic use
-    walmart.BASE_CONFIG["cache"] = False
+    walmart.BASE_CONFIG["cache"] = True
+    walmart.BASE_CONFIG["country"] = "US"
 
     print("running Walmart scrape and saving results to ./results directory")
     kw = [
         "tincture", 
           "drink", 
-          # "tea", 
-          # "supplement"
+          "tea", 
+          "supplement"
          ]
     
     for k in kw:
-        search_data = await walmart.scrape_search(
-            query="california+poppy" + "+" + k, sort="best_seller", max_pages=5
-        )
-        with open(output.joinpath(f"search_california_poppy_{k}_.json"), "a", encoding="utf-8") as file:
-            json.dump(search_data, file, indent=2, ensure_ascii=False)
-        # with open(output.joinpath(f"search_california_poppy_{k}_.json"), "r", encoding="utf-8") as file:
-        #     search_data = json.load(file) 
-        # with open(output.joinpath(f"search_california_poppy_{k}.json"), "r", encoding="utf-8") as file:
-        #     search_data = json.load(file) 
+        # search_data = await walmart.scrape_search(
+        #     query="california+poppy" + "+" + k, sort="best_seller", max_pages=10
+        # )
+        # with open(output.joinpath(f"search_california_poppy_{k}_.json"), "a", encoding="utf-8") as file:
+        #     json.dump(search_data, file, indent=2, ensure_ascii=False)
+        with open(output.joinpath(f"search_california_poppy_{k}_.json"), "r", encoding="utf-8") as file:
+            search_data = json.load(file) 
+            
         # search_data = [{'usItemId': '3931738164'}]
         product_and_reviews = await walmart.scrape_product_and_reviews(search_data, key = k)
     

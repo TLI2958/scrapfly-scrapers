@@ -71,50 +71,81 @@ def parse_review(response: ScrapeApiResponse):
     products_data = json.loads(script)
     return {"product_data":[products_data]}
 
-def parse_product_page(response: ScrapeApiResponse) -> Dict:
-    """parse hidden product data from product pages"""
-    selector = response.selector
-    script = selector.xpath("//script[contains(text(),'offers')]/text()").get()
-    data = json.loads(script)
-    return data
-
-# async def parse_product_page(response, search_data, max_review_pages = 10) -> Dict:
-#     """Parse hidden product data from product pages, including reviews."""
+# def parse_product_page(response: ScrapeApiResponse) -> Dict:
+#     """parse hidden product data from product pages"""
 #     selector = response.selector
-#     # Get total review count
-#     try:
-#         review_for_this_item = selector.xpath('//*[@id="same-listing-reviews-tab"]/span').get()
-#         total_review_for_this_item = strip_text(review_for_this_item.split("\n")[1])
-#         total_review_pages = min(max_review_pages, math.ceil(int(total_review_for_this_item) / 4))  # adjust the divisor based on actual reviews per page
-#     except Exception as e:
-#         log.warning(f"Could not retrieve total review count: {e}")
-#         total_review_pages = 1
+#     script = selector.xpath("//script[contains(text(),'offers')]/text()").get()
+#     data = json.loads(script)
+#     return data
+
+async def parse_product_page(response, max_review_pages = 5) -> Dict:
+    """Parse hidden product data from product pages, including reviews."""
+    selector = response.selector
+    review = selector.xpath('//div[@id = "reviews"]')
+    # Get total review count
+    # try:
+    total_review_for_this_item = review.xpath('//button[@id="same-listing-reviews-tab"]/span/text()').get().strip()
+    total_review_pages = min(max_review_pages, math.ceil(int(total_review_for_this_item) / 4))  # adjust the divisor based on actual reviews per page
+    # except Exception as e:
+    #     log.warning(f"Could not retrieve total review count: {e}")
+    #     total_review_pages = 1
     
-#     # Scrape the first review page
-#     # todo: recursively scrape all review pages
-#     next_page_url = [selector.xpath(f'//*[@id="reviews"]/nav/div/div[{i}]/a/@href').get() for i in range(2,max_review_pages+1)]
-#     next_page_url = [url for url in next_page_url if url]
+    # Scrape the first review page
+    # todo: recursively scrape all review pages
+    next_page_url = response.result['config']['url']
 
-#     first_page = await SCRAPFLY.async_scrape(
-#         ScrapeConfig(next_page_url[0], wait_for_selector="//div[@data-reviews-pagination]", render_js=True, **BASE_CONFIG)
-#     )
-#     product_data = parse_review(first_page)['product_data']
+    first_page = await SCRAPFLY.async_scrape(
+        ScrapeConfig(next_page_url, wait_for_selector="//div[@data-reviews-pagination]", 
+                     render_js=True,
+                     **BASE_CONFIG)
+    )
+    product_data = parse_review(first_page)['product_data']
+    print(product_data)
 
-#     # Scrape remaining review pages concurrently, if there are more pages
-#     log.info(f"Scraping review pagination ({total_review_pages - 1} more pages)")
-#     if total_review_pages > 1:
-#         other_pages = [
-#                 ScrapeConfig(next_page_url[i], wait_for_selector="//div[@data-reviews-pagination]", render_js=True, **BASE_CONFIG)
-#                 for i in range(1, len(next_page_url))
-#             ]
+    # Scrape remaining review pages concurrently, if there are more pages
+    log.info(f"Scraping review pagination ({total_review_pages - 1} more pages)")
+    if total_review_pages > 1:
+        other_pages = [
+                ScrapeConfig(next_page_url,
+                              js_scenario=[
+                                    {
+                                        "click": {
+                                            "selector": f'//a[contains(@href, "page={i}") and contains(@class, "wt-action-group__item wt-btn")]',                     
+                                        }
+                                    },
+                                      {
+                                        "wait": 2000 
+                                    },
+                                    {
+                                        "wait_for_selector": {
+                                            "selector": f'//a[contains(@href, "page={i}") and @aria-current="true"]',
+                                            "state": "visible",
+                                            "timeout": 2000
+                                        }
+                                    },
+                                    {
+                                        "wait_for_selector": {
+                                            "selector": "//div[@data-reviews-pagination]",
+                                            "state": "visible",
+                                            "timeout": 1000
+                                        }
+                                    },
+                                ],
+                             render_js=True, **BASE_CONFIG)
+                for i in range(2, total_review_pages + 1)
+            ]
 
-#         # Scrape remaining review pages
-#         async for response in SCRAPFLY.concurrent_scrape(other_pages):
-#                 data = parse_review(response)
-#                 product_data.extend(data["product_data"])
-
-#         log.success(f"Scraped {len(product_data)} review pages")
-#     return product_data
+        # Scrape remaining review pages
+        async for response in SCRAPFLY.concurrent_scrape(other_pages):
+            try:
+                data = parse_review(response)
+                product_data.extend(data["product_data"])
+                print(data["product_data"])
+            except Exception as e:
+                log.error(f"failed to scrape review page: {e}")
+                pass
+        log.success(f"Scraped {len(product_data)} review pages")
+    return product_data
 
 async def scrape_search(url: str, max_pages: int = None) -> List[Dict]:
     """scrape product listing data from Etsy search pages"""
@@ -137,8 +168,12 @@ async def scrape_search(url: str, max_pages: int = None) -> List[Dict]:
     ]
     # scrape the remaining search pages concurrently
     async for response in SCRAPFLY.concurrent_scrape(other_pages):
-        data = parse_search(response)
-        search_data.extend(data["search_data"])
+        try:
+            data = parse_search(response)
+            search_data.extend(data["search_data"])
+        except Exception as e:
+            log.error(f"failed to scrape search page: {e}")
+            pass
     log.success(f"scraped {len(search_data)} product listings from search")
     return search_data
 
@@ -155,14 +190,14 @@ async def scrape_search(url: str, max_pages: int = None) -> List[Dict]:
 #     log.success(f"scraped {len(products)} product listings from product pages")
 #     return products
 
-async def scrape_product(urls: List[str]) -> List[Dict]:
+async def scrape_product(urls: List[str], max_review_pages = 5) -> List[Dict]:
     """scrape trustpilot company pages"""
     products = []
     # add the product page URLs to a scraping list
     to_scrape = [ScrapeConfig(url, **BASE_CONFIG) for url in urls]
     # scrape all the product pages concurrently
     async for response in SCRAPFLY.concurrent_scrape(to_scrape):
-        data = parse_product_page(response)
+        data = await parse_product_page(response, max_review_pages = max_review_pages)
         products.append(data)
     log.success(f"scraped {len(products)} product listings from product pages")
     return products
@@ -182,7 +217,7 @@ async def scrape_search_and_products(search_url: str, max_pages: int = None, max
     
     # Step 3: Pass product URLs to scrape_product to scrape product pages
     # products_data = await scrape_product(product_urls, search_data, max_review_pages)
-    products_data = await scrape_product(product_urls)
+    products_data = await scrape_product(product_urls, max_review_pages = 5)
     
     
     log.success(f"Scraped {len(products_data)} product pages successfully")

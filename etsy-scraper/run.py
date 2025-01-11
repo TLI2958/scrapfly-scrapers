@@ -14,8 +14,8 @@ output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 urls = [
 # 'https://www.etsy.com/search/home-and-living/food-and-drink?q=%22california+poppy%22&category_path=891%2C930'
-'https://www.etsy.com/search/home-and-living/outdoor-and-garden/plants/herbs?explicit=1&q=%26quot%3BCalifornia+poppy%26quot%3B&category_path=891%2C1105%2C1120%2C1126&ship_to=US',
-# 'https://www.etsy.com/search/home-and-living/food-and-drink/herbs-and-spices-and-seasonings/herbs-and-spices?q=%22California+poppy%22&explicit=1&category_path=891%2C930%2C957%2C958&ship_to=US'
+# 'https://www.etsy.com/search/home-and-living/outdoor-and-garden/plants/herbs?explicit=1&q=%26quot%3BCalifornia+poppy%26quot%3B&category_path=891%2C1105%2C1120%2C1126&ship_to=US',
+'https://www.etsy.com/search/home-and-living/food-and-drink/herbs-and-spices-and-seasonings/herbs-and-spices?q=%22California+poppy%22&explicit=1&category_path=891%2C930%2C957%2C958&ship_to=US'
 # 'https://www.etsy.com/search/home-and-living/food-and-drink/coffee-and-tea/tea?q=%22California+poppy%22&explicit=1&category_path=891%2C930%2C951%2C955&ship_to=US'
 ]
 
@@ -27,7 +27,7 @@ async def run():
         search_data, product_data = await etsy.scrape_search_and_products(
             search_url=url,
             max_pages=1,
-            max_review_pages= 10
+            max_review_pages= 5
         )
         with open(output.joinpath(f"search_null.json"), "w", encoding="utf-8") as file:
             json.dump(search_data, file, indent=2, ensure_ascii=False)

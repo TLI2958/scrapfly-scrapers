@@ -18,8 +18,8 @@ output.mkdir(exist_ok=True)
 kws = [
         # "tea", 
         # "tincture",
-        # "supplement", 
-        "drink"
+        "supplement", 
+        # "drink"
         ]
 
 prefix = "https://www.iherb.com/search?kw=california%20poppy%20"
@@ -31,25 +31,25 @@ async def run():
     print("running iherb scrape and saving results to ./results directory")
 
     for i, k in enumerate(kws):   
-        # url = prefix + k
-        # search = await iherb.scrape_search(url, max_pages=3)
-        # output.joinpath(f"search_{k}_.json").write_text(json.dumps(search, indent=2))
+        url = prefix + k
+        # search = await iherb.scrape_search(url, max_pages=5)
+        # output.joinpath(f"search_{k}_extra.json").write_text(json.dumps(search, indent=2))
         
         # log.success(f"search_{k}.json saved")
-        search = json.loads(output.joinpath(f"search_{k}_.json").read_text())
+        search = json.loads(output.joinpath(f"search_{k}_extra.json").read_text())
         # search = [{"url": "https://www.iherb.com/pr/california-gold-nutrition-sport-organic-mct-oil-unflavored-12-fl-oz-355-ml/99738"}]
 
         # urls = [product["url"] if product["url"].startswith("https://www.iherb.com/pr/") else '/pr/'.join(product["review_url"].split('/r/')) for product in search]
 
         # urls = [product["url"] if product["url"].startswith("https://www.iherb.com/pr/") else '/pr/'.join(product["review_url"].split('/r/')) for product in search]
         # products = await iherb.scrape_products(urls)
-        # output.joinpath(f"search_{k}_products_.json").write_text(json.dumps(products, indent=2))
-        # log.success(f"search_{k}_products_.json saved")
+        # output.joinpath(f"search_{k}_products_w_brand_extra.json").write_text(json.dumps(products, indent=2))
+        # log.success(f"search_{k}_products_w_brand_extra.json saved")
         
         urls = [product["review_url"] for product in search]
         reviews = await iherb.scrape_all_reviews(urls, max_pages= 10)
-        output.joinpath(f"search_{k}_reviews_.json").write_text(json.dumps(reviews, indent=2))
+        output.joinpath(f"search_{k}_reviews_extra.json").write_text(json.dumps(reviews, indent=2))
         
-        log.success(f"search_{k}_reviews_.json saved")
+        log.success(f"search_{k}_reviews_extra.json saved")
 if __name__ == "__main__":
     asyncio.run(run())

@@ -57,7 +57,7 @@ def parse_search(result: ScrapeApiResponse) -> List[ProductPreview]:
     product_boxes = result.selector.css("div.s-result-item[data-component-type=s-search-result]")
     for box in product_boxes:
         url = urljoin(result.context["url"], box.css("h2>   a::attr(href)").get()).split("?")[0]
-        brand = box.css("span.a-size-base-plus.a-color-base::text").get()
+        brand = box.xpath("//h2/span[contains(@class, 'a-size-base-plus')]").get() # not working
 
         if "/slredirect/" in url:  # skip ads etc.
             continue
@@ -134,7 +134,6 @@ def parse_reviews(result: ScrapeApiResponse) -> List[Review]:
                 "rating": box.xpath('//span[@class="a-icon-alt"]/text()')
             }
         )
-    print(parsed)
     return parsed
 
 
@@ -210,25 +209,30 @@ def parse_product(result) -> Product:
         "name": sel.css("#productTitle::text").get("").strip(),
         "asin": sel.css("input[name=ASIN]::attr(value)").get("").strip(),
         "style": sel.xpath("//span[@class='selection']/text()").get("").strip(),
+        "brand": sel.xpath("//div/a[@id='bylineInfo']/text()").get(""),
         "description": '\n'.join(sel.css("#productDescription p span ::text").getall()).strip(),
         "stars": sel.css("i[data-hook=average-star-rating] ::text").get("").strip(),
         "rating_count": sel.css("span[data-hook=total-review-count] ::text").get("").strip(),
         "features": [value.strip() for value in sel.css("#feature-bullets li ::text").getall()],
         "images": images,
     }
+    print(parsed)
     # extract details from "Product Information" table:
     info_table = {}
-    for row in sel.css('#productDetails_detailBullets_sections1 tr'):
-        label = row.css("th::text").get("").strip()
-        value = row.css("td::text").get("").strip()
-        if not value:
-            value = row.css("td span::text").get("").strip()
-        info_table[label] = value
-    info_table['Customer Reviews'] = sel.xpath("//td[div[@id='averageCustomerReviews']]//span[@class='a-icon-alt']/text()").get()
-    rank = sel.xpath("//tr[th[text()=' Best Sellers Rank ']]//td//text()").getall()
-    info_table['Best Sellers Rank'] = ' '.join([text.strip() for text in rank if text.strip()])
-    parsed['info_table'] = info_table
-
+    try:
+        rows = sel.css('#productDetails_detailBullets_sections1 tr')
+        for row in rows:
+            label = row.css("th::text").get("").strip()
+            value = row.css("td::text").get("").strip()
+            if not value:
+                value = row.css("td span::text").get("").strip()
+            info_table[label] = value
+        info_table['Customer Reviews'] = sel.xpath("//td[div[@id='averageCustomerReviews']]//span[@class='a-icon-alt']/text()").get()
+        rank = sel.xpath("//tr[th[text()=' Best Sellers Rank ']]//td//text()").getall()
+        info_table['Best Sellers Rank'] = ' '.join([text.strip() for text in rank if text.strip()])
+        parsed['info_table'] = info_table
+    except:
+        log.info('info table not found.')
     legal_disclaimer = sel.xpath('//div[@id="important-information"]//h4[text()="Legal Disclaimer"]/following-sibling::p/text()').get()
     legal_disclaimer_backup = sel.xpath('//div[@id="important-information"]//span[contains(text(), "Legal Disclaimer")]/following-sibling::p/text()').get()
     ingredients = sel.xpath('//div[@id="important-information"]//h4[text()="Ingredients"]/following-sibling::p/text()').get()
@@ -244,10 +248,15 @@ async def scrape_product(url: str) -> List[Product]:
     url = url.split("/ref=")[0]
     asin = url.split("/dp/")[-1]
     log.info(f"scraping product {url}")
-    product_result = await SCRAPFLY.async_scrape(ScrapeConfig(
-        url, **BASE_CONFIG, render_js=True, wait_for_selector="#productDetails_detailBullets_sections1 tr"
-    ))
-    variants = [parse_product(product_result)]
+    try:
+        product_result = await SCRAPFLY.async_scrape(ScrapeConfig(
+            url, **BASE_CONFIG, render_js=True, wait_for_selector="#productDetails_detailBullets_sections1 tr"
+        ))
+        variants = [parse_product(product_result)]
+        return variants
+    except:
+        log.info(f'{url} not found. skip...')
+        return []
 
     # if product has variants - we want to scrape all of them
     # _variation_data = re.findall(r'dimensionValuesDisplayData"\s*:\s*({.+?}),\n', product_result.content)
@@ -257,7 +266,7 @@ async def scrape_product(url: str) -> List[Product]:
     #     _to_scrape = [ScrapeConfig(f"https://www.amazon.com/dp/{asin}", **BASE_CONFIG) for asin in variant_asins]
         # async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
         #     variants.append(parse_product(result))
-    return variants
+
 
 
 async def scrape_products(urls: List[str]) -> List[Product]:

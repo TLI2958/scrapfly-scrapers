@@ -1,0 +1,218 @@
+[
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/Nelson-s-Tea-Bundle-A-J-s-Root-Beer-Herbal-4oz-California-Poppy-2oz-Loose-Leaf-Blends-Bold-Spices-Soothing-Unique-Experience_140f3aae-c971-48b3-b5c3-24989b3699b0.9f34be01c7ff9a531b5d40cdf53f4f5e.png",
+      "name": "Nelson's Tea Bundle - A&J's Root Beer Herbal Tea (4oz) & California Poppy Herbal Tea (2oz) - Loose Leaf Blends with Bold Root Beer Spices and Soothing California Poppy for a Unique Tea Experience",
+      "sku": "13128659490",
+      "description": "EMBRACE THE TEA RITUAL: Beyond its delightful taste, this tea embodies the essence of what tea brings to people. It is a catalyst for connection, creating cherished moments of togetherness and shared experiences. It provides a comforting refuge, allowing you to unwind and find solace in the ritual of brewing and savoring a cup of tea. With each sip, you embark on a sensory journey that combines the pleasure of unique flavors with the profound rejuvenation that only tea can provide.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Nelson's Tea"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/Nelson-s-Tea-Bundle-A-J-s-Root-Beer-Herbal-4oz-California-Poppy-2oz-Loose-Leaf-Blends-Bold-Spices-Soothing-Unique-Experience/13128659490",
+          "priceCurrency": "USD",
+          "price": 44.91,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "ingredient": null
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/Nelson-s-Tea-Duo-California-Poppy-1oz-Chamomile-Honey-Vanilla-2-2oz-Two-Herbal-Loose-Leaf-Teas-Featuring-Poppy-Chamomile-Honeybush-Lemongrass-More_bedb1aa4-92d0-4414-85f5-23f0eff5324c.98cccb4572f2cc76e38fbed41c29fff0.png",
+      "name": "Nelson's Tea Duo - California Poppy (1oz) & Chamomile Honey Vanilla (2.2oz) - Two Herbal Loose Leaf Teas Featuring California Poppy, Chamomile, Honeybush, Lemongrass, and More",
+      "sku": "13141661748",
+      "description": "EMBRACE THE TEA RITUAL: Beyond its delightful taste, this tea embodies the essence of what tea brings to people. It is a catalyst for connection, creating cherished moments of togetherness and shared experiences. It provides a comforting refuge, allowing you to unwind and find solace in the ritual of brewing and savoring a cup of tea. With each sip, you embark on a sensory journey that combines the pleasure of unique flavors with the profound rejuvenation that only tea can provide.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Nelson's Tea"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/Nelson-s-Tea-Duo-California-Poppy-1oz-Chamomile-Honey-Vanilla-2-2oz-Two-Herbal-Loose-Leaf-Teas-Featuring-Poppy-Chamomile-Honeybush-Lemongrass-More/13141661748",
+          "priceCurrency": "USD",
+          "price": 40.41,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "ingredient": null
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/Organic-California-Poppy-Loose-Leaf-Tea-1-oz_2353ac5d-1cd0-4ee8-8607-9e1003117414.4271798fd621399c3bce24674bd60d8f.jpeg",
+      "name": "Organic California Poppy Loose Leaf Tea ( 1 oz )",
+      "sku": "13552861128",
+      "description": "Organic California Poppy Loose Leaf Tea\nExperience the soothing embrace of Organic California Poppy Loose Leaf Tea from Healing Herbals. Harvested from the rich soils of California, this organic tea is derived from the California Poppy (Eschscholzia californica), known for its mild sedative properties and ability to promote relaxation and support sleep. Our California Poppy Tea is the perfect herbal brew for those looking to naturally ease into a state of calm and enhance their nighttime routine.\nProduct Highlights:\n•\tIngredients: 100% organic California Poppy leaves and flowers\n•\tBenefits: Aids relaxation, supports quality sleep, and contributes to overall calmness\nBrewing Instructions: Steep one teaspoon of loose leaf tea in boiling water for 5-10 minutes. Adjust the quantity or steeping time to suit your taste preferences.\nKey Features:\n•\tNatural, gentle sedative effects for relaxation\n•\tOrganic and sustainably sourced ingredients ensure the highest quality\n•\tCaffeine-free herbal tea for evening consumption\nDisclaimer: These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.\nInvite tranquility into your evenings with Healing Herbals’ Organic California Poppy Loose Leaf Tea, a natural herbal tea crafted for those seeking a peaceful and restorative end to their day.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Healing Herbals"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/Organic-California-Poppy-Loose-Leaf-Tea-1-oz/13552861128",
+          "priceCurrency": "USD",
+          "price": 14.99,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "ingredient": null
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/CaliPM-Valerian-Root-California-Poppy-Herbal-Sleep-Aid-Tea-Promotes-Deep-Longer-Reduce-Stress-Relax-The-Body-Improve-Morning-Mood-Natural-Teabags-48_48c0cdad-1202-4ebc-9a09-2583ffd9e657.46d19ad29017ba5e1e64d99e9ddf8e2d.jpeg",
+      "name": "CaliPM Valerian Root California Poppy Herbal Sleep Aid Tea - Promotes Deep Sleep & Longer Sleep - Reduce Stress & Relax The Body - Improve Morning Mood - Natural Sleep Aid Teabags - 48 Vegan Teabags",
+      "sku": "2946533166",
+      "description": "Synergetic Blend of Valerian Root and California Poppy: Our herbal sleep aid tea is a powerful blend of natural ingredients that work together to promote deep and restful sleep. Valerian root and California Poppy are both well-known for their calming and soothing properties, making them the perfect combination for a good night's sleep.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Ethnospot"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/CaliPM-Valerian-Root-California-Poppy-Herbal-Sleep-Aid-Tea-Promotes-Deep-Longer-Reduce-Stress-Relax-The-Body-Improve-Morning-Mood-Natural-Teabags-48/2946533166",
+          "priceCurrency": "USD",
+          "price": 22.99,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.8,
+        "bestRating": 5,
+        "reviewCount": 10
+      },
+      "ingredient": null
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/California-Poppy-Tea-Pure-Teabags-100-Natural-Herbal-For-Relaxation-Sleep-Stress-Relief-Calming-Nervous-System-2-Gram-48-Vegan_1d0a79f1-ce7f-4953-94f5-8957e99f3757.bd0bcd36b915b331dc91c8adee7c14d9.jpeg",
+      "name": "California Poppy Tea - Pure California Poppy Teabags - 100% Natural Herbal Tea For Relaxation Sleep Stress Relief & Calming Nervous System - 2 Gram Teabags - 48 Vegan Teabags",
+      "sku": "3236706356",
+      "description": "Experience the soothing essence of California Poppy with our premium California Poppy tea, crafted from the finest quality poppy herb and extract. Each teabag is filled with pure, natural ingredients, ensuring a wholesome and enjoyable tea experience free from fillers and additives. Our product is designed for those who seek a calming and relaxing beverage that fits seamlessly into their daily routine.\n\nOur California Poppy tea offers a versatile way to enjoy the benefits of this remarkable herb. Whether you're unwinding after a busy day, taking a moment to relax, or simply enjoying a quiet tea break, our tea is the perfect companion. The gentle formula makes it suitable for regular enjoyment, providing a natural way to find tranquility and peace. Ideal for anyone looking to incorporate a natural, soothing beverage into their lifestyle, our poppy herb offers flexibility for various preferences and routines.\n\nCrafted with care, our tea is made from 100% natural California Poppy, with no artificial ingredients or preservatives. Each teabag is vegan-friendly, making it an excellent choice for those who follow a plant-based lifestyle. We prioritize purity and quality, ensuring that every cup of our tea delivers the true essence of California Poppy.\n\nEnjoy the convenience and ease of our pre-portioned teabags, perfect for brewing a quick and easy cup of tea at home, at work, or on the go. Our teabags provide a simple way to incorporate the calming benefits of poppy extract into your daily routine, allowing you to enjoy the soothing properties of this natural herb whenever you need it.\n\nIncorporate the rich tradition and natural benefits of California Poppy into your daily life with our premium tea. Whether you're a long-time fan of poppy herb or new to its soothing qualities, our tea provides a delightful and calming experience that you'll love. Enjoy the pure, natural taste of California Poppy with every sip, and make our tea a staple in your wellness routine.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Ethnospot"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/California-Poppy-Tea-Pure-Teabags-100-Natural-Herbal-For-Relaxation-Sleep-Stress-Relief-Calming-Nervous-System-2-Gram-48-Vegan/3236706356",
+          "priceCurrency": "USD",
+          "price": 22.99,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "reviewCount": 14
+      },
+      "ingredient": null
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/Nelson-s-Tea-California-Poppy-Cut-Sifted-4-oz-113-4g_c37998ae-bbc5-442e-9bd0-14613339446b.3f6bf159dd65114cebb84159857e0357.png",
+      "name": "Nelson's Tea - California Poppy - Cut & Sifted - Loose Leaf - Herbal Tea - 4 Oz",
+      "sku": "2606324598",
+      "description": "This herb provides the relaxing feeling and ambience needed after a long stressful day. It pairs well with chamomile or peppermint.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Nelson's Tea"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/Nelson-s-Tea-California-Poppy-Cut-Sifted-4-oz-113-4g/2606324598",
+          "priceCurrency": "USD",
+          "price": 19.95,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "ingredient": "California Poppy - Flower - Cut & Sifted"
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/CaliPM-Valerian-Root-California-Poppy-Herbal-Sleep-Aid-Tea-Promotes-Deep-Longer-Reduce-Stress-Relax-The-Body-Improve-Morning-Mood-Natural-Teabags-48_48c0cdad-1202-4ebc-9a09-2583ffd9e657.46d19ad29017ba5e1e64d99e9ddf8e2d.jpeg",
+      "name": "CaliPM Valerian Root California Poppy Herbal Sleep Aid Tea - Promotes Deep Sleep & Longer Sleep - Reduce Stress & Relax The Body - Improve Morning Mood - Natural Sleep Aid Teabags - 48 Vegan Teabags",
+      "sku": "2946533166",
+      "description": "Synergetic Blend of Valerian Root and California Poppy: Our herbal sleep aid tea is a powerful blend of natural ingredients that work together to promote deep and restful sleep. Valerian root and California Poppy are both well-known for their calming and soothing properties, making them the perfect combination for a good night's sleep.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Ethnospot"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/CaliPM-Valerian-Root-California-Poppy-Herbal-Sleep-Aid-Tea-Promotes-Deep-Longer-Reduce-Stress-Relax-The-Body-Improve-Morning-Mood-Natural-Teabags-48/2946533166",
+          "priceCurrency": "USD",
+          "price": 22.99,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.8,
+        "bestRating": 5,
+        "reviewCount": 10
+      },
+      "ingredient": null
+    }
+  },
+  {
+    "product": {
+      "image": "https://i5.walmartimages.com/seo/California-Poppy-Tea-Pure-Teabags-100-Natural-Herbal-For-Relaxation-Sleep-Stress-Relief-Calming-Nervous-System-2-Gram-48-Vegan_1d0a79f1-ce7f-4953-94f5-8957e99f3757.bd0bcd36b915b331dc91c8adee7c14d9.jpeg",
+      "name": "California Poppy Tea - Pure California Poppy Teabags - 100% Natural Herbal Tea For Relaxation Sleep Stress Relief & Calming Nervous System - 2 Gram Teabags - 48 Vegan Teabags",
+      "sku": "3236706356",
+      "description": "Experience the soothing essence of California Poppy with our premium California Poppy tea, crafted from the finest quality poppy herb and extract. Each teabag is filled with pure, natural ingredients, ensuring a wholesome and enjoyable tea experience free from fillers and additives. Our product is designed for those who seek a calming and relaxing beverage that fits seamlessly into their daily routine.\n\nOur California Poppy tea offers a versatile way to enjoy the benefits of this remarkable herb. Whether you're unwinding after a busy day, taking a moment to relax, or simply enjoying a quiet tea break, our tea is the perfect companion. The gentle formula makes it suitable for regular enjoyment, providing a natural way to find tranquility and peace. Ideal for anyone looking to incorporate a natural, soothing beverage into their lifestyle, our poppy herb offers flexibility for various preferences and routines.\n\nCrafted with care, our tea is made from 100% natural California Poppy, with no artificial ingredients or preservatives. Each teabag is vegan-friendly, making it an excellent choice for those who follow a plant-based lifestyle. We prioritize purity and quality, ensuring that every cup of our tea delivers the true essence of California Poppy.\n\nEnjoy the convenience and ease of our pre-portioned teabags, perfect for brewing a quick and easy cup of tea at home, at work, or on the go. Our teabags provide a simple way to incorporate the calming benefits of poppy extract into your daily routine, allowing you to enjoy the soothing properties of this natural herb whenever you need it.\n\nIncorporate the rich tradition and natural benefits of California Poppy into your daily life with our premium tea. Whether you're a long-time fan of poppy herb or new to its soothing qualities, our tea provides a delightful and calming experience that you'll love. Enjoy the pure, natural taste of California Poppy with every sip, and make our tea a staple in your wellness routine.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Ethnospot"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "url": "https://www.walmart.com/ip/California-Poppy-Tea-Pure-Teabags-100-Natural-Herbal-For-Relaxation-Sleep-Stress-Relief-Calming-Nervous-System-2-Gram-48-Vegan/3236706356",
+          "priceCurrency": "USD",
+          "price": 22.99,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availableDeliveryMethod": "https://schema.org/OnSitePickup"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "reviewCount": 14
+      },
+      "ingredient": null
+    }
+  }
+]

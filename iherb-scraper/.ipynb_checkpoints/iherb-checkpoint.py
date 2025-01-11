@@ -23,6 +23,7 @@ BASE_CONFIG = {
     "asp": True,
     # to change region see change the country code
     "country": "US",
+    "proxy_pool": "public_residential_pool"
 }
 
 output = Path(__file__).parent / "results"
@@ -166,8 +167,8 @@ def parse_reviews(result: ScrapeApiResponse) -> List[Review]:
 
 async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List[Review]:
     """scrape product reviews of a given URL of an iherb product"""
-    if max_pages > 10:
-        raise ValueError("max_pages cannot be greater than 10 as iherb paging stops at 10 pages. Try splitting search through multiple filters and sorting to get more results")
+    # if max_pages > 10:
+    #     raise ValueError("max_pages cannot be greater than 10 as iherb paging stops at 10 pages. Try splitting search through multiple filters and sorting to get more results")
 
     # scrape first review page
     log.info(f"scraping review page: {url}")
@@ -219,6 +220,8 @@ def parse_product(result) -> Product:
     """parse uherb product page for essential product data"""
 
     sel = result.selector
+    brand = sel.xpath('//div[@id="brand"]//span/bdi/text()').get() 
+    print(brand)
     if sel.xpath('//div[@class="product-collapse-container"]').get():
         log.info(f"collapsed product page found for {result.context['url']}")
         collapsed = sel.xpath('//div[@class="switch-language-content "]')
@@ -253,6 +256,7 @@ def parse_product(result) -> Product:
 
     parsed = {
         'url': result.context['url'],
+        'brand': brand,
         'description': description,
         'direction':direction,
         'ingredients': ingredients,
@@ -261,7 +265,7 @@ def parse_product(result) -> Product:
         'info_table': info_table
     }
     
-    print(parsed)
+    # print(parsed)
 
     log.info(f"parsed product page for {result.context['url']}")
     return parsed
@@ -275,10 +279,14 @@ async def scrape_products(urls: List[str]) -> List[Product]:
     _to_scrape = [ScrapeConfig(url, **BASE_CONFIG, render_js=True
                                ) for url in urls]
     async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
-        res = parse_product(result)
-        with output.joinpath(f"products_on_time_.json").open('a', encoding='utf-8') as file:
-            file.write(json.dumps(res, indent=2) + ",\n")
-        products.append(res)
+        try:
+            res = parse_product(result)
+            with output.joinpath(f"products_on_time_.json").open('a', encoding='utf-8') as file:
+                file.write(json.dumps(res, indent=2) + ",\n")
+            products.append(res)
+        except Exception as e:
+            log.error(f'Error parsing product: {e}')
+
 
     return products
 

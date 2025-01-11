@@ -7,9 +7,9 @@ output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 
 kws = [
-        "tea", 
+        # "tea", 
         # "tincture",
-        # "supplement", 
+        "supplement", 
         # "drink"
         ]
 
@@ -25,7 +25,7 @@ async def run():
     for i, k in enumerate(kws):   
         url = prefix + k
         # url = prefix + k
-        # search = await iherb.scrape_search(url, max_pages=3)
+        # search = await amazon.scrape_search(url, max_pages=3)
         search = json.loads(output.joinpath(f"search_{k}.json").read_text())
         # output.joinpath(f"search_{k}.json").write_text(json.dumps(search, indent=2))
         
@@ -37,22 +37,25 @@ async def run():
         
         for product in search:
             url = product["url"]
-            brand = product.get('brand', '')
+            # brand = product.get('brand', '')
             product_data = await amazon.scrape_product(url)
-            product_data = product_data[0]
-            ASIN = product_data.get('asin', '')
-
-            if not ASIN:
+            if not product_data:
                 continue
-            else:
-                review_url = url.split(f'dp/{ASIN}')[0]  + 'product-reviews/' + ASIN + '/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
-                reviews = await amazon.scrape_reviews(review_url, ASIN, max_pages=5)
-                for review in reviews:
-                    review.update(product_data)
-                    review.update({'brand': brand})
+            product_data = product_data[0]
+            with output.joinpath(f"search_california_poppy_{k}_products_only.json").open('a', encoding='utf-8') as file:
+                file.write(json.dumps(product_data, indent=2) + ",\n") 
 
-                    with output.joinpath(f"search_california_poppy_{k}_products_reviews.json").open('a', encoding='utf-8') as file:
-                        file.write(json.dumps(review, indent=2) + ",\n") 
+            # if not ASIN:
+            #     continue
+            # else:
+            #     review_url = url.split(f'dp/{ASIN}')[0]  + 'product-reviews/' + ASIN + '/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
+            #     reviews = await amazon.scrape_reviews(review_url, ASIN, max_pages=5)
+            #     for review in reviews:
+            #         review.update(product_data)
+            #         review.update({'brand': brand})
+
+            #         with output.joinpath(f"search_california_poppy_{k}_products_reviews.json").open('a', encoding='utf-8') as file:
+            #             file.write(json.dumps(review, indent=2) + ",\n") 
 
 
 if __name__ == "__main__":
