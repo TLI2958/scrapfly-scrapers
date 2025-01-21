@@ -1,0 +1,3523 @@
+{
+  "__typename": "EmployerReviewsRG",
+  "allReviewsCount": 170,
+  "currentPage": 1,
+  "filteredReviewsCount": 155,
+  "lastReviewDateTime": "2025-01-12T16:35:04.873",
+  "numberOfPages": 16,
+  "queryJobTitle": null,
+  "queryLocation": null,
+  "ratedReviewsCount": 155,
+  "ratings": {
+    "__typename": "EmployerRatings",
+    "businessOutlookRating": 0.51,
+    "careerOpportunitiesRating": 2.6,
+    "ceoRating": 0.89,
+    "compensationAndBenefitsRating": 2.6,
+    "cultureAndValuesRating": 3.2,
+    "diversityAndInclusionRating": 3.8,
+    "overallRating": 3.3,
+    "ratedCeo": {
+      "__typename": "Ceo",
+      "id": 132571,
+      "photoUrl({\"size\":\"LARGE\"})": null,
+      "name": "Maurine Haver",
+      "photoUrl({\"size\":\"REGULAR\"})": null,
+      "title": "President"
+    },
+    "recommendToFriendRating": 0.55,
+    "reviewCount": 155,
+    "seniorManagementRating": 2.9,
+    "workLifeBalanceRating": 3.8
+  },
+  "reviews": [
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Does not have much career prospect",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 49930,
+        "text": "Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "People are chill at night shift",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 1,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 5,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 5,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 1,
+      "ratingWorkLifeBalance": 5,
+      "reviewDateTime": "2025-01-12T16:35:04.873",
+      "reviewId": 94279806,
+      "summary": "Good",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "The upper management is not so great",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": true,
+      "jobTitle": null,
+      "languageId": "eng",
+      "lengthOfEmployment": 1,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "It was a nice short term experience",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 3,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2024-06-18T21:05:57.687",
+      "reviewId": 88378370,
+      "summary": "Review ",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Create an avenue for employees to share feedback about how they feel at the company, The company is doing ok in some areas, and failing in others. ",
+      "adviceOriginal": null,
+      "cons": "-Compensation does not match cost of living in NYC\n-endless work\n-Poor relations between management and staff\n-No company culture",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 787105,
+        "text": "EDM"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 4,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "- Somewhat friendly people\n-office in central location",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEUTRAL",
+      "ratingCareerOpportunities": 2,
+      "ratingCeo": "NO_OPINION",
+      "ratingCompensationAndBenefits": 2,
+      "ratingCultureAndValues": 1,
+      "ratingDiversityAndInclusion": 1,
+      "ratingOverall": 2,
+      "ratingRecommendToFriend": "NEGATIVE",
+      "ratingSeniorLeadership": 1,
+      "ratingWorkLifeBalance": 5,
+      "reviewDateTime": "2024-04-02T12:43:16.783",
+      "reviewId": 85928460,
+      "summary": "Not the best place to work, ok as a last resort",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "pay is not at industry level for a NYC based non remote company. \nNo Career progression.",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 908923,
+        "text": "Economic Database Manager"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 4,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Nice teams, a good place to develop the knowledge base of the use economic and financial data in industry.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "POSITIVE",
+      "ratingCareerOpportunities": 2,
+      "ratingCeo": "APPROVE",
+      "ratingCompensationAndBenefits": 2,
+      "ratingCultureAndValues": 3,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 2,
+      "ratingRecommendToFriend": "NEGATIVE",
+      "ratingSeniorLeadership": 2,
+      "ratingWorkLifeBalance": 2,
+      "reviewDateTime": "2024-01-10T06:43:18.443",
+      "reviewId": 83225271,
+      "summary": "Database Manager",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Stop insisting on college graduate with high Economics GPA and even Masters in Economic if you are going to pay them 50K per year. \r\nRaise dbms pay significantly, no one knows where the revenue goes even though revenue is definitely there. \r\nStop micromanaging employees so much that they have to call the CEO before 8 am on the day that they have to take a sick day. \r\nInvest in some good office renovation if you insist on employees being in office ( furnitures suck)\r\nMatch 401k.\r\nRefund metro cost given the insistence on people coming to office 2 days a week.",
+      "adviceOriginal": null,
+      "cons": "Not a place for someone who values career growth and skillset mobility. \r\nVirtually no upward mobility\r\nSalary is very uncompetitive. \r\nLong hours (8.5) hours excluding lunch break. 9.5 hrs per day. \r\nNo transferable technical skills other than excel and limited python/vba/command prompt batch files\r\nPay is based on tenure and not skillset. Starts at 50-53k and increases by 5-8 % average per year. \r\nVery limited vacation days and vacations are earned, i.e. no vacations for the first 6 months of your employment as a full time employee.\r\nFor people on h1b, don't expect company to sponsor your green card.",
+      "consOriginal": null,
+      "countHelpful": 10,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": true,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 61044,
+        "text": "Database Manager"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 2,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Good place to start right out of School to gain some work experience\r\nNice co-workers ready to help when you need it\r\nSome exposure to some key economic/finance indicators based on the team you belong to\r\ngood health insurance\r\nCompany refunds for 1 class per semester (any tri state uni) if you get b or more",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 1,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 1,
+      "ratingDiversityAndInclusion": 4,
+      "ratingOverall": 2,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 1,
+      "ratingWorkLifeBalance": 3,
+      "reviewDateTime": "2022-05-23T18:44:40.363",
+      "reviewId": 64574724,
+      "summary": "Few Pros and a lot of cons",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Gets very mundane and uninteresting. Lack of culture in the workplace.",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 49930,
+        "text": "Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Flexible hours for students and good for a first job.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 2,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 2,
+      "ratingCultureAndValues": 2,
+      "ratingDiversityAndInclusion": 4,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 4,
+      "ratingWorkLifeBalance": 4,
+      "reviewDateTime": "2023-09-26T15:40:53.797",
+      "reviewId": 80435033,
+      "summary": "Good for a first job",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Pay and can get pretty boring after learning the basics",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 49896,
+        "text": "Research Analyst"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Great people that help each other",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 0,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2023-08-10T17:35:07.203",
+      "reviewId": 79048329,
+      "summary": "Good stepping stone",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "you can end up with bad hours, no upward mobility",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 61044,
+        "text": "Database Manager"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 2,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "this job will be a good stepping stone for your next opportunity",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEUTRAL",
+      "ratingCareerOpportunities": 2,
+      "ratingCeo": "DISAPPROVE",
+      "ratingCompensationAndBenefits": 2,
+      "ratingCultureAndValues": 1,
+      "ratingDiversityAndInclusion": 4,
+      "ratingOverall": 4,
+      "ratingRecommendToFriend": "POSITIVE",
+      "ratingSeniorLeadership": 2,
+      "ratingWorkLifeBalance": 4,
+      "reviewDateTime": "2023-07-25T23:50:35.367",
+      "reviewId": 78578894,
+      "summary": "a good stepping stone",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Salary , micro management, and shifts",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 61044,
+        "text": "Database Manager"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": null,
+      "originalLanguageId": null,
+      "pros": "Nothing i can recall , seriously",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 1,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 1,
+      "ratingDiversityAndInclusion": 1,
+      "ratingOverall": 1,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 1,
+      "ratingWorkLifeBalance": 1,
+      "reviewDateTime": "2023-10-02T19:34:15.707",
+      "reviewId": 80602143,
+      "summary": "Stay away",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Boring Work Sometimes feeling rushed dated system",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 49930,
+        "text": "Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Flexible hours nice environment Great Peopl",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 0,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2023-05-10T09:54:20.370",
+      "reviewId": 76298407,
+      "summary": "Pretty Good",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Sometimes the work can be done quickly.",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": true,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 376646,
+        "text": "Economics Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 2,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Nice people and easy enough work.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "POSITIVE",
+      "ratingCareerOpportunities": 3,
+      "ratingCeo": "APPROVE",
+      "ratingCompensationAndBenefits": 3,
+      "ratingCultureAndValues": 5,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 4,
+      "ratingRecommendToFriend": "POSITIVE",
+      "ratingSeniorLeadership": 4,
+      "ratingWorkLifeBalance": 4,
+      "reviewDateTime": "2022-06-28T04:28:14.053",
+      "reviewId": 66048651,
+      "summary": "It's good",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "low pay, old tech boring work",
+      "consOriginal": null,
+      "countHelpful": 1,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": null,
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": null,
+      "originalLanguageId": null,
+      "pros": "none really its an old place",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 0,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 2,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2022-06-28T15:15:53.430",
+      "reviewId": 66072675,
+      "summary": "old tech",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Training - the short course format is NOT useful for meaningful learning.  I get that it's meant to help us with our productivity, but it rarely does.  The topic/skill being taught that day is so random and so rarely used, by the time we do need it, we forget.  Instead, maintain a library of short course videos in addition to documentation that is UP TO DATE.\r\n\r\nLeadership - Don't micromanage.  Focus on productivity.  Let the DBMs manage their SRAs directly.",
+      "adviceOriginal": null,
+      "cons": "Can get boring and monotonous at times.  Little room for growth and development if your background does not align well with economics.  Upper management seems to be cracking down on little things that are insignificant to productivity.  The short courses are not very useful.",
+      "consOriginal": null,
+      "countHelpful": 1,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": null,
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 17821,
+        "text": "Senior Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": null,
+      "originalLanguageId": null,
+      "pros": "Relatively laid back work environment.  You can set your own schedule and take time off pretty much whenever you need time off.  Two weeks of fairly basic training.  Learning curve after that, but not too difficult to get over that hump.  Can't say anything about other DBMs, but the one I worked with was fairly hands-off and that ended up working well.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 0,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 4,
+      "ratingRecommendToFriend": "POSITIVE",
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2014-12-07T16:16:59.573",
+      "reviewId": 5497369,
+      "summary": "Good place to build skills",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "expand benefits, nothing other than that.",
+      "adviceOriginal": null,
+      "cons": "- location- especially for late shifts or early meetings\r\n-no WFH flexibility\r\n-mid-size business cannot offer as much in the way of benefits but tries to make up for it with pay.",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": null,
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": null,
+      "originalLanguageId": null,
+      "pros": "-Everyone is super friendly and helpful- some of the best people work or worked here!\r\n-you learn a lot about Economics.  If a question is not clearly answered by the data or program, coworkers and the research team will gladly explain it to you\r\n-interaction with top clients in the economics field\r\n-entrepreneurial spirit pervades everything.  Everyone pitches in, can offer an opinion, and get heard.  Very little bureaucracy. \r\n-everyone on the same page or similar page with what should be done with the data, formulas, and program.  Everyone working with the data has an econ background and everything was specifically made to store and use economic data.  It makes development easy.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "POSITIVE",
+      "ratingCareerOpportunities": 4,
+      "ratingCeo": "APPROVE",
+      "ratingCompensationAndBenefits": 3,
+      "ratingCultureAndValues": 5,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 4,
+      "ratingRecommendToFriend": "POSITIVE",
+      "ratingSeniorLeadership": 5,
+      "ratingWorkLifeBalance": 2,
+      "reviewDateTime": "2018-02-05T09:07:35.993",
+      "reviewId": 19084101,
+      "summary": "Great Company to learn about Economics",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Keep doing what you're doing from a diversity standpoint. I've never been made to feel out of place or as a minority at this company, and that is something invaluable. Please begin to modernize culturally and technically, or at least over-prepare for the inevitable employee turnover.",
+      "adviceOriginal": null,
+      "cons": "Old school software and management style\nHigh turnover on certain shifts: workload can fall on you when someone leaves\noffice politics: being likable gets you just as far as being good at your work\ndatabase/management quality is uneven across teams",
+      "consOriginal": null,
+      "countHelpful": 2,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": true,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 893887,
+        "text": "International Database Manager"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 4,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Work from home (for now)\nGreat diversity. Multicultural, multilingual, large age spectrum, women leaders.\nExcellent benefits\nNice people\n(maybe a con) If you're an RA: you can be terrible at the software aspect of this job for a really long time and never actually get fired; we'll literally just hand you baby work every day and pay you a little bit more every 6 months.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEGATIVE",
+      "ratingCareerOpportunities": 3,
+      "ratingCeo": "APPROVE",
+      "ratingCompensationAndBenefits": 5,
+      "ratingCultureAndValues": 4,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": "POSITIVE",
+      "ratingSeniorLeadership": 3,
+      "ratingWorkLifeBalance": 4,
+      "reviewDateTime": "2021-07-22T07:47:22.207",
+      "reviewId": 50131336,
+      "summary": "It's a job",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Almost all feedback that you receive will pertain to making a mistake. While there's definitely some perk to seeing your work reflect directly onto the database, you learn to settle for not hearing complaints from management as affirmation as good work. Some tasks are extremely tedious and don't feel like time is being well-spent.",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 49930,
+        "text": "Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 1,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "The learning curve to be decent/good at what you're doing typically lasts between 2-3 months. Beyond that, you have an idea of what type of projects you'll mainly be working on, which provides security and some comfort going forward. It's a relatively casual work environment and the people who work there are, on a whole, very pleasant. For students, it's very convenient work, considering proximity to subways and general requirements to work between 20-30 hours. I really liked my supervisor.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 0,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 4,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2015-02-21T11:47:34.670",
+      "reviewId": 5966986,
+      "summary": "Convenient and satisfying (albeit tedious) part-time work",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Should give more appreciation and bonus to hard-working staff. Distribute more authority to staff so that they can execute work promptly. Update Haver wiki to be more up to date and give more details and clear on how to run an update.",
+      "adviceOriginal": null,
+      "cons": "Lag of employees' empowerment. You kind of have to wait for senior managers to help you or you figure out how to do the job on your own but you can't really make a decision on the process. Friendly and easy environment. Casual and can be too casual. Not really a business professional environment that you're looking for.",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 36257,
+        "text": "Economic Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 2,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Good opportunity to learn Excel skills (Macro, Pivot Table, Vlookup, Functions etc.), how to gather large data sets and process them. Casual atmosphere. People here are willing to help (if you ask for)",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEUTRAL",
+      "ratingCareerOpportunities": 1,
+      "ratingCeo": "APPROVE",
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 2,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": "POSITIVE",
+      "ratingSeniorLeadership": 2,
+      "ratingWorkLifeBalance": 3,
+      "reviewDateTime": "2014-07-09T14:52:26.527",
+      "reviewId": 4550299,
+      "summary": "Good for those beginning their career",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Management should be a little less bias. They should acknowledge and encourage those who work hard rather than those that they get along with. (This is a work environment not a social setting). They should increase the pay for the SRAs that work hard and fire the ones that don't because they are just taking up space in the office.",
+      "adviceOriginal": null,
+      "cons": "Horrible pay for the amount of work you do. Tasks aren't distributed evenly. some people do nothing all day and get paid the same as people who are working very hard. Kinda feels like high school as some DBMs only encourage and help the SRAs they have good relationships with.",
+      "consOriginal": null,
+      "countHelpful": 1,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 5280,
+        "text": "SRA"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 1,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Because a lot of other companies use the Haver database it is good to have on your resume.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEGATIVE",
+      "ratingCareerOpportunities": 4,
+      "ratingCeo": "APPROVE",
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 2,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 2,
+      "ratingRecommendToFriend": "NEGATIVE",
+      "ratingSeniorLeadership": 1,
+      "ratingWorkLifeBalance": 3,
+      "reviewDateTime": "2015-01-15T18:51:45.233",
+      "reviewId": 5707658,
+      "summary": "Very bad working environment but good for the resume",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Initiate a change in CEO and develop a clear COMPANY WIDE goal for the data team. If it�s frequency, develop higher frequency. If it�s breadth, then drop day to day tasks down to RAs and allow database managers to develop their database. Get rid of punishment for employees who make honest mistakes",
+      "adviceOriginal": null,
+      "cons": "Management needs a total shake down. The leadership from the top down is trying to play both sides for a CEO who inexplicably wants things to not change in a data company in the 21st century. For example if a complaint is raised about the unnecessary morning meetings and potential changes that can be made to it, that line of thinking is immediately shut down.",
+      "consOriginal": null,
+      "countHelpful": 1,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 61044,
+        "text": "Database Manager"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 4,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Great people within the teams, a very relaxed working environment, and a central Manhattan location.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEGATIVE",
+      "ratingCareerOpportunities": 1,
+      "ratingCeo": "DISAPPROVE",
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 2,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 2,
+      "ratingRecommendToFriend": "NEGATIVE",
+      "ratingSeniorLeadership": 3,
+      "ratingWorkLifeBalance": 5,
+      "reviewDateTime": "2019-03-15T07:43:49.927",
+      "reviewId": 25181508,
+      "summary": "Structural Issues",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Pay everyone what they are worth. For a company that provides economic data raises do not match inflation\r\nStop micro managing people\r\nLet people have more flexibility with remote work",
+      "adviceOriginal": null,
+      "cons": "Upper management loves to micro manage\r\n�Fire drills� get created out of thin air\r\nEmployees are severely underpaid compared to what they should be making\r\nLots of promises made very few kept from upper management\r\nNo good opportunities for career advancement\r\nUpper management makes everyone come to the office because they want to breath down everyone�s neck\r\nPeople are leaving in droves because the culture is bad and morale is low\r\nUpper management is paranoid",
+      "consOriginal": null,
+      "countHelpful": 5,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": null,
+      "languageId": "eng",
+      "lengthOfEmployment": 6,
+      "location": null,
+      "originalLanguageId": null,
+      "pros": "CEO is wonderful and really cares about data. \r\nCompany did not lay anyone off during the pandemic\r\nGood healthcare plan\r\nWork life balance is good",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEGATIVE",
+      "ratingCareerOpportunities": 2,
+      "ratingCeo": "APPROVE",
+      "ratingCompensationAndBenefits": 2,
+      "ratingCultureAndValues": 1,
+      "ratingDiversityAndInclusion": 3,
+      "ratingOverall": 2,
+      "ratingRecommendToFriend": "NEGATIVE",
+      "ratingSeniorLeadership": 1,
+      "ratingWorkLifeBalance": 5,
+      "reviewDateTime": "2021-10-12T11:16:04.867",
+      "reviewId": 53883593,
+      "summary": "Low Pay and no respect",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "I can�t think of a con right now.",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": true,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 33225,
+        "text": "Research Intern"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": null,
+      "originalLanguageId": null,
+      "pros": "Great environment with very helpful supervisors that will assist you along the way. Flexible with school!",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "POSITIVE",
+      "ratingCareerOpportunities": 5,
+      "ratingCeo": "APPROVE",
+      "ratingCompensationAndBenefits": 3,
+      "ratingCultureAndValues": 5,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 5,
+      "ratingRecommendToFriend": "POSITIVE",
+      "ratingSeniorLeadership": 5,
+      "ratingWorkLifeBalance": 5,
+      "reviewDateTime": "2023-01-18T15:21:44.160",
+      "reviewId": 72759938,
+      "summary": "Research Intern",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "limited exit option. low pay",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 49930,
+        "text": "Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "easy, chill, nice office, nice people",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 0,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 4,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2023-02-15T20:41:09.647",
+      "reviewId": 73672504,
+      "summary": "great",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Being there from 8am - 6 pm felt like too long. No room for growth",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 20969,
+        "text": "Technical Support Analyst"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "- Great coworkers - Not too difficult of a job",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 0,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 4,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2022-12-23T08:03:37.893",
+      "reviewId": 72088681,
+      "summary": "Great Company",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Low pay No room for advancement",
+      "consOriginal": null,
+      "countHelpful": 1,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 28946,
+        "text": "Sales"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": null,
+      "originalLanguageId": null,
+      "pros": "Good work life balance Helpful and smart colleagues",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEUTRAL",
+      "ratingCareerOpportunities": 3,
+      "ratingCeo": "NO_OPINION",
+      "ratingCompensationAndBenefits": 3,
+      "ratingCultureAndValues": 3,
+      "ratingDiversityAndInclusion": 4,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 3,
+      "ratingWorkLifeBalance": 5,
+      "reviewDateTime": "2022-12-16T12:19:25.547",
+      "reviewId": 71924028,
+      "summary": "Good Place to Start",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Night hours and low salary",
+      "consOriginal": null,
+      "countHelpful": 1,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 49930,
+        "text": "Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 2,
+      "location": null,
+      "originalLanguageId": null,
+      "pros": "Best place to get your feet wet after a huge pile of rejection",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 3,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 3,
+      "ratingCultureAndValues": 3,
+      "ratingDiversityAndInclusion": 3,
+      "ratingOverall": 5,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 3,
+      "ratingWorkLifeBalance": 3,
+      "reviewDateTime": "2022-09-27T14:46:51.243",
+      "reviewId": 69516913,
+      "summary": "Okay company",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "upgrade/invest to more modern tech",
+      "adviceOriginal": null,
+      "cons": "Monotonous work, low pay, not a lot of room for career growth, outdated technology, all the technical skills you learn are company-specific and not transferable to other jobs at other companies",
+      "consOriginal": null,
+      "countHelpful": 1,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": true,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 376646,
+        "text": "Economics Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 1,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Everyone is super kind and understanding, great diversity, great place to jump start your career",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEUTRAL",
+      "ratingCareerOpportunities": 2,
+      "ratingCeo": "NO_OPINION",
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 5,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": "NEGATIVE",
+      "ratingSeniorLeadership": 3,
+      "ratingWorkLifeBalance": 3,
+      "reviewDateTime": "2022-06-02T20:15:49.990",
+      "reviewId": 65035160,
+      "summary": "Great place to start your career, but no room for career growth",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "Get newer technology. This firm is still so far behind other companies in their data collection methods, using outdated things like Microsoft command prompts. There are so many manual updates that are prone to human errors. \n\nAlso, a very dreary office environment. Like no windows, RA's are crammed into a big computer room. I always knew that once the pandemic began, I would never step foot in that office again.",
+      "adviceOriginal": null,
+      "cons": "Seniority does not matter. I worked under a database manager for 2 years. About a year and a half in he announced he was leaving, I applied for his position and did not even receive a second interview.\n\nVery monotonous work. Not necessarily a bad thing, but if you are looking for enjoyment in your job, this isn't the type of work to do. \n\nYou are judged based on the mistakes you made. If you are responsible for Client Problem Reports and receive average performance reviews, you will not be looked upon as a valued employee.\n\nThe hours, they stink. On the Asian and Euro shifts, you must adjust your life pretty dramatically to accommodate for these working hours.\n\nNo room for growth. Even if you do get a DBM job, you will probably be stuck in that position for a while, and you can't advance within the company.",
+      "consOriginal": null,
+      "countHelpful": 3,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "PART_TIME",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 36257,
+        "text": "Economic Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 2,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "A decent part-time opportunity for recent graduates and those who want to split time between work and graduate school.\n\nYou can pick your hours, working between 20-40 hours per week on your designated shift.\n\nA really easy job to do when you are working remotely.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEGATIVE",
+      "ratingCareerOpportunities": 2,
+      "ratingCeo": "DISAPPROVE",
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 3,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 2,
+      "ratingRecommendToFriend": "NEGATIVE",
+      "ratingSeniorLeadership": 1,
+      "ratingWorkLifeBalance": 3,
+      "reviewDateTime": "2021-09-01T16:02:11.527",
+      "reviewId": 51969980,
+      "summary": "Not a great place to work",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": "1. Give a $20K raise to every DBM, ADBM, tech, sales, every full time person\r\n2. Pay part time workers $20-25 every hour, rather than 15. \r\n3. 20 vacation days every year for new people. \r\n4. More holidays. All the federal holidays should be off. \r\n5. Reduce work hour from 9 to 8\r\n6. do 1:1 match in the 401K account\r\nYour EMPLOYEES are more important than data.",
+      "adviceOriginal": null,
+      "cons": "Terrible pay: Salary and bonus here are ridiculously low. Salary for new DBM , ADBM and tech person is less than 60K, pre tax! Some are even around 50K. Research assistants are only paid $15 per hour or the minimum wage. All these people should get a salary raise. I don't think people can live an average life in NYC with 40K-50K after tax. It is not surprising at all that the turnover rate is high in this company. It is funny that you can get $900 unemployment benefit per week from gov if you lose your job in NYC, but less than $900 per week after tax if working for Haver.\r\n\r\nLong Hours: 9 hours every day with a 1 hour break. Day shift even works longer. There is Asian shift from 4 pm to 1 am and a European shift working from 1 am to 10 am! Working nights could be killing health and normal social life. But night shifts only get quite a little compensation for that. Sometimes people have to work on weekends with low compensation.",
+      "consOriginal": null,
+      "countHelpful": 5,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": true,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 61044,
+        "text": "Database Manager"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 1,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Can work remotely. Don't need to commute every day in this pandemic.\r\nGood experience to start off career. Somewhat a recognizable name in the industry. Not a big name though.\r\nCoworkers are nice and chill here.\r\nGood Insurance.",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": "NEGATIVE",
+      "ratingCareerOpportunities": 3,
+      "ratingCeo": "NO_OPINION",
+      "ratingCompensationAndBenefits": 1,
+      "ratingCultureAndValues": 2,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 1,
+      "ratingRecommendToFriend": "NEGATIVE",
+      "ratingSeniorLeadership": 3,
+      "ratingWorkLifeBalance": 1,
+      "reviewDateTime": "2021-02-05T21:12:19.877",
+      "reviewId": 42044402,
+      "summary": "Not a decent job in NYC. Terrible Pay and Long Hours.",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "No growth . stagnation / repetitive workload. Low salary",
+      "consOriginal": null,
+      "countHelpful": 0,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 49930,
+        "text": "Research Assistant"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Easy laid back atmosphere , chill people",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 1,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 2,
+      "ratingCultureAndValues": 2,
+      "ratingDiversityAndInclusion": 5,
+      "ratingOverall": 1,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 2,
+      "ratingWorkLifeBalance": 3,
+      "reviewDateTime": "2022-09-29T23:14:34.503",
+      "reviewId": 69621429,
+      "summary": "Stepping stone",
+      "summaryOriginal": null,
+      "translationMethod": null
+    },
+    {
+      "__typename": "EmployerReviewRG",
+      "advice": null,
+      "adviceOriginal": null,
+      "cons": "Salary on the lower end",
+      "consOriginal": null,
+      "countHelpful": 1,
+      "countNotHelpful": 0,
+      "employer": {
+        "__typename": "Employer",
+        "id": 144210,
+        "shortName": "Haver Analytics",
+        "firstNotReassignedEmployerId": 144210,
+        "activeStatus": "ACTIVE",
+        "approvalStatus": "APPROVED",
+        "headquarters": "New York, NY",
+        "size": "51 to 200 Employees",
+        "bestProfile": {
+          "__typename": "EmployerProfile",
+          "id": 734553,
+          "rowProfile": false
+        },
+        "restOfWorldProfile": {
+          "__typename": "EmployerProfile",
+          "id": 7625986
+        },
+        "primaryIndustry": {
+          "__typename": "EmployerIndustry",
+          "industryId": 200028,
+          "industryName": "Business Consulting",
+          "sectorId": 10006,
+          "sectorName": "Management & Consulting"
+        },
+        "legalActionBadges": [],
+        "employerManagedContent({\"parameters\":[{\"divisionProfileId\":734553,\"employerId\":144210}]})": [
+          {
+            "__typename": "EmployerManagedContent",
+            "isContentPaidForTld": false,
+            "employerId": 144210,
+            "divisionProfileId": 734553,
+            "featuredVideoLink": null,
+            "profileCoverPhoto": null,
+            "diversityContent": {
+              "__typename": "DiversityAndInclusionContent",
+              "programsAndInitiatives": null
+            }
+          }
+        ],
+        "squareLogoUrl": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "website": "www.haver.com",
+        "squareLogoUrl({\"size\":\"LARGE\"})": "https://media.glassdoor.com/sqll/144210/haver-analytics-squarelogo-1399575109590.png",
+        "squareLogoUrl({\"size\":\"REGULAR\"})": "https://media.glassdoor.com/sql/144210/haver-analytics-squarelogo-1399575109590.png",
+        "bestLedCompanies({\"onlyCurrent\":true})": [],
+        "bestPlacesToWork({\"onlyCurrent\":true})": [],
+        "coverPhoto": {
+          "__typename": "EmployerCoverPhoto",
+          "hiResUrl": null
+        },
+        "counts": {
+          "__typename": "EmployerCounts",
+          "benefitCount": 45,
+          "globalJobCount": {
+            "__typename": "EmployerJobCountHolder",
+            "jobCount": 2
+          },
+          "interviewCount": 64,
+          "photoCount": 4,
+          "reviewCount": 170,
+          "salaryCount": 273
+        },
+        "officeAddresses": [],
+        "parent": null,
+        "ratings": {
+          "__typename": "DefaultEmployerRatings",
+          "diversityAndInclusionRatingCount": 41,
+          "overallRating": 3.3
+        },
+        "subsidiaries": []
+      },
+      "employerResponses": [],
+      "employmentStatus": "REGULAR",
+      "flaggingDisabled": null,
+      "featured": false,
+      "isCurrentJob": false,
+      "jobTitle": {
+        "__typename": "JobTitle",
+        "id": 61044,
+        "text": "Database Manager"
+      },
+      "languageId": "eng",
+      "lengthOfEmployment": 0,
+      "location": {
+        "__typename": "City",
+        "id": 1132348,
+        "type": "CITY",
+        "name": "New York, NY"
+      },
+      "originalLanguageId": null,
+      "pros": "Chill work, great coworkers, decent benefits",
+      "prosOriginal": null,
+      "ratingBusinessOutlook": null,
+      "ratingCareerOpportunities": 0,
+      "ratingCeo": null,
+      "ratingCompensationAndBenefits": 0,
+      "ratingCultureAndValues": 0,
+      "ratingDiversityAndInclusion": 0,
+      "ratingOverall": 3,
+      "ratingRecommendToFriend": null,
+      "ratingSeniorLeadership": 0,
+      "ratingWorkLifeBalance": 0,
+      "reviewDateTime": "2022-07-13T18:41:52.967",
+      "reviewId": 66668044,
+      "summary": "Good for post grads",
+      "summaryOriginal": null,
+      "translationMethod": null
+    }
+  ],
+  "ratingCountDistribution": {
+    "__typename": "RatingCountDistribution",
+    "overall": {
+      "__typename": "FiveStarRatingCountDistribution",
+      "_5": 28,
+      "_4": 45,
+      "_3": 48,
+      "_2": 23,
+      "_1": 11
+    },
+    "cultureAndValues": {
+      "__typename": "FiveStarRatingCountDistribution",
+      "_5": 25,
+      "_4": 23,
+      "_3": 25,
+      "_2": 18,
+      "_1": 21
+    },
+    "careerOpportunities": {
+      "__typename": "FiveStarRatingCountDistribution",
+      "_5": 9,
+      "_4": 15,
+      "_3": 41,
+      "_2": 28,
+      "_1": 28
+    },
+    "workLifeBalance": {
+      "__typename": "FiveStarRatingCountDistribution",
+      "_5": 35,
+      "_4": 37,
+      "_3": 30,
+      "_2": 10,
+      "_1": 8
+    },
+    "seniorManagement": {
+      "__typename": "FiveStarRatingCountDistribution",
+      "_5": 17,
+      "_4": 22,
+      "_3": 34,
+      "_2": 17,
+      "_1": 30
+    },
+    "compensationAndBenefits": {
+      "__typename": "FiveStarRatingCountDistribution",
+      "_5": 11,
+      "_4": 21,
+      "_3": 38,
+      "_2": 31,
+      "_1": 18
+    },
+    "diversityAndInclusion": {
+      "__typename": "FiveStarRatingCountDistribution",
+      "_5": 19,
+      "_4": 14,
+      "_3": 5,
+      "_2": 1,
+      "_1": 2
+    },
+    "recommendToFriend": {
+      "__typename": "RecommendToFriendRatingCountDistribution",
+      "WONT_RECOMMEND": 37,
+      "RECOMMEND": 60
+    }
+  }
+}
