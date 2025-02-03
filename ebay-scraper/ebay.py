@@ -8,13 +8,15 @@ $ export $SCRAPFLY_KEY="your key from https://scrapfly.io/dashboard"
 import json
 import math
 import os
+import re
+from pathlib import Path
 from collections import defaultdict
 from typing import Dict, List, Optional
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 import dateutil
-from nested_lookup import nested_lookup
 from loguru import logger as log
+
 from scrapfly import ScrapeApiResponse, ScrapeConfig, ScrapflyClient, ScrapflyScrapeError
 
 SCRAPFLY = ScrapflyClient(key=os.environ["SCRAPFLY_KEY"])
@@ -24,7 +26,17 @@ BASE_CONFIG = {
     "asp": True,
     "country": "US",  # change country for geo details like currency and shipping
     "lang": ["en-US"],
+
 }
+
+
+output = Path(__file__).parent / "results"
+output.mkdir(exist_ok=True)
+
+
+# from chatgpt: update page number
+def update_page_number(url, new_page_number):
+    return re.sub(r"page_id_item=\d+", f"page_id_item={new_page_number}", url)
 
 
 def _find_json_objects(text: str, decoder=json.JSONDecoder()):
@@ -40,67 +52,6 @@ def _find_json_objects(text: str, decoder=json.JSONDecoder()):
             pos = match + index
         except ValueError:
             pos = match + 1
-
-
-def parse_variants(result: ScrapeApiResponse) -> dict:
-    """
-    Parse variant data from Ebay's listing page of a product with variants.
-    This data is located in a js variable MSKU hidden in a <script> element.
-    """
-    script = result.selector.xpath('//script[contains(., "MSKU")]/text()').get()
-    if not script:
-        return {}
-    all_data = list(_find_json_objects(script))
-    data = nested_lookup("MSKU", all_data)[0]
-    # First retrieve names for all selection options (e.g. Model, Color)
-    selection_names = {}
-    for menu in data["selectMenus"]:
-        for id_ in menu["menuItemValueIds"]:
-            selection_names[id_] = menu["displayLabel"]
-    # example selection name entry:
-    # {0: 'Model', 1: 'Color', ...}
-
-    # Then, find all selection combinations:
-    selections = []
-    for v in data["menuItemMap"].values():
-        selections.append(
-            {
-                "name": v["valueName"],
-                "variants": v["matchingVariationIds"],
-                "label": selection_names[v["valueId"]],
-            }
-        )
-    # example selection entry:
-    # {'name': 'Gold', 'variants': [662315637181, 662315637177, 662315637173], 'label': 'Color'}
-
-    # Finally, extract variants and apply selection details to each
-    results = []
-    variant_data = nested_lookup("variationsMap", data)[0]
-    for id_, variant in variant_data.items():
-        result = defaultdict(list)
-        result["id"] = id_
-        for selection in selections:
-            if int(id_) in selection["variants"]:
-                result[selection["label"]] = selection["name"]
-        result["price_original"] = variant["binModel"]["price"]["value"]["convertedFromValue"]
-        result["price_original_currency"] = variant["binModel"]["price"]["value"]["convertedFromCurrency"]
-        result["price_converted"] = variant["binModel"]["price"]["value"]["value"]
-        result["price_converted_currency"] = variant["binModel"]["price"]["value"]["currency"]
-        result["out_of_stock"] = variant["quantity"]["outOfStock"]
-        results.append(dict(result))
-    # example variant entry:
-    # {
-    #     'id': '662315637173',
-    #     'Model': 'Apple iPhone 11 Pro Max',
-    #     'Storage Capacity': '64 GB',
-    #     'Color': 'Gold',
-    #     'price_original': 469,
-    #     'price_original_currency': 'CAD',
-    #     'price_converted': 341.55,
-    #     'price_converted_currency': 'USD',
-    #     'out_of_stock': False
-    # }
-    return results
 
 
 def parse_product(result: ScrapeApiResponse):
@@ -140,6 +91,96 @@ async def scrape_product(url: str) -> Dict:
     product = parse_product(page)
     product["variants"] = parse_variants(page)
     return product
+
+
+async def scrape_products(urls: List[str]) -> List:
+    """scrape multiple iherb.com products"""
+    products = []
+    log.info(f"scraping {len(urls)} products")
+    _to_scrape = [ScrapeConfig(url, **BASE_CONFIG, render_js=True
+                               ) for url in urls]
+    async for result in SCRAPFLY.concurrent_scrape(_to_scrape):
+        try:
+            res = parse_product(result)
+            with output.joinpath(f"products_on_time_.json").open('a', encoding='utf-8') as file:
+                file.write(json.dumps(res, indent=2) + ",\n")
+            products.append(res)
+        except Exception as e:
+            log.error(f'Error parsing product: {e}')
+
+    return products
+
+# todo: tailor review parser
+def parse_reviews(result: ScrapeApiResponse) -> List:
+    """parse review from single review page"""
+
+    sel = result.selector
+    try:
+        total_reviews = sel.xpath('//div[@class="fdbk-filter"]//span/label/text()').getall()[0]
+    except:
+        total_reviews = 0
+
+    review_boxes = sel.xpath('//li[@class="fdbk-container"]')
+    parsed = []
+    for box in review_boxes:    
+        user = review_boxes.xpath('.//div[@class="fdbk-container__details__info__username"]/span[1]/text()').get()
+        rating = sel.xpath('.//div[@class="fdbk-container__details__info__icon"]/svg/@aria-label').get()
+        review_text = box.xpath('.//div[@class="fdbk-container__details__top"]/div[@class="fdbk-container__details__comment"]/span/text()').get()
+        parsed.append({ 
+            'review_url': result.context['url'],
+            "total_reviews": total_reviews,
+            'user': user,
+            'rating': rating,
+            'text': review_text,
+        })
+    print(parsed)
+    return parsed
+
+async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List:
+    """scrape product reviews of a given URL of an ebay product"""
+
+    log.info(f"scraping review page: {url}")
+    first_page_result = await SCRAPFLY.async_scrape(ScrapeConfig(url, **BASE_CONFIG))
+    reviews = parse_reviews(first_page_result)
+    if not reviews:
+        return []
+    # find total reviews
+    _reviews_per_page = max(len(reviews), 1)
+    total_reviews = reviews[0].get('total_reviews', 0)
+    if total_reviews:
+        total_reviews = int(total_reviews.split('(')[-1].rstrip(')'))
+    # raise ValueError
+    total_pages = int(math.ceil(int(total_reviews) / _reviews_per_page)) if total_reviews > 0 and _reviews_per_page > 0 else max_pages if _reviews_per_page > 0 else 0
+    print(total_pages)
+    if max_pages and total_pages > max_pages:
+        total_pages = max_pages
+
+    log.info(f"found total {total_reviews} reviews across {total_pages} pages -> scraping")
+    other_pages = []
+    for page in range(2, total_pages + 1):
+        url = update_page_number(url, page)
+        print(url)
+        other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
+
+    async for result in SCRAPFLY.concurrent_scrape(other_pages):
+        try:
+            page_reviews = parse_reviews(result)
+            with output.joinpath(f"reviews_on_time_.json").open('a', encoding='utf-8') as file:
+                file.write(json.dumps(page_reviews, indent=2) + ",")
+            reviews.extend(page_reviews)
+        except:
+            continue
+            
+    log.info(f"scraped total {len(reviews)} reviews for url {url.split('?')[0]}")
+    return reviews
+
+
+async def scrape_all_reviews(urls: List[str], max_pages: Optional[int] = None):
+    """scrape all reviews of multiple iherb.com products"""
+    reviews = []
+    for url in urls:
+        reviews.extend(await scrape_reviews(url, max_pages))
+    return reviews
 
 
 def parse_search(result: ScrapeApiResponse) -> List[Dict]:

@@ -10,28 +10,56 @@ import json
 import ebay
 from datetime import datetime
 from pathlib import Path
+from loguru import logger as log
+
 
 output = Path(__file__).parent / "results"
 output.mkdir(exist_ok=True)
 
 
+# from chatgpt: generate fdbk url
+def generate_ebay_review_url(username, item_id, page_number=1):
+    base_url = "https://www.ebay.com/fdbk/mweb_profile"
+    params = {
+        "fdbkType": "FeedbackReceivedAsSeller",
+        "item_id": item_id,
+        "username": username,
+        "filter": "feedback_page%3ARECEIVED_AS_SELLER",
+        "q": item_id,
+        "sort": "RELEVANCE",
+        "page_id_item": page_number,
+        "filter_image_item": "false"
+    }
+    return f"{base_url}?{'&'.join([f'{k}={v}' for k, v in params.items()])}"
+
+kws = [
+        # 'tea',
+        # 'tincture',
+        # 'supplement',
+        'drink'
+        ]
+prefix = 'https://www.ebay.com/sch/i.html?_nkw=california+poppy+'
 async def run():
     # enable scrapfly cache only during development
     ebay.BASE_CONFIG["cache"] = False
     ebay.BASE_CONFIG["country"] = "US"
 
     print("running Ebay.com scrape and saving results to ./results directory")
-    url = "https://www.ebay.com/sch/i.html?_from=R40&_nkw=iphone&_sacat=0&LH_TitleDesc=0&Storage%2520Capacity=16%2520GB&_dcat=9355&_ipg=240&rt=nc&LH_All=1"
-    search_results = await ebay.scrape_search(url, max_pages=2)
-    output.joinpath("search.json").write_text(json.dumps(search_results, indent=2, cls=DateTimeEncoder))
 
-    single_product_result = await ebay.scrape_product("https://www.ebay.com/itm/332562282948")
-    output.joinpath("product.json").write_text(json.dumps(single_product_result, indent=2))
+    for k in kws:   
+        # url = prefix + k
+        # search_results = await ebay.scrape_search(url, max_pages=5)
+        # output.joinpath(f"search_{k}.json").write_text(json.dumps(search_results, indent=2, cls=DateTimeEncoder))
 
-    variant_product_result = await ebay.scrape_product("https://www.ebay.com/itm/393531906094")
-    output.joinpath("product-with-variants.json").write_text(json.dumps(variant_product_result, indent=2))
-
-
+        # urls = [product["url"] for product in search_results]
+        # products = await ebay.scrape_products(urls)
+        # output.joinpath(f"search_{k}_products.json").write_text(json.dumps(products, indent=2))
+        products = json.loads(output.joinpath(f"search_{k}_products.json").read_text())
+        urls = [generate_ebay_review_url(product["seller_name"].lower(), product["id"]) for product in products]
+        reviews = await ebay.scrape_all_reviews(urls, max_pages= 10)
+        output.joinpath(f"search_{k}_reviews.json").write_text(json.dumps(reviews, indent=2))
+        
+        log.success(f"search_{k}_reviews.json saved")
 
 class DateTimeEncoder(json.JSONEncoder):
     """Custom JSONEncoder subclass that knows how to encode datetime values."""
