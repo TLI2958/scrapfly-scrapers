@@ -36,7 +36,9 @@ output.mkdir(exist_ok=True)
 
 # from chatgpt: update page number
 def update_page_number(url, new_page_number):
-    return re.sub(r"page_id_item=\d+", f"page_id_item={new_page_number}", url)
+    url = re.sub(r"page_id_item=\d+", f"page_id_item={new_page_number}", url)
+    url = re.sub(r"page_id=\d+", f"page_id={new_page_number}", url)
+    return url
 
 
 def _find_json_objects(text: str, decoder=json.JSONDecoder()):
@@ -123,8 +125,8 @@ def parse_reviews(result: ScrapeApiResponse) -> List:
     review_boxes = sel.xpath('//li[@class="fdbk-container"]')
     parsed = []
     for box in review_boxes:    
-        user = review_boxes.xpath('.//div[@class="fdbk-container__details__info__username"]/span[1]/text()').get()
-        rating = sel.xpath('.//div[@class="fdbk-container__details__info__icon"]/svg/@aria-label').get()
+        user = box.xpath('.//div[@class="fdbk-container__details__info__username"]/span/text()').get()
+        rating = box.xpath('.//div[@class="fdbk-container__details__info__icon"]/svg/@aria-label').get()
         review_text = box.xpath('.//div[@class="fdbk-container__details__top"]/div[@class="fdbk-container__details__comment"]/span/text()').get()
         parsed.append({ 
             'review_url': result.context['url'],
@@ -140,12 +142,21 @@ async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List:
     """scrape product reviews of a given URL of an ebay product"""
 
     log.info(f"scraping review page: {url}")
-    first_page_result = await SCRAPFLY.async_scrape(ScrapeConfig(url, **BASE_CONFIG))
-    reviews = parse_reviews(first_page_result)
+    first_page_result = await SCRAPFLY.async_scrape(ScrapeConfig(url, 
+                                #     js_scenario=[
+                                #     {
+                                #         "wait": 500
+                                #     }
+                                # ], render_js = True,
+                                **BASE_CONFIG))
+    try:
+        reviews = parse_reviews(first_page_result)
+    except:
+        reviews = []
     if not reviews:
         return []
     # find total reviews
-    _reviews_per_page = max(len(reviews), 1)
+    _reviews_per_page = len(reviews)
     total_reviews = reviews[0].get('total_reviews', 0)
     if total_reviews:
         total_reviews = int(total_reviews.split('(')[-1].rstrip(')'))
@@ -159,8 +170,13 @@ async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List:
     other_pages = []
     for page in range(2, total_pages + 1):
         url = update_page_number(url, page)
-        print(url)
-        other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
+        other_pages.append(ScrapeConfig(url, 
+                                #          js_scenario=[
+                                #     {
+                                #         "wait": 500
+                                #     }
+                                # ], render_js = True,
+                                        **BASE_CONFIG))
 
     async for result in SCRAPFLY.concurrent_scrape(other_pages):
         try:
@@ -171,7 +187,7 @@ async def scrape_reviews(url: str, max_pages: Optional[int] = None) -> List:
         except:
             continue
             
-    log.info(f"scraped total {len(reviews)} reviews for url {url.split('?')[0]}")
+    log.info(f"scraped total {len(reviews)} reviews for url {url}")
     return reviews
 
 

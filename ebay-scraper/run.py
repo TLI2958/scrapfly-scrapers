@@ -8,6 +8,7 @@ $ export $SCRAPFLY_KEY="your key from https://scrapfly.io/dashboard"
 import asyncio
 import json
 import ebay
+import re
 from datetime import datetime
 from pathlib import Path
 from loguru import logger as log
@@ -28,15 +29,16 @@ def generate_ebay_review_url(username, item_id, page_number=1):
         "q": item_id,
         "sort": "RELEVANCE",
         "page_id_item": page_number,
-        "filter_image_item": "false"
+        "filter_image_item": "false",
+        "page_id": page_number,
     }
     return f"{base_url}?{'&'.join([f'{k}={v}' for k, v in params.items()])}"
 
 kws = [
-        # 'tea',
+        'tea',
         # 'tincture',
         # 'supplement',
-        'drink'
+        # 'drink'
         ]
 prefix = 'https://www.ebay.com/sch/i.html?_nkw=california+poppy+'
 async def run():
@@ -55,11 +57,11 @@ async def run():
         # products = await ebay.scrape_products(urls)
         # output.joinpath(f"search_{k}_products.json").write_text(json.dumps(products, indent=2))
         products = json.loads(output.joinpath(f"search_{k}_products.json").read_text())
-        urls = [generate_ebay_review_url(product["seller_name"].lower(), product["id"]) for product in products]
+        urls = [generate_ebay_review_url(re.sub(' ', '', product["seller_name"].lower()), product["id"]) for product in products]
         reviews = await ebay.scrape_all_reviews(urls, max_pages= 10)
         output.joinpath(f"search_{k}_reviews.json").write_text(json.dumps(reviews, indent=2))
-        
         log.success(f"search_{k}_reviews.json saved")
+        
 
 class DateTimeEncoder(json.JSONEncoder):
     """Custom JSONEncoder subclass that knows how to encode datetime values."""
