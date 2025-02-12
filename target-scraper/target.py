@@ -33,28 +33,20 @@ output.mkdir(exist_ok=True)
 
 def parse_product(response: ScrapeApiResponse):
     """parse product data from target product pages"""
+    url = response.result['config']['url']
+    
     sel = response.selector
-    # data = sel.xpath('//script[@id="__NEXT_DATA__"]/text()').get()
-    # data = json.loads(data)
-    # _product_raw = data["props"]["pageProps"]["initialData"]["data"]["product"]
-
-    metadata = sel.xpath('//script[@type="application/ld+json" and @data-seo-id="schema-org-product"]/text()').get()
-    meta_data = json.loads(metadata)
-
-    wanted_product_keys = [
-        "name",
-        "sku",
-        "description",
-        'image',
-        'brand',
-        'offers',
-        "aggregateRating",
-    ]
-
-    ingredients = sel.xpath('//h3[text()="Ingredients"]/following-sibling::p/text()').get()
-    # print(ingredients)
-    product = {k: v for k, v in meta_data.items() if k in wanted_product_keys}  
-    product['ingredient'] = ingredients
+    product = {}
+    product['url'] = url
+    for spec in sel.xpath('//div[@data-test="item-details-specifications"]/div'):
+        key = spec.xpath('.//b/text()').get()
+        val = spec.xpath('.//b/following-sibling::text()[2]').get()
+        if val is None:
+            val = spec.xpath('.//b/following-sibling::text()[1]').get()
+        if key and val:
+            product[key] = val
+    # maybe: still results in ':'
+    print(product)
     return {"product": product}
 
 def parse_search(result: ScrapeApiResponse) -> List:
@@ -133,22 +125,26 @@ async def scrape_products(res = None) -> List[Dict]:
     res: metadata of products from scrape_search"""
     # add the product pages to a scraping list
     result = []
-    urls = [f"https://www.target.com/ip/{e['usItemId']}" for e in res if e.get('usItemId', 0) != 0]
+    prefix = 'https://www.target.com'
+    urls = [prefix + e['url'] for e in res]
     to_scrape = [ScrapeConfig(url, 
                                     js_scenario=[
-                                    {
-                                        "condition": {
-                                            "selector": "//div[@data-testid='product-description']",
+                                        {"scroll": {"selector": '//div[@data-test="@web/site-top-of-funnel/ProductDetailCollapsible-Specifications"]'}},
+                                        {"click": {"selector": '//div[@data-test="@web/site-top-of-funnel/ProductDetailCollapsible-Specifications"]/button'}},
+
+                                        {"condition": {
+                                            "selector": "//div[@data-test='item-details-specifications']",
                                             "selector_state": "not_existing",
-                                            "timeout": 200,
+                                            "timeout": 500,
                                             "action": "exit_success"
                                         }
                                     },
+
                                     {
                                         "wait_for_selector": {
-                                            "selector": "//div[@data-testid='product-description']",
+                                            "selector": "//div[@data-test='item-details-specifications']",
                                             "state": "visible",
-                                            "timeout": 200
+                                            "timeout": 500
                                         }
                                     }
                                 ],
@@ -171,7 +167,15 @@ async def scrape_reviews(res = None, max_pages: Optional[int] = None):
         res: metadata of product from scrape_products"""
     total_reviews = int(res.get('product',{}).get("aggregateRating",{}).get('reviewCount', 0))
     id = res['product']['sku']
-    first_page = await SCRAPFLY.async_scrape(ScrapeConfig(f"https://www.target.com/reviews/product/{id}?", **BASE_CONFIG))
+    first_page = await SCRAPFLY.async_scrape(ScrapeConfig(f"https://www.target.com/reviews/product/{id}?", 
+                                                          js_scenario = 
+                                                          [ {"scroll": {"selector": "bottom"}},
+                                                            *[{"click": 
+                                                                {"selector": '//div[@data-test="load-more-btn"]/button',
+                                                                'ignore_if_not_visible': True}},
+                                                                {"wait": 500},]*3],
+                                                        render_js = True,
+                                                        **BASE_CONFIG))
     log.info(f"scraping the first review page from https://www.target.com/reviews/product/{id}?")
 
     reviews = parse_reviews(first_page)
@@ -196,24 +200,24 @@ async def scrape_reviews(res = None, max_pages: Optional[int] = None):
 
 async def scrape_product_and_reviews(search_data, key = ''):
     """scrape product and reviews concurrently"""
-    # result = await scrape_products(search_data)
-    # with open(output.joinpath(f"target_products_california_poppy_{key}_extra.json"), "a", encoding="utf-8",) as file:
-    #     json.dump(result, file, indent=2, ensure_ascii=False)
+    result = await scrape_products(search_data)
+    with open(output.joinpath(f"target_products_california_poppy_{key}.json"), "a", encoding="utf-8",) as file:
+        json.dump(result, file, indent=2, ensure_ascii=False)
 
     # log.success(f'scraped {len(result)} products...')
-    with open(output.joinpath(f"target_products_california_poppy_{key}_extra.json"), "r", encoding="utf-8") as file:
-        result = json.load(file) 
+    # with open(output.joinpath(f"target_products_california_poppy_{key}.json"), "r", encoding="utf-8") as file:
+    #     result = json.load(file) 
         
-    result_combined = []
-    for product in result:
-        product_reviews = await scrape_reviews(product, max_pages=20)
-        product['product_reviews'] = product_reviews
-        result_combined.append(product)
-        log.info(f'scraped reviews for product {product["product"]["sku"]}')
-        with open(output.joinpath(f"target_product_and_reviews_california_poppy_{key}_extra.json"), "a", encoding="utf-8") as file:
-            json.dump(result_combined, file, indent=2, ensure_ascii=False)
+    # result_combined = []
+    # for product in result:
+    #     product_reviews = await scrape_reviews(product, max_pages=20)
+    #     product['product_reviews'] = product_reviews
+    #     result_combined.append(product)
+    #     log.info(f'scraped reviews for product {product["product"]["sku"]}')
+    #     with open(output.joinpath(f"target_product_and_reviews_california_poppy_{key}.json"), "a", encoding="utf-8") as file:
+    #         json.dump(result_combined, file, indent=2, ensure_ascii=False)
             
-    return result_combined
+    # return result_combined
 
 async def scrape_search(
     query: str = "",

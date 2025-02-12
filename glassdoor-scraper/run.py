@@ -30,9 +30,9 @@ async def run():
     # result_salaries = await glassdoor.scrape_salaries(url, max_pages=3)
     # output.joinpath("salaries.json").write_text(json.dumps(result_salaries, indent=2, ensure_ascii=False))
 
-    url = "https://www.glassdoor.com/Reviews/Kesar-Web-Reviews-E1581336.htm"
+    url = "https://www.glassdoor.com/Reviews/Spring-Venture-Group-Reviews-E327869.htm"
     result_reviews = await glassdoor.scrape_reviews(url, max_pages=3)
-    output.joinpath("Haver_Analytics_reviews.json").write_text(json.dumps(result_reviews, indent=2, ensure_ascii=False))
+    output.joinpath(f"{url.split('/')[-1].split('.htm')[0]}.json").write_text(json.dumps(result_reviews, indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

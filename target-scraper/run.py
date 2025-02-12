@@ -29,16 +29,16 @@ async def run():
          ]
     
     for k in kw:
-        search_data = await target.scrape_search(
-            query="california+poppy" + "+" + k,  max_pages=10
-        )
-        with open(output.joinpath(f"search_california_poppy_{k}.json"), "a", encoding="utf-8") as file:
-            json.dump(search_data, file, indent=2, ensure_ascii=False)
-        # with open(output.joinpath(f"search_california_poppy_{k}.json"), "r", encoding="utf-8") as file:
-        #     search_data = json.load(file) 
+        # search_data = await target.scrape_search(
+        #     query="california+poppy" + "+" + k,  max_pages=10
+        # )
+        # with open(output.joinpath(f"search_california_poppy_{k}.json"), "a", encoding="utf-8") as file:
+        #     json.dump(search_data, file, indent=2, ensure_ascii=False)
+        with open(output.joinpath(f"search_california_poppy_{k}.json"), "r", encoding="utf-8") as file:
+            search_data = json.load(file) 
             
         # search_data = [{'usItemId': '3931738164'}]
-        # product_and_reviews = await target.scrape_product_and_reviews(search_data, key = k)
+        product_and_reviews = await target.scrape_product_and_reviews(search_data, key = k)
     
     # with open(output.joinpath("target_product_and_reviews_california_poppy.json"), "a", encoding="utf-8") as file:
     #     json.dump(product_and_reviews, file, indent=2, ensure_ascii=False)
