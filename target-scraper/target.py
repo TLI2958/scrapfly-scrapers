@@ -34,7 +34,6 @@ output.mkdir(exist_ok=True)
 def parse_product(response: ScrapeApiResponse):
     """parse product data from target product pages"""
     url = response.result['config']['url']
-    
     sel = response.selector
     product = {}
     product['url'] = url
@@ -45,7 +44,7 @@ def parse_product(response: ScrapeApiResponse):
             val = spec.xpath('.//b/following-sibling::text()[1]').get()
         if key and val:
             product[key] = val
-    # maybe: still results in ':'
+    
     print(product)
     return {"product": product}
 
@@ -129,22 +128,21 @@ async def scrape_products(res = None) -> List[Dict]:
     urls = [prefix + e['url'] for e in res]
     to_scrape = [ScrapeConfig(url, 
                                     js_scenario=[
-                                        {"scroll": {"selector": '//div[@data-test="@web/site-top-of-funnel/ProductDetailCollapsible-Specifications"]'}},
-                                        {"click": {"selector": '//div[@data-test="@web/site-top-of-funnel/ProductDetailCollapsible-Specifications"]/button'}},
-
-                                        {"condition": {
-                                            "selector": "//div[@data-test='item-details-specifications']",
+                                         {"condition": {
+                                            "selector": '//div[@data-test="@web/site-top-of-funnel/ProductDetailCollapsible-Specifications"]',
                                             "selector_state": "not_existing",
-                                            "timeout": 500,
+                                            "timeout": 1000,
                                             "action": "exit_success"
                                         }
                                     },
-
+                                        
+                                        # {"scroll": {"selector": '//div[@data-test="@web/site-top-of-funnel/ProductDetailCollapsible-Specifications"]'}},
+                                        {"click": {"selector": '//div[@data-test="@web/site-top-of-funnel/ProductDetailCollapsible-Specifications"]/button'}},
                                     {
                                         "wait_for_selector": {
                                             "selector": "//div[@data-test='item-details-specifications']",
                                             "state": "visible",
-                                            "timeout": 500
+                                            "timeout": 1000
                                         }
                                     }
                                 ],
@@ -155,7 +153,11 @@ async def scrape_products(res = None) -> List[Dict]:
     for i in range(0, len(to_scrape), 20):
         to_scrape_slice = to_scrape[i: i+20]
         async for response in SCRAPFLY.concurrent_scrape(to_scrape_slice):
-            result.append(parse_product(response))  
+            try:
+                parse_product(response)
+                result.append(parse_product(response))  
+            except:
+                continue
         if len(result)%10 == 0:
             log.info('scraped product data from product pages...')
 
