@@ -80,42 +80,29 @@ def parse_search(result: ScrapeApiResponse) -> List:
 def parse_reviews(response: ScrapeApiResponse):
     """parse product reviews from product pages"""
     sel = response.selector
-    # will select left/right columns separately, hence undesirable None values
-    # review_boxes = sel.xpath('//div[contains(@class,"overflow-visible" and contains(@class, "dark-gray"))]/*').getall()
+    tot_rating = sel.xpath('//a[@data-test="ratingCountLink"]//span[@data-test="ratings"]/span/text()').get()
+    # will select /right columns separately, hence undesirable None values
     parsed = []
-    key = ['url', 'customer_name', 'review_date', 'star_rating', 'review_title', 'review_text']
+    if not tot_rating:
+        overall_rating, total_reviews = None, 0
+        return parsed
     
-    # solve non-unique
-    url = response.result['config']['url']
-    customer_name = sel.xpath('//span[contains(@class, "f7") and contains(@class, "b") and contains(@class, "mv0")]/text()').getall()
-    # need revising
-    review_date = sel.xpath('//div[contains(@class, "f7") and contains(@class, "justify")]/text()').getall()
-    star_rating = sel.xpath('//div[contains(@class, "w_ExHd")]/following-sibling::span[contains(@class, "w_iUH7")]/text()').getall()
-
-    review_body = sel.xpath('//div[contains(@class, "overflow-visible")][not(contains(@class, "undefined"))]').getall()
-    review_title = sel.xpath('//div[contains(@class, "overflow-visible")][not(contains(@class, "undefined"))]//h3[contains(@class, "w_kV33")]/text()').getall()
-    review_text = sel.xpath('//div[contains(@class, "overflow-visible")][not(contains(@class, "undefined"))]//span[contains(@class, "tl-m") and contains(@class, "db-m")]/text()').getall()
-
-    j, k = 0, 0
-    for i in range(len(review_body)):
-        has_title = re.search(r'w_kV33', review_body[i])
-        has_text = re.search(r'tl-m db-m', review_body[i])
-
-        if has_title and has_text: 
-            parsed.append(dict(zip(key, [url, customer_name[i], review_date[i], star_rating[i], review_title[j], review_text[k]])))
-            j, k = j + 1, k + 1
-        elif has_text:
-            parsed.append(dict(zip(key, [url, customer_name[i], review_date[i], star_rating[i], '', review_text[k]])))
-            k = k + 1
-        elif has_title:
-            parsed.append(dict(zip(key, [url, customer_name[i], review_date[i], star_rating[i], review_title[j], ''])))
-            j = j + 1
-        else:
-            parsed.append(dict(zip(key, [url, customer_name[i], review_date[i], star_rating[i], '', ''])))
-        try:
-            print(parsed[-1])    
-        except:
-            continue
+    overall_rating, total_reviews = tot_rating.split('out of')[0], tot_rating.split('with')[1] 
+    url  = response.result['config']['url']
+    key = ['overall_rating', 'total_reviews', 'url', 'title', 'rating', 'recommend', 'user', 'data', 'content']
+    for box in sel.xpath('//div[@data-test="reviews-list"]/div'):
+        title = box.xpath('.//h4[@data-test="review-card--title"]/text()').get()
+        rating = box.xpath('.//span[@data-test="ratings"]/span/text()').get()
+        recommend = box.xpath('.//div[@data-test="review-card--recommendation"]/span[2]/text()').get()
+        user = box.xpath('.//span[@data-test="review-card--username"]/text()').get()
+        date = box.xpath('.//span[@data-test="review-card--reviewTime"]/text()').get()
+        content = box.xpath('.//div[@data-test="review-card--text"]/text()').get()
+        review = dict(zip(key, [overall_rating, total_reviews, url, title, rating, recommend, user, date, content]))
+        parsed.append(review)
+    try:
+        print(parsed)
+    except:
+        pass
     return parsed
 
 
@@ -164,62 +151,57 @@ async def scrape_products(res = None) -> List[Dict]:
     return result
 
 
-async def scrape_reviews(res = None, max_pages: Optional[int] = None):
+async def scrape_reviews(res = None):
     """scrape product reviews from product pages
         res: metadata of product from scrape_products"""
-    total_reviews = int(res.get('product',{}).get("aggregateRating",{}).get('reviewCount', 0))
-    id = res['product']['sku']
-    first_page = await SCRAPFLY.async_scrape(ScrapeConfig(f"https://www.target.com/reviews/product/{id}?", 
+    url = res['product']['url']
+    # print(url)
+    first_page = await SCRAPFLY.async_scrape(ScrapeConfig(url, 
                                                           js_scenario = 
                                                           [ {"scroll": {"selector": "bottom"}},
-                                                            *[{"click": 
-                                                                {"selector": '//div[@data-test="load-more-btn"]/button',
-                                                                'ignore_if_not_visible': True}},
-                                                                {"wait": 500},]*3],
+                                                            {"wait": 1000},
+                                                            {"click":
+                                                                    {"selector": '//div[@data-test="hide-show-reviews-btn"]/button',
+                                                                    'ignore_if_not_visible': True}},
+                                                            {"wait": 500},
+                                                            {"click": {"selector": '//div[@data-test="load-more-btn"]/button', 
+                                                                    "ignore_if_not_visible": True}},
+                                                            {"wait": 500},
+                                                            {"click": {"selector": '//div[@data-test="load-more-btn"]/button', 
+                                                                    "ignore_if_not_visible": True}},
+                                                            {"wait": 500},
+                                                            ],
                                                         render_js = True,
                                                         **BASE_CONFIG))
-    log.info(f"scraping the first review page from https://www.target.com/reviews/product/{id}?")
-
+    log.info(f"scraping reviews from {url}")
     reviews = parse_reviews(first_page)
-    _reviews_per_page = 10
-
-
-    total_pages = int(math.ceil(total_reviews / _reviews_per_page))
-    if max_pages and total_pages > max_pages:
-        total_pages = max_pages
-    
-    log.info(f"found total {total_reviews} reviews across {total_pages} pages -> scraping")
-    other_pages = []
-    for page in range(6, total_pages + 1):
-        url = f"https://www.target.com/reviews/product/{id}?page={page}"
-        other_pages.append(ScrapeConfig(url, **BASE_CONFIG))
-
-    async for result in SCRAPFLY.concurrent_scrape(other_pages):
-        page_reviews = parse_reviews(result)
-        reviews.extend(page_reviews)
-    log.info(f"scraped total {len(reviews)} reviews")
+    log.info(f"scraped {len(reviews)} reviews from {url}")
     return reviews
 
-async def scrape_product_and_reviews(search_data, key = ''):
+async def scrape_product_and_reviews(search_data = None, key = ''):
     """scrape product and reviews concurrently"""
-    result = await scrape_products(search_data)
-    with open(output.joinpath(f"target_products_california_poppy_{key}.json"), "a", encoding="utf-8",) as file:
-        json.dump(result, file, indent=2, ensure_ascii=False)
+    # result = await scrape_products(search_data)
+    # with open(output.joinpath(f"target_products_california_poppy_{key}.json"), "a", encoding="utf-8",) as file:
+    #     json.dump(result, file, indent=2, ensure_ascii=False)
 
     # log.success(f'scraped {len(result)} products...')
-    # with open(output.joinpath(f"target_products_california_poppy_{key}.json"), "r", encoding="utf-8") as file:
-    #     result = json.load(file) 
+    with open(output.joinpath(f"target_products_california_poppy_{key}.json"), "r", encoding="utf-8") as file:
+        result = json.load(file) 
         
-    # result_combined = []
-    # for product in result:
-    #     product_reviews = await scrape_reviews(product, max_pages=20)
-    #     product['product_reviews'] = product_reviews
-    #     result_combined.append(product)
-    #     log.info(f'scraped reviews for product {product["product"]["sku"]}')
-    #     with open(output.joinpath(f"target_product_and_reviews_california_poppy_{key}.json"), "a", encoding="utf-8") as file:
-    #         json.dump(result_combined, file, indent=2, ensure_ascii=False)
-            
-    # return result_combined
+    result_combined = []
+    for product in result:
+        if product['product'].get('UPC', None):
+            print(product['product']['UPC'])   
+            product_reviews = await scrape_reviews(product)
+            if not product_reviews:
+                continue
+            product['product_reviews'] = product_reviews
+            result_combined.append(product)
+            log.info(f'scraped reviews for product {product["product"]["UPC"]}')
+            with open(output.joinpath(f"target_product_and_reviews_california_poppy_{key}.json"), "a", encoding="utf-8") as file:
+                json.dump(result_combined, file, indent=2, ensure_ascii=False)
+                
+    return result_combined
 
 async def scrape_search(
     query: str = "",

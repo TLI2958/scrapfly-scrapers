@@ -23,9 +23,9 @@ async def run():
     print("running target scrape and saving results to ./results directory")
     kw = [
         # "tincture", 
-          # "drink", 
-          "tea", 
-          "supplement"
+          "drink", 
+        #   "tea", 
+        #   "supplement"
          ]
     
     for k in kw:
@@ -35,13 +35,15 @@ async def run():
         # with open(output.joinpath(f"search_california_poppy_{k}.json"), "a", encoding="utf-8") as file:
         #     json.dump(search_data, file, indent=2, ensure_ascii=False)
         with open(output.joinpath(f"search_california_poppy_{k}.json"), "r", encoding="utf-8") as file:
-            search_data = json.load(file) 
+            search_data = json.load(file)   
             
         # search_data = [{'usItemId': '3931738164'}]
+        # res = ['https://www.target.com/p/yogi-tea-elderberry-lemon-balm-immune-stress-16ct/-/A-81503691#lnk=sametab']
+        # review = await target.scrape_reviews(res)
         product_and_reviews = await target.scrape_product_and_reviews(search_data, key = k)
     
-    # with open(output.joinpath("target_product_and_reviews_california_poppy.json"), "a", encoding="utf-8") as file:
-    #     json.dump(product_and_reviews, file, indent=2, ensure_ascii=False)
+        with open(output.joinpath(f"target_product_and_reviews_california_poppy_{k}.json"), "a", encoding="utf-8") as file:
+            json.dump(product_and_reviews, file, indent=2, ensure_ascii=False)
 
     # products_data = await target.scrape_products(
     #     urls=[
