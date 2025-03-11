@@ -34,13 +34,15 @@ def generate_ebay_review_url(username, item_id, page_number=1):
     }
     return f"{base_url}?{'&'.join([f'{k}={v}' for k, v in params.items()])}"
 
-kws = [
-        'tea',
+kws = [''
+        # 'tea',
         # 'tincture',
         # 'supplement',
         # 'drink'
         ]
-prefix = 'https://www.ebay.com/sch/i.html?_nkw=california+poppy+'
+# prefix = 'https://www.ebay.com/sch/i.html?_nkw=california+poppy+'
+prefix = 'https://www.ebay.com/sch/i.html?_nkw=lemon+balm+'
+
 async def run():
     # enable scrapfly cache only during development
     ebay.BASE_CONFIG["cache"] = False
@@ -49,18 +51,18 @@ async def run():
     print("running Ebay.com scrape and saving results to ./results directory")
 
     for k in kws:   
-        # url = prefix + k
-        # search_results = await ebay.scrape_search(url, max_pages=5)
-        # output.joinpath(f"search_{k}.json").write_text(json.dumps(search_results, indent=2, cls=DateTimeEncoder))
+        url = prefix + k
+        search_results = await ebay.scrape_search(url.rstrip(), max_pages=5)
+        output.joinpath(f"search_products.json").write_text(json.dumps(search_results, indent=2, cls=DateTimeEncoder))
 
         # urls = [product["url"] for product in search_results]
         # products = await ebay.scrape_products(urls)
         # output.joinpath(f"search_{k}_products.json").write_text(json.dumps(products, indent=2))
-        products = json.loads(output.joinpath(f"search_{k}_products.json").read_text())
+        products = json.loads(output.joinpath(f"search_products.json").read_text())
         urls = [generate_ebay_review_url(re.sub(' ', '', product["seller_name"].lower()), product["id"]) for product in products]
         reviews = await ebay.scrape_all_reviews(urls, max_pages= 10)
-        output.joinpath(f"search_{k}_reviews.json").write_text(json.dumps(reviews, indent=2))
-        log.success(f"search_{k}_reviews.json saved")
+        output.joinpath(f"search_reviews.json").write_text(json.dumps(reviews, indent=2))
+        log.success(f"search_reviews.json saved")
         
 
 class DateTimeEncoder(json.JSONEncoder):
