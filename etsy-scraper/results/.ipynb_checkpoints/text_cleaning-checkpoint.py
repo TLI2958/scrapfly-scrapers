@@ -23,7 +23,7 @@ def text_cleaning(example, map_label = True):
     new editions as of Apr 24' 
     ''' 
     template = re.compile(r'https?://\S+|www\.\S+') # Removes website links
-    text = template.sub(r'', example['review_body'])
+    text = template.sub(r'', example['text'])
     
     soup = BeautifulSoup(text, 'lxml') #Removes HTML tags
     only_text = soup.get_text()

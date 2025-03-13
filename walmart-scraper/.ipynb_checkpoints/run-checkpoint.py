@@ -27,18 +27,25 @@ async def run():
           "tea", 
           "supplement"
          ]
+    # search_data = await walmart.scrape_search(
+    #     query="lemon+balm", sort="best_seller", max_pages=10)
+    # with open(output.joinpath(f"search_lemon_balm.json"), "a", encoding="utf-8") as file:
+    #     json.dump(search_data, file, indent=2, ensure_ascii=False)
     
-    for k in kw:
+    with open(output.joinpath(f"search_lemon_balm.json"), "r", encoding="utf-8") as file:
+        search_data = json.load(file) 
+    
+    # for k in kw:
         # search_data = await walmart.scrape_search(
         #     query="california+poppy" + "+" + k, sort="best_seller", max_pages=10
         # )
         # with open(output.joinpath(f"search_california_poppy_{k}_.json"), "a", encoding="utf-8") as file:
         #     json.dump(search_data, file, indent=2, ensure_ascii=False)
-        with open(output.joinpath(f"search_california_poppy_{k}_.json"), "r", encoding="utf-8") as file:
-            search_data = json.load(file) 
+        # with open(output.joinpath(f"search_california_poppy_{k}_.json"), "r", encoding="utf-8") as file:
+        #     search_data = json.load(file) 
             
         # search_data = [{'usItemId': '3931738164'}]
-        product_and_reviews = await walmart.scrape_product_and_reviews(search_data, key = k)
+    product_and_reviews = await walmart.scrape_product_and_reviews(search_data, key = '')
     
     # with open(output.joinpath("Walmart_product_and_reviews_california_poppy.json"), "a", encoding="utf-8") as file:
     #     json.dump(product_and_reviews, file, indent=2, ensure_ascii=False)

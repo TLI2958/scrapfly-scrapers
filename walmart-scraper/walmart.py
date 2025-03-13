@@ -38,7 +38,9 @@ def parse_product(response: ScrapeApiResponse):
     # data = json.loads(data)
     # _product_raw = data["props"]["pageProps"]["initialData"]["data"]["product"]
 
-    metadata = sel.xpath('//script[@type="application/ld+json" and @data-seo-id="schema-org-product"]/text()').get()
+    metadata = sel.xpath('//script[@type="application/ld+json" and @data-seo-id="schema-org-product"]/text()').get()     
+    if not metadata:
+        return {}
     meta_data = json.loads(metadata)
 
     wanted_product_keys = [
@@ -118,23 +120,23 @@ async def scrape_products(res = None) -> List[Dict]:
     result = []
     urls = [f"https://www.walmart.com/ip/{e['usItemId']}" for e in res if e.get('usItemId', 0) != 0]
     to_scrape = [ScrapeConfig(url, 
-                                    js_scenario=[
-                                    {
-                                        "condition": {
-                                            "selector": "//div[@data-testid='product-description']",
-                                            "selector_state": "not_existing",
-                                            "timeout": 500,
-                                            "action": "exit_success"
-                                        }
-                                    },
-                                    {
-                                        "wait_for_selector": {
-                                            "selector": "//div[@data-testid='product-description']",
-                                            "state": "visible",
-                                            "timeout": 500
-                                        }
-                                    }
-                                ],
+                                #     js_scenario=[
+                                #     {
+                                #         "condition": {
+                                #             "selector": "//div[@data-testid='product-description']",
+                                #             "selector_state": "not_existing",
+                                #             "timeout": 500,
+                                #             "action": "exit_success"
+                                #         }
+                                #     },
+                                #     {
+                                #         "wait_for_selector": {
+                                #             "selector": "//div[@data-testid='product-description']",
+                                #             "state": "visible",
+                                #             "timeout": 500
+                                #         }
+                                #     }
+                                # ],
                               render_js = True,
                               **BASE_CONFIG,
                              ) for url in urls]
@@ -142,7 +144,12 @@ async def scrape_products(res = None) -> List[Dict]:
     for i in range(0, len(to_scrape), 20):
         to_scrape_slice = to_scrape[i: i+20]
         async for response in SCRAPFLY.concurrent_scrape(to_scrape_slice):
-            result.append(parse_product(response))  
+                prod = parse_product(response)
+                if not prod:
+                    continue
+                print(prod)
+                result.append(prod)
+                log.info(f'scraped from {response.result["config"]["url"]}')
         if len(result)%10 == 0:
             log.info('scraped product data from product pages...')
 
@@ -180,21 +187,25 @@ async def scrape_reviews(res = None, max_pages: Optional[int] = None):
 async def scrape_product_and_reviews(search_data, key = ''):
     """scrape product and reviews concurrently"""
     # result = await scrape_products(search_data)
-    # with open(output.joinpath(f"Walmart_products_california_poppy_{key}_extra.json"), "a", encoding="utf-8",) as file:
+    # with open(output.joinpath(f"Walmart_products_lemon_balm.json"), "a", encoding="utf-8",) as file:
     #     json.dump(result, file, indent=2, ensure_ascii=False)
 
     # log.success(f'scraped {len(result)} products...')
-    with open(output.joinpath(f"Walmart_products_california_poppy_{key}_extra.json"), "r", encoding="utf-8") as file:
+    
+    with open(output.joinpath(f"Walmart_products_lemon_balm.json"), "r", encoding="utf-8") as file:
         result = json.load(file) 
         
     result_combined = []
     for product in result:
-        product_reviews = await scrape_reviews(product, max_pages=20)
-        product['product_reviews'] = product_reviews
-        result_combined.append(product)
-        log.info(f'scraped reviews for product {product["product"]["sku"]}')
-        with open(output.joinpath(f"Walmart_product_and_reviews_california_poppy_{key}_extra.json"), "a", encoding="utf-8") as file:
-            json.dump(result_combined, file, indent=2, ensure_ascii=False)
+        try:
+            product_reviews = await scrape_reviews(product, max_pages=20)
+            product['product_reviews'] = product_reviews
+            result_combined.append(product)
+            log.info(f'scraped reviews for product {product["product"]["sku"]}')
+            with open(output.joinpath(f"Walmart_product_and_reviews_lemon_balm.json"), "a", encoding="utf-8") as file:
+                json.dump(result_combined, file, indent=2, ensure_ascii=False)
+        except:
+            pass
             
     return result_combined
 
