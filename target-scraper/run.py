@@ -19,13 +19,14 @@ async def run():
     # enable scrapfly cache for basic use
     target.BASE_CONFIG["cache"] = True
     target.BASE_CONFIG["country"] = "US"
+    
 
     print("running target scrape and saving results to ./results directory")
     kw = [
         # "tincture", 
-          "drink", 
+        #   "drink", 
         #   "tea", 
-        #   "supplement"
+          "supplement"
          ]
     
     for k in kw:

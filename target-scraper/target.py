@@ -160,6 +160,13 @@ async def scrape_reviews(res = None):
                                                           js_scenario = 
                                                           [ {"scroll": {"selector": "bottom"}},
                                                             {"wait": 1000},
+                                                            {"condition": {
+                                                                "selector": '//div[@data-test="hide-show-reviews-btn"]/button',
+                                                                "selector_state": "not_existing",
+                                                                "timeout": 1000,
+                                                                "action": "exit_success"
+                                                            }
+                                                            },
                                                             {"click":
                                                                     {"selector": '//div[@data-test="hide-show-reviews-btn"]/button',
                                                                     'ignore_if_not_visible': True}},

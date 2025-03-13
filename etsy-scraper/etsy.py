@@ -20,6 +20,7 @@ BASE_CONFIG = {
     "asp": True,
     # set the poxy location to US
     "country": "US",
+
 }
 
 def strip_text(text):
@@ -69,6 +70,19 @@ def parse_review(response: ScrapeApiResponse):
     selector = response.selector
     script = selector.xpath("//script[contains(text(),'offers')]/text()").get()
     products_data = json.loads(script)
+    reviews = []
+    # separate reviews as product_data['review'] = parsed
+    for box in selector.xpath('//div[@id="same-listing-reviews-panel"]/div/div'):
+        review_rating = box.xpath('.//span[@class ="wt-display-inline-block wt-mr-xs-1"]/span[1]/text()').get()
+        review_name = box.xpath('.//p[@class= "wt-text-caption wt-text-gray"]/a/text()').get().strip(' \n\t')
+        review_date = box.xpath('.//p[@class= "wt-text-caption wt-text-gray"]/text()[2]').get().strip(' \n\t')
+        review_text = box.xpath('.//p[@class="wt-text-truncate--multi-line wt-break-word wt-text-body"]/text()').get().strip(' \n\t')
+        reviews.append({'review_rating': review_rating, 
+                        'reviewr': review_name, 
+                        'review_date': review_date, 
+                        'review_text': review_text})
+    products_data['reviews'] = reviews
+    print(reviews)
     return {"product_data":[products_data]}
 
 # def parse_product_page(response: ScrapeApiResponse) -> Dict:
@@ -81,14 +95,15 @@ def parse_review(response: ScrapeApiResponse):
 async def parse_product_page(response, max_review_pages = 5) -> Dict:
     """Parse hidden product data from product pages, including reviews."""
     selector = response.selector
+    log.info(f'scraping product page {response.result["config"]["url"]}')
     review = selector.xpath('//div[@id = "reviews"]')
     # Get total review count
-    # try:
-    total_review_for_this_item = review.xpath('//button[@id="same-listing-reviews-tab"]/span/text()').get().strip()
-    total_review_pages = min(max_review_pages, math.ceil(int(total_review_for_this_item) / 4))  # adjust the divisor based on actual reviews per page
-    # except Exception as e:
-    #     log.warning(f"Could not retrieve total review count: {e}")
-    #     total_review_pages = 1
+    try:
+        total_review_for_this_item = review.xpath('.//button[@id="same-listing-reviews-tab"]/span/text()').get().strip()
+        total_review_pages = min(max_review_pages, math.ceil(int(total_review_for_this_item) / 4))  # adjust the divisor based on actual reviews per page
+    except Exception as e:
+        log.warning(f"Could not retrieve total review count: {e}")
+        total_review_pages = 1
     
     # Scrape the first review page
     # todo: recursively scrape all review pages
@@ -100,7 +115,6 @@ async def parse_product_page(response, max_review_pages = 5) -> Dict:
                      **BASE_CONFIG)
     )
     product_data = parse_review(first_page)['product_data']
-    print(product_data)
 
     # Scrape remaining review pages concurrently, if there are more pages
     log.info(f"Scraping review pagination ({total_review_pages - 1} more pages)")
@@ -108,28 +122,20 @@ async def parse_product_page(response, max_review_pages = 5) -> Dict:
         other_pages = [
                 ScrapeConfig(next_page_url,
                               js_scenario=[
-                                    {
-                                        "click": {
-                                            "selector": f'//a[contains(@href, "page={i}") and contains(@class, "wt-action-group__item wt-btn")]',                     
-                                        }
+                                   {"click": 
+                                    {"selector": f'//div[@class="wt-action-group__item-container"]/a[@data-page="{i}"]'}
                                     },
                                       {
-                                        "wait": 2000 
+                                        "wait": 1000 
                                     },
                                     {
-                                        "wait_for_selector": {
-                                            "selector": f'//a[contains(@href, "page={i}") and @aria-current="true"]',
-                                            "state": "visible",
-                                            "timeout": 2000
+                                        "condition": {
+                                            "selector": f'//div[@class="wt-action-group__item-container"]/a[contains(@href, "page={i}") and @aria-current="true"]',
+                                            "selector_state": "not_existing",
+                                            "action": "exit_success"
                                         }
                                     },
-                                    {
-                                        "wait_for_selector": {
-                                            "selector": "//div[@data-reviews-pagination]",
-                                            "state": "visible",
-                                            "timeout": 1000
-                                        }
-                                    },
+            
                                 ],
                              render_js=True, **BASE_CONFIG)
                 for i in range(2, total_review_pages + 1)
@@ -140,7 +146,6 @@ async def parse_product_page(response, max_review_pages = 5) -> Dict:
             try:
                 data = parse_review(response)
                 product_data.extend(data["product_data"])
-                print(data["product_data"])
             except Exception as e:
                 log.error(f"failed to scrape review page: {e}")
                 pass
@@ -208,11 +213,12 @@ async def scrape_search_and_products(search_url: str, max_pages: int = None, max
     
     # Step 1: Scrape search results to get product listings
     log.info("Starting search scrape")
-    search_data = await scrape_search(search_url, max_pages)
+    # search_data = await scrape_search(search_url, max_pages)
+    with open('results/search.json', 'r', encoding = 'utf-8') as file:
+        search_data = json.load(file)
     
     # Step 2: Extract product URLs from search data
-    product_urls = [product["productLink"] for product in search_data if product.get("productLink")]
-    
+    product_urls = [product["url"] for product in search_data]
     log.info(f"Found {len(product_urls)} product links to scrape")
     
     # Step 3: Pass product URLs to scrape_product to scrape product pages
